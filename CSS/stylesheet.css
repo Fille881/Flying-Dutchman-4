@@ -11,3 +11,16 @@ p {
     font-family: "Times New Roman";
     font-size: 20px;
 }
+ul {
+    list-style-type: none;
+    font-size: 18;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    background-color: #167835;
+    background-repeat: no-repeat;
+    background-position: 0px center; 
+    padding-left: 15px; 
+}
