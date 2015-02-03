@@ -1,12 +1,15 @@
 <SCRIPT LANGUAGE="JavaScript">
 
-var userName = prompt("What is your name?")
+document.getElementById("clickMe").onclick = popup();
 
-var popup = function(userName){
+var userName = prompt("What is your name?");
+
+popup = function(userName){
 	
 	console.log("Good afternoon" + userName);
 	
 	}
+	
 	
 	
 </SCRIPT>
