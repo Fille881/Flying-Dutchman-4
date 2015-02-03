@@ -8,11 +8,26 @@
 	
 	}
 */
+
+  var numberOfBeers = 0;
     
     makeOrder = function(){
-	    var numberOfBeers = 1;
-	    return numberOfBeers;
-    }
+	    
+	    var currentOrder = document.getElementById("showOrders").value;
+	    
+	    if(currentOrder != null){
+		    
+		    numberOfBeers = numberOfBeers + 1;
+	    }
+	    
+	  else{
+		  numberOfBeers = 1;
+	  }
+	  
+	  document.getElementById("showOrders").innerHTML=numberOfBeers;	    
+	        
+	  }
+	 
     
-    document.getElementById("showOrders").innerHTML=makeOrder()
+    
 
