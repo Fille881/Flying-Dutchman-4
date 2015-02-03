@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
        
 	   popup = function(userName){
 		   
@@ -6,4 +6,3 @@
 		   alert("Good afternoon" + " " + userName);
 	
 	}
-        </script>
