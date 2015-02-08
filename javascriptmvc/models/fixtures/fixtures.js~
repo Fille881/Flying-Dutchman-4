@@ -1,0 +1,120 @@
+// map fixtures for this application
+steal("can/util/fixture", function(fixture) {
+
+	var beerstore = fixture.store(0, function() {});
+	
+	fixture({
+		'GET /beers' : beerstore.findAll,/*function(request, response)
+/*		{
+
+/*			var user = request.data.user;
+			var pass = request.data.pass;
+			var xmlhttp = new XMLHttpRequest();
+			var url = "http://pub.jamaica-inn.net/fpdb/api.php?username="+user+"&password="+pass+"&action=inventory_get";
+			xmlhttp.open("get", url);
+			xmlhttp.send();
+			xmlhttp.onreadystatechange = function() 
+			{
+				if(xmlhttp.readyState == 4)
+				{
+					if(xmlhttp.status == 200)
+					{
+						var json = JSON.parse(xmlhttp.responseText);
+						var type = json.type;
+						if(type == 'error')
+						{
+							window.alert("Error!\n"+json.payload[0].code + "\n"+json.payload[0].msg);
+						}
+						else
+						{
+							var data = [];
+							var count = 0;
+							for(var i = 0; i < json.payload.length; i++)
+							{
+								if(json.payload[i].namn != "" && json.payload[i].count >= 0)
+								{
+									data.push({name:json.payload[i].namn + " {"+json.payload[i].beer_id+"}", description: "Count: " + json.payload[i].count});
+									count++;
+								}
+							}
+							response(
+								200,
+								"success",
+								{
+									data:data,
+									count:count
+								})
+						}
+					}
+					else
+					{
+						window.alert("Error: " + xmlhttp.status);
+					}	
+				}
+			}*/
+		//},
+		//'GET /beers/{id}' : beerstore.findOne//function(request, response)
+		//{
+		//},
+		'POST /beers' : beerstore.create,
+		'POST /beersync' : function(request, response)
+		{
+			var user = request.data.user;
+			var pass = request.data.pass;
+			var xmlhttp2 = new XMLHttpRequest();
+			var url = "http://pub.jamaica-inn.net/fpdb/api.php?username="+user+"&password="+pass+"&action=inventory_get";
+			xmlhttp2.open("get", url);
+			xmlhttp2.send();
+			xmlhttp2.onreadystatechange = function() 
+			{
+				if(xmlhttp2.readyState == 4)
+				{
+					if(xmlhttp2.status == 200)
+					{
+						var json = JSON.parse(xmlhttp2.responseText);
+						var type = json.type;
+						if(type == 'error')
+						{
+							window.alert(xmlhttp2.responseText);//"\nError!\n"+json.payload[0].code + "\n"+json.payload[0].msg);
+						}
+						else
+						{
+							var names = [];
+							var counts = [];
+							var count = 0;
+							var id = [];
+							for(var i = 0; i < json.payload.length; i++)
+							{
+								if(json.payload[i].namn != "" && json.payload[i].count >= 0)
+								{
+									//data.push({name:json.payload[i].namn + " {"+json.payload[i].beer_id+"}", description: "Count: " + json.payload[i].count});
+									names.push(json.payload[i].namn + " {"+json.payload[i].beer_id+"}");
+									counts.push(json.payload[i].count);
+									id.push(json.payload[i].beer_id);
+									count++;
+									//beerstore.create({id:json.payload[i].beer_id, name:json.payload[i].namn, description: "Count: " + json.payload[i].count},function(){});
+								}
+							}
+							beerstore = fixture.store(count, function(i)
+													 {
+														 return {
+														  id: 1,
+														  name: "test",// names[i],
+														  description: "Test" // counts[i]
+														 };
+													  });
+						}
+					}					
+					else
+					{
+						window.alert("Error: " + xmlhttp2.status);
+					}
+				}
+			}
+		},
+		'PUT /beers/{id}' : beerstore.update,
+		'DELETE /beers/{id}' : beerstore.destroy
+	});
+
+	return beerstore;
+});

@@ -1,0 +1,8 @@
+<% this.each(function(current) { %>
+	<li class="beer" <%= (el) -> el.data('beer', current) %>>
+    <h3><%= current.attr('name') %> <a href='javascript://' class='destroy'>X</a></h3>
+	<p><%= current.attr('name2') %></p>
+    <p>Count: <%= current.attr('count') %></p>
+	<p>Price: <%= current.attr('price') %></p>
+	</li>
+<% }) %>
