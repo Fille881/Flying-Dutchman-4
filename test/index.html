@@ -7,7 +7,21 @@
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
-
+	
+	$("#btn1").click(function(){
+		var url2 =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
+		jQuery.get(url, function(data){
+	                
+	                console.log(url2);
+	                var beerCount = 7;
+	                
+					var total = 13;  //total is 166
+	
+	
+	}
+	
+	
+	
         //When DOM loaded we attach click event to button
         $(document).ready(function() {
             
@@ -49,11 +63,15 @@
         $("<img/>").attr( {"src": src, "width": 80, "height": 80}).appendTo("#imageDiv"+ o);
     });
    
-
+	
+	
+	
+	
+	
         });
        //return o;
        
-       alert();
+       //alert();
           ++o;
           
     
@@ -74,7 +92,7 @@
 </div>
 
 <div class="centerDiv">
-<button id="btn382" type="button">Click to load all beers and pictures</button>   
+<button id="btn382" type="button" >Click to load all beers and pictures</button>   
 
 </div>
 	
