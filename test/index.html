@@ -17,7 +17,7 @@
 		
 		jQuery.get(url2, function(data){
 	                
-	                var beerMinimum = 500;
+	                var beerMinimum = 200;
 	                
 	                
 	                for(i = 10; i < 166; i++) {
@@ -30,8 +30,11 @@
 		                
 		                console.log("out of beer" + data.payload[i].namn);
 		                
-		        $('#inStock').append('<div id = "beerCountDiv'+ i +'" />');
-				$("#beerCountDiv"+ i).append("out of beer" + data.payload[i].namn);
+		        $('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
+				$("#beerNameDiv"+ i).append(data.payload[i].namn);
+				
+				$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
+				$("#countDiv"+ i).append(data.payload[i].count);
 
 		                
 	                }
