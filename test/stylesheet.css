@@ -1,0 +1,104 @@
+body {
+    background-color: #d0e4fe;
+}
+
+h1 {
+    color: #1f32a9;
+    text-align: center;
+}
+
+p {
+    font-family: "Times New Roman";
+    font-size: 25px;
+}
+ul {
+    list-style-type: none;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+}
+#usefulbutton{
+	color: blue;
+	background-color: red;
+}
+ul li {
+    background-color: #167835;
+    background-repeat: no-repeat;
+    background-position: 0px center; 
+    padding-left: 15px; 
+}
+
+.headerDiv {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+	background-color: #c219a6;
+	text-align:center;
+	
+	
+ } 
+ 
+ 
+ 
+#container{
+    width: 100%;
+    font-size: 12px;
+    height: 150px;
+   
+   
+  
+}
+
+ #imageDiv{
+	width: 100%;
+    font-size: 12px;
+    height: 150px;
+    text-align: center;
+   
+    
+	
+	}
+
+.nameDiv{
+	float: left; 
+    width: 13%;
+    height: 130px;
+    font-size: 18px;
+    text-align: center;
+    
+	
+}
+
+
+#left {
+    float: left; 
+    width: 10%;
+    background-color: #bbb;
+    border:dotted;
+    height: 150px;
+}
+#center { 
+    float: left;
+    background-color: #eee;
+    width: 10%;
+    border:dotted;
+    height: 150px;
+}
+#right{
+	height: 200px;
+    float: left;
+    width: 10%;
+    background-color: #bbb;
+    border:dotted;
+    height: 150px;
+}  
+
+#right2{
+    height: 200px;
+    float: right;
+    width: 10%;
+    background-color: #bbb;
+    border:dotted;
+    height: 150px;
+}  
+ 
