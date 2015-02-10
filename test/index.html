@@ -8,17 +8,39 @@
 		
 	<script type="text/javascript">
 	
+	
+	$(document).ready(function() {
+		
 	$("#btn1").click(function(){
+		
 		var url2 =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
-		jQuery.get(url, function(data){
+		
+		jQuery.get(url2, function(data){
 	                
-	                console.log(url2);
-	                var beerCount = 7;
+	                var beerMinimum = 500;
 	                
-					var total = 13;  //total is 166
+	                
+	                for(i = 10; i < 166; i++) {
+	                
+	                console.log(data.payload[i].count);
+	                
+	                var beerCount = data.payload[i].count
+	                
+	                if (beerCount < beerMinimum) {
+		                
+		                console.log("out of beer" + data.payload[i].namn);
+		                
+	                }
+	                
+	                
+	           };
+	            });
+	            });
+	            })
+	            
+	            
 	
-	
-	}
+
 	
 	
 	
