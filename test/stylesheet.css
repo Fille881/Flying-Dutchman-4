@@ -34,12 +34,15 @@ ul li {
 	margin: 0 auto;
 	background-color: #c219a6;
 	text-align:center;	
+	
  } 
  
 #container{
     width: 100%;
     font-size: 12px;
-    height: 150px;  
+    height: 150px; 
+    border: dotted;
+    
 }
 
  #imageDiv{
@@ -47,8 +50,17 @@ ul li {
     font-size: 12px;
     height: 150px;
     text-align: center;
+    border: dotted;
    
-    
+#centerDiv{
+	
+	width: 100%;
+    font-size: 12px;
+    height: 20px;
+    text-align: center;
+    border: dotted;
+
+}    
 	
 	}
 
@@ -58,28 +70,33 @@ ul li {
     height: 130px;
     font-size: 18px;
     text-align: center;
+    border: dotted;
+    
     	
 }
 #inStock{
-	width: 100%;
-	text-align:	center;
-	border: dotted;
+	
+	width: 400px;
+	
 }
 
 .beerNameDiv{
-	position: relative;
+	
+	position:relative;
     float: left;
-    margin-left: 10px;
-    clear: none;
+    width: 190px;
+    text-align: left;
+   
 	
 }
 
 .countDiv{
 	
-	 position: relative;
+	position: relative;
     float: left;
-    clear: none;
-    margin-left: 0px;
+    width: 190px;
+    text-align: left
+   
 	
 }
 
