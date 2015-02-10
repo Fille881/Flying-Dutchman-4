@@ -76,27 +76,36 @@ ul li {
 }
 #inStock{
 	
-	width: 400px;
+	width: 66%;
+	font-size: 20px;
+	font-family: Verdana;
 	
+}
+
+.checkForm{
+	position:relative;
+    float: left;
+    width: 5%;
+	height: 100%;
+    text-align: left;
+
 }
 
 .beerNameDiv{
-	
 	position:relative;
     float: left;
-     width: 190px;
+    width: 40%;
+	height: 100%;
     text-align: left;
    
-	
 }
 
 .countDiv{
-	
 	position: relative;
     float: left;
-    width: 190px;
+    width: 55%;
+	height: 100%;
     text-align: left
    
-	
 }
 

@@ -12,39 +12,42 @@
 	$(document).ready(function() {
 		
 
-	$("#btn1").click(function(){
+	// $("#btn1").click(function(){
 		
 		var url2 =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
 		
 		jQuery.get(url2, function(data){
 	                
-	                var beerMinimum = 0;
+	                var beerMinimum = 100;
 	                
 	                
 	                for(i = 10; i < 166; i++) {
 	                
-	                console.log(data.payload[i].count);
-	                
-	                var beerCount = data.payload[i].count
-	                
-	                if (beerCount < beerMinimum) {
-		                
-		                console.log("out of beer" + data.payload[i].namn);
-		                
-		        $('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
-				$("#beerNameDiv"+ i).append(data.payload[i].namn);
-				
-				$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
-				$("#countDiv"+ i).append(data.payload[i].count);
-
+						console.log(data.payload[i].count);
+						
+						var beerCount = data.payload[i].count
+						
+						if (beerCount < beerMinimum) {
 							
-						}
+							console.log("out of beer" + data.payload[i].namn);
+							
+							$('#inStock').append('<div class = "checkForm" id = "checkForm'+ i +'" />');
+							$("#checkForm"+ i).append('<form><input type="checkbox" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
+							
+							$('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
+							$("#beerNameDiv"+ i).append(data.payload[i].namn);
+							
+							$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
+							$("#countDiv"+ i).append(data.payload[i].count);
+
+								
+							}
 						
 						
 					};
-					});
-					});
-					})
+				});
+					//});
+	})
 	            
 	    
 </script>
@@ -59,17 +62,16 @@
 </div>
 
 <div id ="centerDiv">   
-<button id="btn1" type="button">Check stock</button>
-
+<!--<button id="btn1" type="button">Check stock</button>-->
 </div>
+
 	
 
 
 <div id="inStock">
-	
 
 </div>
 
-
+</div>
 </body>
 </html>
