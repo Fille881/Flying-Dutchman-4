@@ -30,6 +30,10 @@
 		                
 		                console.log("out of beer" + data.payload[i].namn);
 		                
+		        $('#inStock').append('<div id = "beerCountDiv'+ i +'" />');
+				$("#beerCountDiv"+ i).append("out of beer" + data.payload[i].namn);
+
+		                
 	                }
 	                
 	                
