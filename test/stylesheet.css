@@ -109,3 +109,14 @@ ul li {
    
 }
 
+#PurchaseHistory{
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+	
+}
+
+

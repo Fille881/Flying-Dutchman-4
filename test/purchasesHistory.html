@@ -7,39 +7,6 @@
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
-/*
-//{"namn" "namn2"  "transaction_id" "user_id" "beer_id"  "timestamp"  "price" });
-$(document).ready(function() {
-	$("#btn").click(function(){
-  	var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=purchases_get",
-	jQuery.get(url, function(data){
-		for(i = 10; i < 166; i++) {
-		$('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
-		$("#beerNameDiv"+ i).append(data.payload[i].namn);
-				
-		$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
-		$("#countDiv"+ i).append(data.payload[i].count);
-		
-		$('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
-		$("#beerNameDiv"+ i).append(data.payload[i].namn);
-				
-		$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
-		$("#countDiv"+ i).append(data.payload[i].count);
-		
-		}
-});
-})
-*/
-
-/*
-var namn = data.payload[i].namn;
-var namn2 = data.payload[i].namn2;
-var transaction_id = data.payload[i].transaction_id;
-var user_id = data.payload[i].user_id;
-var beer_id = data.payload[i].beer_id;
-var timestamp = data.payload[i].timestamp;
-var price = data.payload[i].price;
-*/
 
 $(document).ready(function() {
 	$("#btn").click(function(){
@@ -48,35 +15,26 @@ $(document).ready(function() {
 		jQuery.get(url, function(data){
 			
 	    	for (i=0; i <= data.payload.length; i++) {
-	    		/*
-	            var namn = data.payload[i].namn;
-				var namn2 = data.payload[i].namn2;
-				var transaction_id = data.payload[i].transaction_id;
-				var user_id = data.payload[i].user_id;
-				var beer_id = data.payload[i].beer_id;
-				var timestamp = data.payload[i].timestamp;
-				var price = data.payload[i].price;
-	            */
-		            
-		        $('#PurchaseHistory').append('<div class = "Namn" id = "Namn'+ i +'" />');
+
+		        $('#PurchaseHistory1').append('<div class = "timestamp" id = "timestamp'+ i +'" />');
+				$("#timestamp"+ i).append(data.payload[i].timestamp);    
+		        
+		        $('#PurchaseHistory2').append('<div class = "TransaktionID" id = "TransaktionID'+ i +'" />');
+				$("#TransaktionID"+ i).append(data.payload[i].transaction_id);
+				
+		        $('#PurchaseHistory3').append('<div class = "Namn" id = "Namn'+ i +'" />');
 				$("#Namn"+ i).append(data.payload[i].namn);
 				
-				$('#PurchaseHistory').append('<div class = "Namn2" id = "Namn2'+ i +'" />');
+				$('#PurchaseHistory4').append('<div class = "Namn2" id = "Namn2'+ i +'" />');
 				$("#Namn2"+ i).append(data.payload[i].namn2);
 					
-				$('#PurchaseHistory').append('<div class = "TransaktionID" id = "TransaktionID'+ i +'" />');
-				$("#TransaktionID"+ i).append(data.payload[i].transaction_id);
-					
-				$('#PurchaseHistory').append('<div class = "userID" id = "userID'+ i +'" />');
+				$('#PurchaseHistory5').append('<div class = "userID" id = "userID'+ i +'" />');
 				$("#userID"+ i).append(data.payload[i].user_id);
 					
-				$('#PurchaseHistory').append('<div class = "beerID" id = "beerID'+ i +'" />');
+				$('#PurchaseHistory6').append('<div class = "beerID" id = "beerID'+ i +'" />');
 				$("#beerID"+ i).append(data.payload[i].beer_id);
 					
-				$('#PurchaseHistory').append('<div class = "timestamp" id = "timestamp'+ i +'" />');
-				$("#timestamp"+ i).append(data.payload[i].timestamp);
-					
-				$('#PurchaseHistory').append('<div class = "price" id = "price'+ i +'" />');
+				$('#PurchaseHistory7').append('<div class = "price" id = "price'+ i +'" />');
 				$("#price"+ i).append(data.payload[i].price);
 				
 			};
@@ -86,28 +44,44 @@ $(document).ready(function() {
 
 	    
 </script>
-
 </header>
-	
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 <body>
 
 <div class="headerDiv">
-<h1> Purchase history</h1>
-
+	<h1> Purchase history</h1>
 </div>
 
 <div id ="centerDiv">   
-<button id="btn" type="button">Check Purchases</button>
-
+	<button id="btn" type="button">Check Purchases</button>
 </div>
+<table>
+  <tr>
+    <th>timestamp</th>
+    <th>transaktion id</th>
+    <th>namn1</th>
+    <th>namn2</th>
+	<th>user id</th>
+    <th>beer id</th>
+    <th>price</th>
+  </tr>
+  <tr>
+  	<th> <div id="PurchaseHistory1"></div></th>
+  	<th> <div id="PurchaseHistory2"></div></th>
+  	<th> <div id="PurchaseHistory3"></div></th>
+  	<th> <div id="PurchaseHistory4"></div></th>
+  	<th> <div id="PurchaseHistory5"></div></th>
+  	<th> <div id="PurchaseHistory6"></div></th>
+  	<th> <div id="PurchaseHistory7"></div></th>
+  </tr>
+</table>
 	
 
 
-<div id="PurchaseHistory">
-<div id="inStock">
-	
-
-</div>
 
 
 </body>
