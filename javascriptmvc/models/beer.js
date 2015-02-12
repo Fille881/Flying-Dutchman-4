@@ -13,24 +13,11 @@ steal('can', function (can) {
 		/**
  		 * Find all beers
 		 */
-		findAll : function()
-		{
-			 return $.get("/beers",
-						 {
-						 });
-		},
+		findAll : "GET /beers",
 		/**
  		 * Find one beer
 		 */
-		findOne : function(data)
-		{
-			var id = data[0];
-			var user = data[1];
-			var pass = data[2];
-			return $.get("/beers/"+id+"/"+user+"/"+pass,
-						{
-						});
-		},
+		findOne : "GET /beers/{id}",
 		/**
  		 * Create a beer
 		 */
@@ -38,7 +25,7 @@ steal('can', function (can) {
 		/**
 		 * Update a beer
 		 */
-		update : function(data)
+		update : "PUT /beers/{id}" /*function(data)
 		{
 			var id = data[0];
 			var user = data[1];
@@ -48,11 +35,7 @@ steal('can', function (can) {
 			return $.post("/beers/"+id+"?"+user+"&"+pass+"&"+amount+"&"+price,
 				   {
 				   });
-		},
-		/**
-		 * Destroy a beer
-		 */
-		destroy : "DELETE /beers/{id}"
+		}*/
 	},
 	/* @Prototype */
 	{name:"",

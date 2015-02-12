@@ -1,10 +1,11 @@
 steal(
-	'beer/create',
-	'beer/list',
+	'./models/beer.js',
+	'./models/account.js',
+	'./models/purchase.js',
+	'./models/payment.js',
+	'./models/login.js',
 	'./flying.less',
 	'./models/fixtures/fixtures.js',
-function(BeerCreate, BeerList){
+function(){
 	
-	new BeerList('#beers');
-	new BeerCreate('#create');
 })

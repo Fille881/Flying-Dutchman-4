@@ -1,137 +1,580 @@
 // map fixtures for this application
 steal("can/util/fixture", function(fixture) {
-
+	var dburl = "http://pub.jamaica-inn.net/fpdb/api.php";
+	/**
+	 * Beer fixtures
+	 */
 	fixture({
 		'GET /beers' : function(request, response)
 		{
-			var xmlhttp = new XMLHttpRequest();
-			var url = "/getInventory.php";
-			xmlhttp.open("get", url);
-			xmlhttp.send();
-			xmlhttp.onreadystatechange = function() 
-			{
-				if(xmlhttp.readyState == 4)
+			var username = request.data.username;
+			var password = request.data.password;
+			$.ajax(
 				{
-					if(xmlhttp.status == 200)
+					type:"GET",
+					url: dburl,
+					data: 
 					{
-						var json = JSON.parse(xmlhttp.responseText);
+						username: username,
+						password: password,
+						action: "inventory_get"
+					},
+					success : function(json) 
+					{
 						var type = json.type;
 						if(type == 'error')
 						{
-							window.alert(xmlhttp.responseText);//"\nError!\n"+json.payload[0].code + "\n"+json.payload[0].msg);
+							response(401, "{type: 'unauthorized'}")
 						}
 						else
 						{							
 							var data = [];
 							var count = 0;
-							for(var i = 0; i < json.payload.length; i++)
-							{
-								if(json.payload[i].namn != "" && json.payload[i].count >= 0)
-								{
-									data.push(
-										{
-											id: json.payload[i].beer_id, 
-											name:json.payload[i].namn, 
-											name2: json.payload[i].namn2, 
-											sbl_price: json.payload[i].sbl_price,
-											pub_price: json.payload[i].pub_price,
-											count: json.payload[i].pub_price,
-											price: json.payload[i].price
-										});
-									count++;
-								}
-							}
 							response(
 								200,
-								"success",
-								data);
+								"{type: 'success'}",
+								{data: json.payload })
 						}
+					},
+					fail : function(r)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
+		},
+
+
+		'GET /beers/{id}' : function(request, response) {
+			var user = request.data.username;
+			var pass = request.data.password;
+			var id   = request.data.id;
+			$.ajax({
+				type: "GET",
+				url: dburl,
+				data: {
+					action: "beer_data_get",
+					username: user,
+					password: pass,
+					beer_id: id
+				},
+				success: function(json)
+				{
+					var type = json.type;
+					if(type == "error")
+					{
+						// Todo: Give proper error based on payload code.
+						response(401, "{type: 'unauthorized'}")
 					}
 					else
 					{
-						window.alert("Error: " + xmlhttp.status);
+						response(200,
+								 "{type: success}",
+								 {
+									 data: json.payload[0]
+								 })
 					}
-				}
-			}
-		},
-		'GET /beers/{id}/{user}/{pass}' : function(request, response) {
-			var user = request.data.user;
-			var pass = request.data.pass;
-			var id   = request.data.id;
-			var url = "http://pub.jamaica-inn.net/fpdb/api.php?username="+user+"&password="+pass+"&action=beer_data_get&beer_id="+id;
-id;
-			var http = new XMLHttpRequest();
-			http.open("get", url, true);
-			http.onreadystatechange = function() 
-			{
-				if(http.readyState == 4)
+				},
+				fail: function(r)
 				{
-					if(http.status == 200)
+					response(400, "{type: 'bad request'}")
+				}
+			});
+		},
+		
+
+		"PUT /beers/{id}" : function(request, response)
+		{
+			var id = request.data.id;
+			var user = request.data.username;
+			var pass = request.data.password;
+			var amount = request.data.amount;
+			var price = request.data.price;
+			$.ajax({
+				type: "GET",
+				url: dburl,
+				data: 
+				{
+					action: "inventory_append",
+					beer_id: id,
+					username: user,
+					password: pass,
+					amount: amount,
+					price: price
+				},
+				success: function(r)
+				{
+					response(200, "{type: 'success'}")
+				},
+				error: function(r)
+				{
+					response(403, "{type: 'forbidden'}")
+				}
+			});
+		}
+	});
+
+	/**
+	 * Accounts fixtures
+	 */
+	fixture({
+		'GET /accounts' : function(request, response)
+		{
+			var user = request.data.username;
+			var pass = request.data.username;
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
 					{
-						var json = JSON.parse(http.responseText);
-						var type = json.type;
-						if(type == "error")
+						action: "iou_get_all",
+						username: user,
+						password: pass
+					},
+					success: function(json)
+					{
+						if(json.type == "error")
 						{
-							window.alert("Error: " + json.payload[0].code);
+							response(401, "{type: 'unauthorized'}")
 						}
 						else
 						{
 							response(200,
-									 "success",
+									 "{type: 'success'}",
 									 {
-										 nr: json.payload[0].nr,
-										 articleid: json.payload[0].artikelid,
-										 itemnr: json.payload[0].varnummer,
-										 name: json.payload[0].namn,
-										 name2: json.payload[0].namn2,
-										 priceplusvat: json.payload[0].prisinklmoms,
-										 volume: json.payload[0].volymiml,
-										 priceperl: json.payload[0].prisperliter,
-										 sellstart: json.payload[0].saljstart,
-										 sellend: json.payload[0].slutlev,
-										 itemcategory: json.payload[0].varugrupp,
-										 packaging: json.payload[0].forpackning,
-										 seal: json.payload[0].forslutning,
-										 origin: json.payload[0].ursprung,
-										 originname: json.payload[0].ursprunglandnamn,
-										 producer: json.payload[0].producent,
-										 distributer: json.payload[0].leverantor,
-										 vintage: json.payload[0].argang,
-										 sampledvintage: json.payload[0].provadargang,
-										 alcoholcontent: json.payload[0].alkoholhalt,
-										 module: json.payload[0].modul,
-										 assortment: json.payload[0].sortiment,
-										 ecological: json.payload[0].ekologisk,
-										 koscher: json.payload[0].koscher
+										 data: json.payload
+									 })
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
+		}, 
+
+
+		'GET /accounts/{username}' : function(request, response)
+		{
+			var user = request.data.username;
+			var pass = request.data.password;
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
+					{
+						username: user,
+						password: pass,
+						action: "iou_get"
+					},
+					success: function(json)
+					{
+						if(json.type == "error")
+						{
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: 'success'}",
+									 {
+										 data: json.payload[0]
+									 })
+						}
+					},
+					error: function(r)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
+		},
+
+		
+		/* Seems impossible at the moment, never mind this!
+		   'GET /accounts/id/{user}' : function(request, response)
+		   {
+		   var username = request.data.username;
+		   var password = request.data.password;
+		   var user = user;
+		   $.ajax(
+		   {
+		   type: "GET",
+		   url: "/accounts",
+		   data:
+		   {
+		   username: username,
+		   password: password
+		   },
+		   success: function(json)
+		   {
+		   var arr = json.data;
+		   var length = arr.length;
+		   var id = -1;
+		   console.log(arr[0]);
+		   for(var i = 0; i < length; i++)
+		   {
+		   if(arr[i].username == user)
+		   {
+		   id = arr[i].user_id;
+		   break;
+		   }
+		   }
+		   if(id != -1)
+		   {
+		   response(200, "{type: 'success'}", {data: id});
+		   }
+		   else
+		   {
+		   response(400, "{type: 'bad request'}");
+		   }
+		   },
+		   error: function(json)
+		   {
+		   }
+		   });
+		   },*/
+
+		
+		'PUT /accounts/{user_id}' : 'PUT /payments/{user_id}'
+	});
+	
+	/**
+	 * Purchases fixtures
+	 */
+	fixture({
+		'GET /purchases' : function(request, response)
+		{
+			var username = request.data.username;
+			var password = request.data.password;
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
+					{
+						username: username,
+						password: password,
+						action: "purchases_get_all"
+					},
+					success: function(json)
+					{
+						var type = json.type;
+						if(type == "error")
+						{
+							// Todo: Give proper error based on payload code.
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: success}",
+									 {
+										 data: json.payload
+									 })
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					},
+				});
+		},
+
+
+		'GET /purchases/{username}' : function(request, response)
+		{
+			var username = request.data.username;
+			var password = request.data.password;
+			$.ajax(
+				{
+					type:"GET",
+					url: dburl,
+					data:
+					{
+						username: username,
+						password: password,
+						action: "purchases_get"
+					},
+					success: function(json)
+					{
+						var type = json.type;
+						if(type == "error")
+						{
+							// Todo: Give proper error based on payload code.
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: success}",
+									 {
+										 data: json.payload
+									 })
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					},
+				});
+		},
+
+
+		'POST /purchases/' : function(request, response)
+		{
+			var username = request.data.username;
+			var password = request.data.password;
+			var beer_id = request.data.beer_id;
+			$.ajax(
+				{
+					type:"GET",
+					url: dburl,
+					data:
+					{
+						username: username,
+						password: password,
+						beer_id: beer_id,
+						action: "purchases_append"
+					},
+					success: function(json)
+					{
+						var type = json.type;
+						if(type == "error")
+						{
+							// Todo: Give proper error based on payload code.
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200, "{type: success}")
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					},
+				});
+		}
+	});
+	
+	/**
+	 * Payments fixtures
+	 */
+	fixture({
+		'GET /payments' : function(request, response)
+		{
+			var user = request.data.username;
+			var pass = request.data.password;
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
+					{
+						username: user,
+						password: pass,
+						action: "payments_get_all"
+					},
+					success: function(json)
+					{
+						if(json.type == "error")
+						{
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: 'success'}",
+									 {
+										 data: json.payload
 									 });
 						}
-					}
-					else
+					},
+					error: function(r)
 					{
-						window.alert("Error!");
+						response(400, "{type: 'bad request'}")
 					}
-				}
-			}
-			http.send();
+				});
 		},
-		'POST /beers' : function(request, response)
+
+
+		'GET /payments/{username}' : function(request, response)
 		{
+			var user = request.data.username;
+			var pass = request.data.password;
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
+					{
+						username: user,
+						password: pass,
+						action: "payments_get"
+					},
+					success: function(json)
+					{
+						if(json.type == "error")
+						{
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: 'success'}",
+									 {
+										 data: json.payload
+									 })
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
 		},
-		"POST /beers/{id}?{user}&{pass}&{amount}&{price}" : function(request, response)
+
+
+		'PUT /payments/{user_id}' : function(request, response)
 		{
-			var id = request.data.id;
-			var user = request.data.user;
-			var pass = request.data.pass;
+			var username = request.data.username;
+			var password = request.data.password;
+			var user_id = request.data.user_id;
 			var amount = request.data.amount;
-			var price = request.data.price;
-			$.get("http://pub.jamaica-inn.net/fpdb/api.php?username="+user+"&password="+pass+"&action=inventory_append&beer_id="+id+"&amount="+amount+"&price="+price);
-			response(200,
-					 "success",
-					 {
-					 });
-		},
-		'DELETE /beers/{id}' : function(request, response)
+			$.ajax(
+				{
+					type: "GET",
+					url: dburl,
+					data:
+					{
+						username: username,
+						password: password,
+						user_id: user_id,
+						amount: amount,
+						action: "payments_append"
+					},
+					success: function(json)
+					{
+						if(json.type == "error")
+						{
+							response(401, "{type: 'unauthorized'}")
+						}
+						else
+						{
+							response(200,
+									 "{type: 'success'}")
+						}
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
+		}
+	});
+	
+	/**
+	 * Logins fixtures
+	 */
+	fixture({
+		'GET /logins/{username}' : function(request, response)
 		{
+			var username = request.data.username;
+			var password = request.data.password;
+			// Do an account-request and return a login-response.
+			$.ajax(
+				{
+					type: "GET",
+					url: "/accounts/"+username,
+					data: { password: password},
+					success: function(json)
+					{
+						response(200,
+								 "{type: success}",
+								 {
+									 data:
+									 {
+										 type: "user",
+										 user_id: json.data.user_id,
+										 username: username,
+										 password: password, // Feels -reaaally- non-secure, but we'll need to keep it around, so we might as well.
+										 first_name: json.data.first_name,
+										 last_name: json.data.last_name,
+										 assets: json.data.assets
+									 }
+								 });
+					},
+					error: function(json)
+					{
+						response(401, "{type: 'unauthorized'}")
+					}
+				});
+		},
+		
+		'GET /logins/admin/{username}' : function(request, response)
+		{
+			var username = request.data.username;
+			var password = request.data.password;
+			$.ajax(
+				{
+					type: "GET",
+					url: "/accounts/"+username,
+					data: { password: password},
+					success: function(json)
+					{
+												// It is not enough that we managed to make an accounts-request - we need to perform an admin-only
+						// operation. In this case, we request the purchases listing.
+						$.ajax(
+							{
+								type: "GET",
+								url: dburl,
+								data:
+								{
+									username: username,
+									password: password,
+									action: "purchases_get_all"
+								},
+								success: function(json2)
+								{
+									if(json2.type == "error")
+									{
+										// Someone tried to sneak admin privileges with their regular account! Tsk tsk!
+										response(401, "{type: 'unauthorized'}");
+									}
+									else
+									{
+										// All right, we're logged in.
+										console.log(json);
+										// Admin successfully signed in!
+										response(200,
+												 "{type: success}",
+												 {
+												 data:
+													 {
+														 type: "admin",
+														 user_id: json.data.user_id,
+														 username: username,
+														 password: password, // Again, very non-secure, but oh well!
+														 first_name: json.data.first_name,
+														 last_name: json.data.last_name,
+														 assets: json.data.assets,
+														 purchases_list: json2.payload
+													 }
+												 })
+									}
+								},
+								error: function(json)
+								{
+									response(400, "{type: 'bad request'}")
+								}
+							});
+					},
+					error: function(json)
+					{
+						response(400, "{type: 'bad request'}")
+					}
+				});
 		}
 	});
 });

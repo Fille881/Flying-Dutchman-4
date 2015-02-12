@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>flying/login/list Demo</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+        </style>
+	</head>
+	<body>
+	    <h1>flying/login/list Demo</h1>
+		<ul id='logins'></ul>
+		<a href='javascript://' id='create'>Create Login</a>
+		<script type='text/javascript' 
+                src='../../../steal/steal.js'>
+        </script>
+		<script type='text/javascript'>
+			steal(
+				'flying/login/list', 
+				'flying/models/login.js',
+          		'flying/models/fixtures',
+          		function(LoginList, Login){
+				
+				new LoginList('#logins');
+				
+				$('#create').click(function(){
+					new Login({
+						name: "Grilled Cheese",
+						description: "Bread and Cheese"
+					}).save();
+				})
+			})
+		</script>
+	</body>
+</html>
