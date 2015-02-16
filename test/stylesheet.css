@@ -38,10 +38,11 @@ ul li {
  } 
  
 #container{
-    width: 100%;
+    width: 60%;
+    float:left;
     font-size: 12px;
     height: 150px; 
-    border: dotted;
+     border: dotted; 
     
 }
 
@@ -50,7 +51,7 @@ ul li {
     font-size: 12px;
     height: 150px;
     text-align: center;
-    border: dotted;
+    /* border: dotted; */
    
 #centerDiv{
 	
@@ -58,19 +59,35 @@ ul li {
     font-size: 12px;
     height: 20px;
     text-align: center;
-    border: dotted;
+    /* border: dotted; */
 
 }    
+
+
+.orderItem {
+	
+	
+    font-size: 12px;
+    float:left;
+    width:100%;
+    text-align: left;
+    border:dotted;
+    background-color: black;
+	
+	
+}
+
+
 	
 	}
 
 .nameDiv{
 	float: left; 
-    width: 13%;
+    width: 20%;
     height: 130px;
     font-size: 18px;
     text-align: center;
-    border: dotted;
+    /* border: dotted; */
     
     	
 }
@@ -81,6 +98,30 @@ ul li {
 	font-family: Verdana;
 	
 }
+
+#overview{
+	
+	position:relative;
+	float: right;
+    width: 38%;
+	height: 100%;
+    text-align: left;
+    border:dotted;
+   
+    
+}
+
+#bigcontainer{
+	
+	width: 100%;
+    font-size: 12px;
+    height: 150px; 
+    border: dotted;
+	
+	
+}
+
+
 
 .checkForm{
 	position:relative;
