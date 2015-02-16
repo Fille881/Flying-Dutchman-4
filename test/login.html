@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
+		
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+
+			$("#btnLogin").click(function(){
+				 alert( "Not yet implemented." );
+			})
+			
+			
+			$("#btnLoginCustomer").click(function(){
+				window.location.href = "orders.html";
+			})
+			
+			$("#btnLoginBartender").click(function(){
+				window.location.href = "orders.html";
+			})
+			
+			$("#btnLoginManager").click(function(){
+				window.location.href = "manager.html";
+			})
+			
+		})
+	
+	</script>
+
+</header>
+	
+<body>
+
+<div id="headerWrapper">
+	<div id="headerLogo">
+		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
+	</div>
+	<div id="headerTitle">
+		<h1> Login </h1>
+	</div>
+</div>
+
+<div class="centerDiv">
+ Name:<br>
+ <input type="text" size="25" value="">
+</div>
+
+<div class="centerDiv">
+ Password:<br>
+ <input type="password" size="25" value="">
+</div>
+<br>
+<div class="centerDiv">
+	<a href="#" id="btnLogin" class="btn">Login</a>
+</div>
+<br>
+<br>
+------------ Test -----------
+<div class="buttonsDiv">
+	<a href="#" id="btnLoginCustomer" class="btn">Login as customer</a>
+	<br>
+	<br>
+	<a href="#" id="btnLoginBartender" class="btn">Login as bartender</a>
+	<br>
+	<br>
+	<a href="#" id="btnLoginManager" class="btn">Login as manager</a>
+</div>
+-----------------------------
+
+
+</body>
+</html>

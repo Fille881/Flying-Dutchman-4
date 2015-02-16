@@ -1,9 +1,9 @@
 body {
-    background-color: #d0e4fe;
+    background-color: #eeebaa;
 }
 
 h1 {
-    color: #1f32a9;
+    color: #000000;
     text-align: center;
 }
 
@@ -17,6 +17,7 @@ ul {
     padding: 0px;
     margin: 0px;
 }
+
 #usefulbutton{
 	color: blue;
 	background-color: red;
@@ -28,16 +29,31 @@ ul li {
     padding-left: 15px; 
 }
 
-.headerDiv {
-	width: 100%;
-	height: 40px;
-	margin: 0 auto;
-	background-color: #c219a6;
+
+#headerWrapper{
+    /*border: 1px solid black;*/
+    overflow: hidden;
+	height: 100px;
+}
+
+#headerLogo {
+	background-color: #dcdcdc;
+    float:left;
+	height:80px;
+	width:150px;
+	border: 1px solid black;
+	font-size: 11px;
+}
+
+#headerTitle {
+	background-color: #dcdcdc;
 	text-align:center;	
-	
+	border: 1px solid black;
+    overflow: hidden;
+	height:80px;
  } 
  
-#container{
+#beers{
     width: 60%;
     float:left;
     font-size: 12px;
@@ -52,8 +68,9 @@ ul li {
     height: 150px;
     text-align: center;
     /* border: dotted; */
+   }
    
-#centerDiv{
+ #centerDiv{
 	
 	width: 100%;
     font-size: 12px;
@@ -72,14 +89,11 @@ ul li {
     width:100%;
     text-align: left;
     border:dotted;
-    background-color: black;
-	
-	
 }
 
 
 	
-	}
+
 
 .nameDiv{
 	float: left; 
@@ -111,7 +125,7 @@ ul li {
     
 }
 
-#bigcontainer{
+#container{
 	
 	width: 100%;
     font-size: 12px;
@@ -163,7 +177,8 @@ ul li {
 .btn {
           display: inline-block;
           padding: 0.4em 1.2em;
-          background: #08c;
+          /*background: #08c;*/
+		  background: #6B4513;
           color: #fff;
           text-decoration: none;
           font-size: 14px;
