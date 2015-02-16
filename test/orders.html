@@ -47,16 +47,18 @@
 				// while the o < total there is a new div created in the beers div. In that div the name, price and beer ID are placed.
 	           while (o < total) {
 		       
-			             
-				$('#beers').append('<div class ="nameDiv" id="div'+ o +'" />');
-				$("#div"+ o).append(data.payload[o].namn + " " +  "(" +data.payload[o].price + ")" + o + " " + data.payload[o].beer_id );
+			    // In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
-				
-				// In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
-				
-				$("#div" + o).append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
+				$("#beers").append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
 
                 $("#imageDiv" + o).append('<input type="image" class="picture" src="heineken.jpg" width="80" height="80" id="' + data.payload[o].namn + '"  />')
+
+				
+				//$('#beers').append('<div class ="nameDiv" id="div'+ o +'" />');
+				$("#imageDiv" + o).append("<br>" + data.payload[o].namn + " " + o + " " );
+				
+				
+
 				
 	
 				
@@ -108,8 +110,8 @@
 					
 				
 					
-				$("#overview").append('<div class ="orderItem" id="orderItem'+ o +'" />');
-				$("#orderItem" + o).append(beerId + "<br>");
+				
+				$("#overview ul").append("<li>" + beerId + "</li>");
           		
           		});
 
@@ -158,15 +160,15 @@ var beerId = document.getElementById(this.id);
 	</div>
 </div>
 
-<div class="centerDiv">
+
   
 <div id="container">
-	
-<div id="beers"></div>
-	
-<div id="overview"></div>
-		
+	<div id="beers"></div>
+	<div id="overview">
+		<ul id="orderList" class="list-unstyled"></ul>
+	</div>	
 </div>
+	
 	
 <br>
 <div class="buttonsDiv">

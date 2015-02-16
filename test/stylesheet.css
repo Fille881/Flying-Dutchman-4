@@ -57,18 +57,20 @@ ul li {
     width: 60%;
     float:left;
     font-size: 12px;
-    height: 150px; 
-     border: dotted; 
-    
+    height: auto; 
+    border: dotted; 
 }
 
- #imageDiv{
-	width: 100%;
-    font-size: 12px;
-    height: 150px;
-    text-align: center;
-    /* border: dotted; */
-   }
+.imageDiv{
+
+float: left;
+width: 30%;
+height: 130px;
+font-size: 18px;
+text-align: center;
+
+
+}
    
  #centerDiv{
 	
@@ -114,25 +116,20 @@ ul li {
 }
 
 #overview{
-	
 	position:relative;
 	float: right;
     width: 38%;
 	height: 100%;
     text-align: left;
     border:dotted;
-   
-    
 }
 
 #container{
-	
 	width: 100%;
     font-size: 12px;
-    height: 150px; 
+    height: auto; 
     border: dotted;
-	
-	
+	overflow: hidden;
 }
 
 

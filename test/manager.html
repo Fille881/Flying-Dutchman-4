@@ -9,6 +9,20 @@
 	<script type="text/javascript">
 	
 	
+	$(document).ready(function() {
+
+			$("#btnStock").click(function(){
+				window.location.href = "stock.html";
+			})
+			
+			$("#btnSales").click(function(){
+				alert( "Not yet implemented." );
+			})
+			
+		})
+	
+	
+	
 	</script>
 </header>
 
@@ -23,6 +37,16 @@
 		<h1> Manager page </h1>
 	</div>
 </div>
+
+
+<br>
+<div class="buttonsDiv">
+	<a href="#" id="btnStock" class="btn">Stock</a>
+	<br>
+	<br>
+	<a href="#" id="btnSales" class="btn">Sales reports</a>
+</div>
+
 
 </body>
 </html>
