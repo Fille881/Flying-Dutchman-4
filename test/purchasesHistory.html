@@ -12,7 +12,6 @@ $(document).ready(function() {
 	$("#btn").click(function(){
 		var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=purchases_get";
 		jQuery.get(url, function(data){
-				var tprice = data.payload[i].price;
 			
 	    	for (i=0; i <= data.payload.length; i++) {
 		        $('#PurchaseHistory1').append('<div class = "timestamp" id = "timestamp'+ i +'" />');
@@ -54,8 +53,6 @@ table, th, td {
 <div class="headerDiv">
 	<h1> Purchase history</h1>
 </div>
-
-<p>tprice</p>
 
 <div id ="centerDiv">   
 	<button id="btn" type="button">Check Purchases</button>
