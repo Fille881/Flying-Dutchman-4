@@ -9,9 +9,6 @@
 	<script type="text/javascript">
 		
 		
-
-
-	
         //When DOM loaded we attach click event to button
         $(document).ready(function() {
             
@@ -20,19 +17,32 @@
 
 			var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
               
+              
                 //start ajax request
-                jQuery.get(url, function(data){
-	                
-	                
-	                var o = 15;
-	                var total = 20;  //total is 166
+                jQuery.get(url, function (data){
+	               
+	                external = data;
+	                //alert(external.payload[30].namn);
+	               
+					var o = 20;
+	                var total = 25;  //total is 166
 	            
+
+	            
+
 	           while (o < total) {
-		        
-		         
+		       
 			             
 				$('#container').append('<div class ="nameDiv" id="div'+ o +'" />');
-				$("#div"+ o).append(data.payload[o].namn + " " +  "(" +data.payload[o].price + ")" + o  );
+				$("#div"+ o).append(data.payload[o].namn + " " +  "(" +data.payload[o].price + ")" + o + " " + data.payload[o].beer_id );
+				
+				$("#div" + o).append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
+
+                $("#imageDiv" + o).append('<input type="image" class="picture" src="heineken.jpg" width="80" height="80" id="' + data.payload[o].namn + '"  />')
+				
+	
+				
+		
     
    // $("#center").append(data.payload[i].price + "<br>");
 
@@ -66,11 +76,47 @@
        //alert();
           ++o;
           
+          
+ 
     
     }
+    
+    $('.picture').click(function() {
+				beerId = $(this).attr('id');
+					
+				$("#overview").append('<div class ="orderItem" id="orderItem'+ o +'" />');
+				$("#orderItem" + o).append(beerId + "<br>");
+          		
+          		});
+
     });
+    
+    
    // });
+   
+   
     });
+
+/*
+
+function send() {
+
+
+
+ 			//element = document.getElementById(data.payload[o].beer_id);
+
+var beerId = document.getElementById(this.id);
+ 			alert(beerId);
+
+}
+*/
+
+
+
+
+
+
+
 
     
 </script>
@@ -94,16 +140,14 @@
     <input type="submit" value="Check purchases history">
 </form>
 
-
+<div id="bigcontainer">
 	
 <div id="container"></div>
-
-<div id="inStock"></div>
-
-<div id="PurchasesHistory"></div>
 	
-
-
+<div id="overview"></div>
+		
+	
+</div>
 
 
 
