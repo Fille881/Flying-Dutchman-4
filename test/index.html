@@ -12,29 +12,30 @@
         //When DOM loaded we attach click event to button
         $(document).ready(function() {
             
-            //after button is clicked we download the data
-           // $("#btn382").click(function(){
-
+          
+			// url that gives a JSON object of all beverages
 			var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
               
               
-                //start ajax request
+                //start ajax request. All data from the url above is being put in data
                 jQuery.get(url, function (data){
 	               
-	                external = data;
-	                //alert(external.payload[30].namn);
 	               
+	               // creating counter to count all array items 
 					var o = 20;
 	                var total = 25;  //total is 166
 	            
 
 	            
-
+				// while the o < total there is a new div created in the container div. In that div the name, price and beer ID are placed.
 	           while (o < total) {
 		       
 			             
 				$('#container').append('<div class ="nameDiv" id="div'+ o +'" />');
 				$("#div"+ o).append(data.payload[o].namn + " " +  "(" +data.payload[o].price + ")" + o + " " + data.payload[o].beer_id );
+				
+				
+				// In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
 				$("#div" + o).append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
 
@@ -44,8 +45,8 @@
 				
 		
     
-   // $("#center").append(data.payload[i].price + "<br>");
-
+ 
+// below is an Flickr function that searches for pictures using the beername as a keyword. The results aren't really satisfying so we will manually download pictures for the beers :)
     
     
   /*
@@ -81,8 +82,14 @@
     
     }
     
+    // when clicking on a picure of a beer in the class 'picture', the variable beerID is made. The ID of the button clicked is attached to that variable.
+ 
+    
     $('.picture').click(function() {
 				beerId = $(this).attr('id');
+					
+					
+				
 					
 				$("#overview").append('<div class ="orderItem" id="orderItem'+ o +'" />');
 				$("#orderItem" + o).append(beerId + "<br>");
