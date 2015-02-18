@@ -27,6 +27,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: 0px center; 
     padding-left: 15px; 
+    
 }
 
 
@@ -53,6 +54,13 @@ ul li {
 	height:80px;
  } 
  
+ #container{
+	width: 100%;
+    font-size: 12px;
+    height: auto; 
+    border: dotted; 
+	overflow: hidden;
+}
 #beers{
     width: 60%;
     float:left;
@@ -61,6 +69,32 @@ ul li {
     border: dotted; 
 }
 
+#overview{
+	position:relative;
+	float: left;
+    width: 20%;
+	height: 100%;
+    text-align: left;
+   border:dotted; 
+     
+}
+#price{
+	position:relative;
+	float: left;
+    width: 10%;
+	height: 100%;
+    text-align: left;
+   border:dotted; 
+    }
+
+#amount{
+	position:relative;
+	float: left;
+    width: 5%;
+	height: 100%;
+    text-align: left;
+   border:dotted; 
+    }
 .imageDiv{
 
 float: left;
@@ -90,7 +124,7 @@ text-align: center;
     float:left;
     width:100%;
     text-align: left;
-    border:dotted;
+    /* border:dotted; */
 }
 
 
@@ -114,24 +148,6 @@ text-align: center;
 	font-family: Verdana;
 	
 }
-
-#overview{
-	position:relative;
-	float: right;
-    width: 38%;
-	height: 100%;
-    text-align: left;
-    border:dotted;
-}
-
-#container{
-	width: 100%;
-    font-size: 12px;
-    height: auto; 
-    border: dotted;
-	overflow: hidden;
-}
-
 
 
 .checkForm{

@@ -51,7 +51,7 @@
 				
 				$("#beers").append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
 
-                $("#imageDiv" + o).append('<input type="image" class="picture" src="heineken.jpg" width="80" height="80" id="' + data.payload[o].namn + '"  />')
+                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class="picture" src="heineken.jpg" width="80" height="80" id="' + data.payload[o].sbl_price + '"  />')
 
 				
 				//$('#beers').append('<div class ="nameDiv" id="div'+ o +'" />');
@@ -105,14 +105,36 @@
  
     
     $('.picture').click(function() {
-				beerId = $(this).attr('id');
-					
-					
+	    
+				beerName = $(this).attr('name');
+				beerPrice = $(this).attr('id');
 				
+			
 					
+				if ( $("ul li:contains('" + beerName + "')").length ) {
+					
+					a = this.id;
+					
+					alert (a);
+					
+					$("#amount ul").append("<li id=" + beerName + " >" + a + "</li>");
+					
+					
+						
+						
+					
+    
+}
+
+else{
+	
+	a = 1;
 				
-				$("#overview ul").append("<li>" + beerId + "</li>");
+				$("#overview ul").append("<li id=" + beerName + ">" + beerName + "</li>");
+				$("#price ul").append("<li id=" + beerName + " >" + beerPrice + "</li>");
+				$("#amount ul").append("<li id=" + beerName + " >" + a + "</li>");
           		
+          		}
           		});
 
     });
@@ -165,8 +187,19 @@ var beerId = document.getElementById(this.id);
 <div id="container">
 	<div id="beers"></div>
 	<div id="overview">
-		<ul id="orderList" class="list-unstyled"></ul>
+	<ul id="orderListName" class="list-unstyled"></ul>
 	</div>	
+	
+	<div id ="price">
+		
+	<ul id="orderListPrice" class="list-unstyled"></ul>
+	</div>
+	
+	<div id ="amount">
+		
+		<ul id="orderAmount" class="list-unstyled"></ul>
+	</div>
+
 </div>
 	
 	
