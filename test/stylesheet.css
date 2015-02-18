@@ -30,6 +30,17 @@ ul li {
     
 }
 
+#buttonsDiv{
+	
+	position:relative;
+	float: right;
+    width: 10%;
+	height: 100%;
+   text-align: left;
+   border: 1px dashed black;
+	
+	
+}
 
 #headerWrapper{
     /*border: 1px solid black;*/
@@ -58,7 +69,7 @@ ul li {
 	width: 100%;
     font-size: 12px;
     height: auto; 
-    border: dotted; 
+    border: 1px dashed black;
 	overflow: hidden;
 }
 #beers{
@@ -66,7 +77,7 @@ ul li {
     float:left;
     font-size: 12px;
     height: auto; 
-    border: dotted; 
+    border: 1px dashed black; 
 }
 
 #overview{
@@ -75,7 +86,7 @@ ul li {
     width: 20%;
 	height: 100%;
     text-align: left;
-   border:dotted; 
+   border: 1px dashed black;
      
 }
 #price{
@@ -84,7 +95,7 @@ ul li {
     width: 10%;
 	height: 100%;
     text-align: left;
-   border:dotted; 
+   border: 1px dashed black; 
     }
 
 #amount{
@@ -93,7 +104,7 @@ ul li {
     width: 5%;
 	height: 100%;
     text-align: left;
-   border:dotted; 
+   border: 1px dashed black; 
     }
 .imageDiv{
 

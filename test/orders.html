@@ -104,37 +104,46 @@
     // when clicking on a picure of a beer in the class 'picture', the variable beerID is made. The ID of the button clicked is attached to that variable.
  
     
+    var count = 0;
+    
     $('.picture').click(function() {
 	    
 				beerName = $(this).attr('name');
+				beerName1 = beerName;
+				beerName = beerName.replace(/\s+/g, '');
 				beerPrice = $(this).attr('id');
 				
+				
 			
-					
-				if ( $("ul li:contains('" + beerName + "')").length ) {
-					
-					a = this.id;
-					
-					alert (a);
-					
-					$("#amount ul").append("<li id=" + beerName + " >" + a + "</li>");
+				if ( $("ul:contains('" + beerName + "')").length ) {
+				
 					
 					
-						
-						
+				count = ($("#1" + beerName).attr('value'));
+				count ++;
 					
-    
+					//alert(count + beerName);
+					$("#1" + beerName).text(count);
+					$("#1" + beerName).attr('value', count);
+					
+   
 }
 
-else{
-	
-	a = 1;
+else {
+	count = 1;
+
+			
+					
+					
+				//beerName = beerName.replace(/\s+/g, '');
 				
+					
 				$("#overview ul").append("<li id=" + beerName + ">" + beerName + "</li>");
 				$("#price ul").append("<li id=" + beerName + " >" + beerPrice + "</li>");
-				$("#amount ul").append("<li id=" + beerName + " >" + a + "</li>");
+				$("#amount ul").append("<li id= " + count + beerName +" value=" +count+">" + count + "</li>");
           		
           		}
+          	
           		});
 
     });
@@ -158,6 +167,20 @@ var beerId = document.getElementById(this.id);
 
 }
 */
+
+$("#btnOrders").click(function(){
+	
+	
+	url = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=purchase_append";
+	
+	
+	})
+	
+	
+	
+	
+	
+	
 
 
 
@@ -204,7 +227,7 @@ var beerId = document.getElementById(this.id);
 	
 	
 <br>
-<div class="buttonsDiv">
+<div class="buttonsDiv" id="buttonsDiv">
 	<a href="#" id="btnOrder" class="btn">Order</a>
 </div>
 
