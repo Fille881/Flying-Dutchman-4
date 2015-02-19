@@ -26,8 +26,21 @@
 			
 			// ----- Order -----
 			$("#btnOrder").click(function(){
-				 alert( "Not yet implemented." );
-			})
+				
+				 beer_id = 167903;
+
+				url = "http://pub.jamaica-inn.net/fpdb/api.php?username=aamsta&password=aamsta&action=purchase_append&beer_id=" + beer_id;
+		
+	$.ajax({
+   type: "POST",
+   url: url,
+   success: function(msg){
+	   
+    alert("succes");
+   }
+});
+				
+							})
 			// ----------------
           
 			// url that gives a JSON object of all beverages
@@ -174,6 +187,19 @@ $("#btnOrders").click(function(){
 	url = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=purchase_append";
 	
 	
+	beerId = 5555;
+	
+	$.ajax({
+   type: "POST",
+   data: {beerId},
+   url: url,
+   success: function(msg){
+	   
+    alert("succes");
+   }
+});
+	
+	
 	})
 	
 	
@@ -210,19 +236,18 @@ $("#btnOrders").click(function(){
 <div id="container">
 	<div id="beers"></div>
 	<div id="overview">
-	<ul id="orderListName" class="list-unstyled"></ul>
+		<ul id="orderListName" class="list-unstyled"></ul>
 	</div>	
-	
 	<div id ="price">
-		
-	<ul id="orderListPrice" class="list-unstyled"></ul>
+		<ul id="orderListPrice" class="list-unstyled"></ul>
 	</div>
-	
 	<div id ="amount">
-		
 		<ul id="orderAmount" class="list-unstyled"></ul>
 	</div>
-
+	
+	<div id="total"></div>
+	</div>
+	
 </div>
 	
 	
