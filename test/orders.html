@@ -52,8 +52,8 @@
 	               
 	               
 	               // creating counter to count all array items 
-					var o = 20;
-	                var total = 25;  //total is 166
+					var o = 35;
+	                var total = 40;  //total is 166
 	            
 
 	            
@@ -121,17 +121,20 @@
     
     $('.picture').click(function() {
 	    
+	    		
+	    
 				beerName = $(this).attr('name');
-				beerName1 = beerName;
+			//	beerName1 = beerName;
 				beerName = beerName.replace(/\s+/g, '');
 				beerPrice = $(this).attr('id');
-				
+				totalPrice = count * beerPrice;	
 				
 			
-				if ( $("ul:contains('" + beerName + "')").length ) {
+				if ( $("#overview ul:contains('" + beerName + "')").length ) {
 				
+
 					
-					
+						
 				count = ($("#1" + beerName).attr('value'));
 				count ++;
 					
@@ -139,21 +142,43 @@
 					$("#1" + beerName).text(count);
 					$("#1" + beerName).attr('value', count);
 					
-   
+					totalPrice;
+				
+				
+				if ( $("#amountPrice ul:contains('" + totalPrice + "')").length ) {
+
+					totalPrice = count * beerPrice;
+					
+					
+					$("#" + beerName + beerName).text(totalPrice);
+					
+					}
+					else{
+						
+						alert("bo");
+					}
+						
+					
+					
+				 // $("#amountPrice ul").append("<li id= " + count + beerName + " value=" +beerName + total +">"+ total +"</li>");
+
+					
+					
+					
 }
 
 else {
-	count = 1;
-
-			
-					
-					
-				//beerName = beerName.replace(/\s+/g, '');
-				
+	
+				count = 1;				
 					
 				$("#overview ul").append("<li id=" + beerName + ">" + beerName + "</li>");
-				$("#price ul").append("<li id=" + beerName + " >" + beerPrice + "</li>");
-				$("#amount ul").append("<li id= " + count + beerName +" value=" +count+">" + count + "</li>");
+				$("#price ul").append("<li id=" + beerPrice + beerName + " >" + beerPrice + "</li>");
+				$("#amount ul").append("<li id= " + count + beerName + " value=" +count+ ">" + count + "</li>");
+ 		
+          		
+          		totalPrice = count * beerPrice;
+          		
+          		$("#amountPrice ul").append("<li id= " + beerName + beerName + " >" + totalPrice + "</li>");
           		
           		}
           	
@@ -161,10 +186,6 @@ else {
 
     });
     
-    
-   // });
-   
-   
     });
 
 /*
@@ -181,6 +202,7 @@ var beerId = document.getElementById(this.id);
 }
 */
 
+/*
 $("#btnOrders").click(function(){
 	
 	
@@ -201,7 +223,7 @@ $("#btnOrders").click(function(){
 	
 	
 	})
-	
+*/
 	
 	
 	
@@ -244,7 +266,9 @@ $("#btnOrders").click(function(){
 	<div id ="amount">
 		<ul id="orderAmount" class="list-unstyled"></ul>
 	</div>
-	
+	<div id ="amountPrice">
+		<ul id="totalPerBeer" class="list-unstyled"></ul>
+	</div>
 	<div id="total"></div>
 	</div>
 	

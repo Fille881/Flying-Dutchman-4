@@ -106,7 +106,14 @@ ul li {
     text-align: left;
    border: 1px dashed black; 
     }
-    
+#amountPrice{
+	position:relative;
+	float: left;
+    width: 2%;
+	height: 100%;
+    text-align: left;
+   border: 1px dashed black; 
+    }    
     
 #total{
 	position: static;
