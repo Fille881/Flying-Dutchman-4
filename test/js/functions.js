@@ -14,27 +14,48 @@
 			// ------------------------
 			
 			// ----- Order -----
-/*
+
 			$("#btnOrder").click(function(){
 				
-				var sendData = [];
+			
 				
 				$('#orderListName li').each(function() {
-				var obj = { 
+					 
 					beer_id = $(this).attr('id');
 					
-					}
-					   				
-					sendData.push(obj);
-					alert(sendData);
-});
-				
-				url = "http://pub.jamaica-inn.net/fpdb/api.php?username=aamsta&password=aamsta&action=purchase_append&beer_id=" + beer_id;
+					dburl = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=inventory_append&beer_id=" + beer_id;
+					
+				alert(dburl);
+					
+				$.ajax({
+					
+				type: "POST",
+				url: dburl,
+				data: 
+				{
+					
+					
+				},
+				success: function(r)
+				{
+					alert("succes");
+									},
+				error: function(r)
+				{
+					alert("fail");				}
+			});
+
+        
+					
+					});
+					
+				});
+		
 				
 		
-	});
+	
 		
-*/		
+	
 							
 			// ----------------
           
@@ -120,7 +141,6 @@ beerPrice = $(this).attr('id');
 totalPrice = count * beerPrice;
 
 sum = 0;
-
 
 if ($("li[id*='" + beerID + "']").length) {
 		
