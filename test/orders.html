@@ -27,6 +27,8 @@
 			// ----- Order -----
 			$("#btnOrder").click(function(){
 				
+				
+				
 				url = "http://pub.jamaica-inn.net/fpdb/api.php?username=aamsta&password=aamsta&action=purchase_append&beer_id=" + beer_id;
 				
 		
@@ -51,12 +53,15 @@
 	            
 				// while the o < total there is a new div created in the beers div. In that div the name, price and beer ID are placed.
 	           while (o < total) {
+		           
+		           var picname = data.payload[o].beer_id;
+		           
 		       
 			    // In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
 				$("#beers").append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
 
-                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class="picture" src="heineken.jpg" width="80" height="80" id="' + data.payload[o].sbl_price + '" id2 = "' + data.payload[o].beer_id + '" />')
+                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class="picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" id="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
 
 				
 				//$('#beers').append('<div class ="nameDiv" id="div'+ o +'" />');
@@ -104,9 +109,6 @@
        //alert();
           ++o;
           
-          
- 
-    
     }
     
     
@@ -126,7 +128,7 @@ sumjq = function(selector) {
    $('.picture').click(function() {
 
 beerName = $(this).attr('name');
-beerID = $(this).attr('id2');
+beerID = $(this).attr('beerID');
 beerName = beerName.replace(/\s+/g, '');
 beerPrice = $(this).attr('id');
 totalPrice = count * beerPrice;
