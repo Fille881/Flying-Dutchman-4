@@ -78,6 +78,7 @@ ul li {
     font-size: 12px;
     height: auto; 
     border: 1px dashed black; 
+	background-color: #ffffff;
 }
 
 #overview{
