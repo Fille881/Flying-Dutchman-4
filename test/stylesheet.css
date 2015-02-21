@@ -30,15 +30,15 @@ ul li {
     
 }
 
+
 #buttonsDiv{
 	
 	position:relative;
 	float: right;
     width: 10%;
 	height: 100%;
-   text-align: left;
-   border: 1px dashed black;
-	
+	text-align: left;
+	border: 1px dashed black;
 	
 }
 
@@ -127,17 +127,15 @@ ul li {
     border: 1px dashed black; 
     
     }
-
     
 .imageDiv{
 
-float: left;
-width: 30%;
-height: 130px;
-font-size: 18px;
-text-align: center;
-padding-bottom: 40px;
-
+	float: left;
+	width: 30%;
+	height: 130px;
+	font-size: 18px;
+	text-align: center;
+	padding-bottom: 40px;
 
 }
    
@@ -154,16 +152,12 @@ padding-bottom: 40px;
 
 .orderItem {
 	
-	
     font-size: 12px;
     float:left;
     width:100%;
     text-align: left;
     /* border:dotted; */
 }
-
-
-	
 
 
 .nameDiv{
@@ -174,42 +168,51 @@ padding-bottom: 40px;
     text-align: center;
     /* border: dotted; */
     
-    	
 }
-#inStock{
-	
+
+.inStock{
 	width: 66%;
 	font-size: 20px;
 	font-family: Verdana;
-	
+	background-color: #eeebbb;
+	}
+
+input[type=checkbox] {
+	/* All browsers except webkit*/
+	transform: scale(1.5);
+
+	/* Webkit browsers*/
+	-webkit-transform: scale(1.5);
 }
 
 
 .checkForm{
+	padding: 10px;
 	position:relative;
     float: left;
-    width: 5%;
+    width: 30%;
 	height: 100%;
-    text-align: left;
+    text-align: right;
 
 }
 
 .beerNameDiv{
 	position:relative;
+	padding: 10px;
     float: left;
     width: 40%;
 	height: 100%;
-    text-align: left;
-   
+    text-align: center;
+
 }
 
 .countDiv{
 	position: relative;
-    float: left;
-    width: 55%;
+	padding: 10px;
+    float: right;
+    width: 25%;
 	height: 100%;
-    text-align: left
-   
+    text-align: left;
 }
 
 #PurchaseHistory{
@@ -223,24 +226,24 @@ padding-bottom: 40px;
 }
 
 .btn {
-          display: inline-block;
-          padding: 0.4em 1.2em;
-          /*background: #08c;*/
-		  background: #6B4513;
-          color: #fff;
-          text-decoration: none;
-          font-size: 14px;
-          font-family: Arial, sans-serif;
-          border-radius: 4px;
-	}
+	display: inline-block;
+	padding: 0.4em 1.2em;
+	/*background: #08c;*/
+	background: #6B4513;
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	border-radius: 4px;
+}
       
-      .btn.disabled {
-          background: #ccc;
-          color: #555;
-    }
+	.btn.disabled {
+	background: #ccc;
+	color: #555;
+}
       
-    p .btn {
-          margin-right: 0.5em;
-    }
+	p .btn {
+	margin-right: 0.5em;
+}
 
 

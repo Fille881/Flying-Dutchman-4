@@ -18,18 +18,31 @@
 		
 		jQuery.get(url2, function(data){
 	                
-	                var beerMinimum = 100;
+	                var beerLowStock = 50;
+					var outOfStock = 0;
+					
+					var beerList = [];
 	                
 	                
-	                for(i = 10; i < 166; i++) {
-	                
-						console.log(data.payload[i].count);
+	                for(i = 22; i < 166; i++) {
 						
-						var beerCount = data.payload[i].count
+						var beerCount = data.payload[i].count;
 						
-						if (beerCount < beerMinimum) {
+						
+						if (beerCount < beerLowStock && beerCount > outOfStock) {
 							
-							console.log("out of beer" + data.payload[i].namn);
+							beerList.push(data.payload[i].count);
+							
+							for(var j=0, len=beerList.length; j<len; j++){
+								beerList[j] = parseInt(beerList[j], 10);
+							}
+							
+							function sortNumbers(a,b) {
+								return a-b;
+							}
+							beerList.sort(sortNumbers);
+							
+							console.log(beerList);
 							
 							$('#inStock').append('<div class = "checkForm" id = "checkForm'+ i +'" />');
 							$("#checkForm"+ i).append('<form><input type="checkbox" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
@@ -40,10 +53,19 @@
 							$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
 							$("#countDiv"+ i).append(data.payload[i].count);
 
-								
-							}
-						
-						
+						}
+							
+						else if (beerCount <= outOfStock) {
+							$('#inStock').append('<div class = "checkForm" id = "checkForm'+ i +'" />');
+							$("#checkForm"+ i).append('<form><input type="checkbox" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
+							
+							$('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
+							$("#beerNameDiv"+ i).append(data.payload[i].namn);
+							
+							$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
+							$("#countDiv"+ i).append('Out of stock'); /*data.payload[i].count+*/
+
+						}
 					};
 				});
 					//});
@@ -65,16 +87,20 @@
 	</div>
 </div>
 
-<div id ="centerDiv">   
+<div id ="centerDiv">
 <!--<button id="btn1" type="button">Check stock</button>-->
 </div>
 
-	
 
 
-<div id="inStock">
+<div class = "inStock" id = "inStock"></div>
 
+<br>
+<div class="buttonsDiv" id="buttonsDiv">
+	<a href="#" id="btnOrder" class="btn">Order</a>
 </div>
+
+
 
 </div>
 </body>
