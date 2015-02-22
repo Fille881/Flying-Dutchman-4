@@ -34,10 +34,10 @@ ul li {
 #buttonsDiv{
 	
 	position:relative;
-	float: right;
-    width: 10%;
-	height: 100%;
-	text-align: left;
+	float: left;
+    width: 100%;
+	height: 50px;
+	text-align: center;
 	border: 1px dashed black;
 	
 }
@@ -65,7 +65,7 @@ ul li {
 	height:80px;
  } 
  
- #container{
+#container{
 	width: 100%;
     font-size: 12px;
     height: auto; 
@@ -139,8 +139,7 @@ ul li {
 
 }
    
- #centerDiv{
-	
+.centerDiv{
 	width: 100%;
     font-size: 12px;
     height: 20px;
@@ -148,6 +147,7 @@ ul li {
     /* border: dotted; */
 
 }    
+
 
 
 .orderItem {
@@ -159,9 +159,105 @@ ul li {
     /* border:dotted; */
 }
 
+.titleDiv{
+	position:relative;
+	width: 66%;
+	height: 10%;
+	font-family: Arial;
+    font-size: 24px;
+
+}    
+#title1{
+	padding: 10px;
+	position:relative;
+    float: left;
+    width: 30%;
+    text-align: right;
+
+}
+
+#title2{
+	background-color: #eeebbb;
+	padding: 10px;
+	text-decoration: underline;
+	position:relative;
+    float: left;
+    width: 40%;
+    text-align: center;
+
+}
+
+#title3{
+	background-color: #eeebbb;
+	padding: 10px;
+	text-decoration: underline;
+	position:relative;
+    float: left;
+    width: 20%;
+    text-align: center;
+
+}
+.inStock{
+	position: relative;
+	width: 66%;
+	height: 90%;
+	font-size: 20px;
+	font-family: Verdana;
+	
+}
+.checkForm{
+	
+	padding: 10px;
+	position:relative;
+    float: left;
+    width: 30%;
+    text-align: right;
+
+}
+
+.beerNameDiv{
+	background-color: #eeebbb;
+	position: relative;
+	border: 1px solid black;
+	padding: 10px;
+    float: left;
+    width: 40%;
+    text-align: center;
+
+}
+.beerOutNameDiv{
+	background-color: #FF9933;
+	position: relative;
+	border: 1px solid black;
+	padding: 10px;
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+.countDiv{
+	background-color: #eeebbb;
+	position: relative;
+	border: 1px solid black;
+	padding: 10px;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.countOutDiv{
+	background-color: #FF9933;
+	position: relative;
+	border: 1px solid black;
+	padding: 10px;
+    float: left;
+    width: 20%;
+    text-align: center;
+}
 
 .nameDiv{
-	float: left; 
+	
+	float: left;
     width: 20%;
     height: 130px;
     font-size: 18px;
@@ -170,12 +266,7 @@ ul li {
     
 }
 
-.inStock{
-	width: 66%;
-	font-size: 20px;
-	font-family: Verdana;
-	background-color: #eeebbb;
-	}
+
 
 input[type=checkbox] {
 	/* All browsers except webkit*/
@@ -186,34 +277,7 @@ input[type=checkbox] {
 }
 
 
-.checkForm{
-	padding: 10px;
-	position:relative;
-    float: left;
-    width: 30%;
-	height: 100%;
-    text-align: right;
 
-}
-
-.beerNameDiv{
-	position:relative;
-	padding: 10px;
-    float: left;
-    width: 40%;
-	height: 100%;
-    text-align: center;
-
-}
-
-.countDiv{
-	position: relative;
-	padding: 10px;
-    float: right;
-    width: 25%;
-	height: 100%;
-    text-align: left;
-}
 
 #PurchaseHistory{
     line-height:30px;
