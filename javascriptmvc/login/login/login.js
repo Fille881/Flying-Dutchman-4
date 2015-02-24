@@ -48,15 +48,10 @@ steal('can', 'models/login.js', './init.ejs', 'jquery/dom/form_params', 'models/
 															 success: function(json)
 															 {
 																 var beers = json.data;
+																 beers.sort(function(a, b) {return b.count - a.count});
 																 var cnt = 0;
 																 var row = 0;
-																 var str1 = "<p class=\"beerrow\" id=\"row_0\">";
-																 var str2 = "#row_"+row;
-																 var beerstr = "#beers";
-																 $(str1).appendTo($(beerstr))
-																 console.log(str1);
-																 console.log(str2);
-																 console.log("");
+																 $("<p class=\"beerrow\" id=\"row_0\">").appendTo($("#beers"))
 																 for(var i = 0; i < beers.length; i++)
 																 {
 																	 if(beers[i].count >= 0 && beers[i].namn != "")
@@ -64,22 +59,16 @@ steal('can', 'models/login.js', './init.ejs', 'jquery/dom/form_params', 'models/
 																		 if(cnt > 5)
 																		 {
 																			 row++;
-																			 str1 = "<p class=\"beerrow\" id=\"row_"+(row)+"\">"
-																			 $(str1).appendTo($("#beers"))
+																			 $("<p class=\"beerrow\" id=\"row_"+row+"\">").appendTo($("#beers"))
 																			 cnt = 0;
 																			 str2 = "#row_"+row;
-																			 console.log(str1);
-																			 console.log(str2);
-																			 console.log("");
 																		 }
 																		 str1 = beers[i].namn+"<br \><div class=\"cnt\">"+beers[i].count+"</div>";
-																		 console.log(str1);
-																		 console.log(str2);
-																		 console.log(" ");
-																		 beerstr = 
-																		 $("<div class=\"beer\" id=\""+beers[i].beer_id+"\">").html(str1).appendTo($(str2));
-																		 cnt++;
-}
+																		 if(beers[i].count > 0)
+																			 $("<div class=\"beer-avail\" id=\""+beers[i].beer_id+"\">").html(str1).appendTo($("#row_"+row));
+																		 else
+																			 $("<div class=\"beer-unavail\" id=\""+beers[i].beer_id+"\">").html(str1).appendTo($("#row_"+row));
+																		 cnt++;}
 																 }
 															 },
 															 error: function(json)

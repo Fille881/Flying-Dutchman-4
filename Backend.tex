@@ -1,0 +1,480 @@
+\documentclass[a4paper]{article}
+\usepackage{listings}
+
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+\begin{document}
+\section{Working with the JavascriptMVC backend.}
+Working with the javascript MVC backend involves making AJAX calls to the dynamic fixtures created for the various models. 
+Each such call will receive a response of JSON data, either a single object or a list of objects. These objects describe the different model's data,
+and it's through these objects that information is grabbed.
+
+If that makes no sense, don't worry, let's explain it a bit, but first a quick glossary for Fixtures and JSON.
+
+\subsection{Fixtures}
+Fixtures are a way to simulate HTTP requests in order to grab information. That means that, for example, if we want to get all the beers, we simulate a \texttt{GET} request to \texttt{/beers}.
+JavascriptMVC intercepts this request and executes the relevant code in models/fixtures/fixtures.js.
+
+An example of a fixture, as it exists in fixtures.js, looks like this:
+\begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily]
+"GET /beers" : function(request, response)
+{
+  // Do stuff with the request, then call response with the relevant information.
+}
+\end{lstlisting}
+This means that when we use AJAX to perform a get request to \texttt{/beers}, we will do the code inside that function. The function will then
+return with a response call, which is how information will be handled when the request is completed, as will be shown below.
+
+\subsection{JSON}
+JSON is a way to structure data in javascript, essentially it's a more human-readable alternative to XML used by Java and Javascript.
+For our purposes, the chief advantage of it is how easy it is to get information out of JSON objects in javascript.
+
+For a JSON object \texttt{json}, any value can be retreived by name. For example, if we want to find the \texttt{description} field of \texttt{json}, 
+we just refer to it by its name as such: \texttt{json.description}.
+
+\subsection{AJAX}
+With that out of the way, here's a more detailed example of how to make use of the backend, through AJAX calls.
+
+An AJAX call is a call to the function \texttt{\$.ajax()} with a JSON object whose values decide what operation to perform. 
+If we want to fetch the inventory from the database using the username \textit{tehoi} and password \textit{tehoi}, we would make the following call:
+\begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily]
+$.ajax(
+        {
+          type: "GET",
+          url: "/beers",
+          data:
+          {
+            username: "tehoi",
+            password: "tehoi"
+          },
+          success: function(json)
+          {
+            // json.data here is a list of all beers.
+          },
+          error: function(json)
+          {
+            // Error information is in json.
+          }
+        }
+      );
+\end{lstlisting}
+and that's pretty much it. That call will make a GET (see the type: parameter) request to \texttt{/beers} (the url: parameter). 
+The username and password are set inside another JSON object named data:, and that's how you pass along any additional information necessary
+by the function, such as id numbers and so on. success is a function, with a JSON object as parameter, that is executed if the request succeeds.
+It's in this function any code using the requested information goes and the information is accessed through \texttt{json.data}. 
+In the above example, \texttt{json.data} contains the list of beers as returned by the database.
+
+There is an exception to the above format, and that is when you wish to perform operations on single-data, such as logging in. When performing 
+that kind of request, the fixture is of the format \texttt{/logins/\{username\}}, which means that instead of defining the username in the
+data section of the ajax request, it's defined in the url as follows:
+\begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax(
+        {
+          type: "GET",
+          url: "/logins/tehoi",
+          data:
+          {
+            password: "tehoi"
+          }
+          &\ldots&
+        }
+      );
+\end{lstlisting}
+
+\subsection{List of fixtures}
+\subsubsection{Beers}
+\begin{description}
+  \item[GET /beers]\hfill\\
+    Using an AJAX get request to /beers retrieves the full inventory of available beers. The list is not cleaned up, so result may contain garbage data.\hfill
+
+    The request requires the following data: \hfill \\
+    Username\hfill \\
+    Password\hfill \\
+    
+    The response is a list of JSON objects with each element containing the following information:
+    beer\_id\hfill\\
+    count\hfill\\
+    namn\hfill\\
+    namn2\hfill\\
+    price\hfill\\
+    pub\_price\hfill\\
+    sbl\_price\hfill
+
+    Example:\hfill\\
+    \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily]
+$.ajax(
+        {
+          type: "GET",
+          url: "/beers",
+          data:
+          {
+            username: "tehoi",
+            password: "tehoi"
+          },
+          success: function(json)
+          {
+            console.log(json.data[0].namn); // Print the name of the 
+            // first beer to the console.
+          },
+          error: function(json)
+          {
+            // Error information is in json.
+          }
+        }
+      );
+    \end{lstlisting}
+  \item[GET /beers/\{id\}]\hfill\\
+    This request returns detailed information about a single beer.
+
+    The required data, beyond id, are:\hfill\\
+    username\hfill\\
+    password\hfill\\
+
+    The request returns a JSON containing the following:\hfill\\
+    alkoholhalt\hfill\\
+    argang\hfill\\
+    artikelid\hfill\\
+    ekologisk\hfill\\
+    forpackning\hfill\\
+    forslutning\hfill\\
+    koscher\hfill\\
+    leverantor\hfill\\
+    modul\hfill\\
+    namn\hfill\\
+    namn2\hfill\\
+    nr\hfill\\
+    prisinklmoms\hfill\\
+    prisperliter\hfill\\
+    producent\hfill\\
+    provadargang\hfill\\
+    saljstart\hfill\\
+    slutlev\hfill\\
+    sortiment\hfill\\
+    ursprung\hfill\\
+    ursprunglandnamn\hfill\\
+    varnummer\hfill\\
+    varugrupp\hfill\\
+    volymiml\hfill\\
+
+    Example:\hfill\\
+    \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+  var id = 148803;
+  $.ajax({
+    type:"GET",
+    url:"/beers/"+id,
+    data:
+    {
+      username:"jorass",
+      password:"jorass"
+    },
+    &\ldots&
+    });
+    \end{lstlisting}
+    \item[PUT /beers/\{id\}]\hfill\\
+      The PUT request updates an item that already exists in the database, that is to say it is how you change the price or amount of a beer, such as when one is sold.
+
+      The put request requires the following data beyond id:\hfill\\
+      username\hfill\\
+      password\hfill\\
+      amount\hfill\\
+      price
+
+      The request does not return anything beyond success/failure.
+
+      Example: 
+\newpage
+    \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+var id = 148803;
+$.ajax({
+  type:"PUT",
+  url:"/beers/"+id,
+  data:
+  {
+    username:"jorass",
+    password:"jorass",
+    amount: "0",
+    price: "10.90"
+  },
+  &\ldots&
+});
+    \end{lstlisting}
+\end{description}
+\subsubsection{Accounts}
+\begin{description}
+\item[GET /accounts/\{username\}]\hfill\\
+  This request retrieves information about a user.
+
+  The data requiered, beyond a username, is a password.
+
+  The request returns the following information:\hfill\\
+  user\_id\hfill\\
+  first\_name\hfill\\
+  last\_name\hfill\\
+  assets
+
+  Example:\hfill\\
+    \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+var user = "jorass";
+$.ajax({
+  type:"GET",
+  url:"/accounts/"+user,
+  data:
+  {
+    password:"jorass",
+  },
+&\ldots&
+  });
+    \end{lstlisting}
+\item[PUT /accounts/\{user\_id\}]\hfill\\
+  Identical to \textbf{PUT /payments/\{user\_id\}}.
+\end{description}
+\subsubsection{Purchases}
+\begin{description}
+\item[GET /purchases]\hfill\\
+  This request grabs a list of all purchases registered on the server.
+  It requires the username and password of an administrator as data.
+
+  The request returns a JSON containing:\hfill\\
+  beer\_id \textit{The beer purchased}\hfill\\
+  first\_name \hfill\\
+  last\_name \textit{The name of the user who placed the purchase}\hfill\\
+  namn \textit{The name of the beer}\hfill\\
+  namn2 \hfill\\
+  price \hfill\\
+  timestamp \hfill\\
+  transaction\_id\hfill\\
+  user\_id\hfill\\
+  username
+ 
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/purchases",
+  data:
+  {
+    username:"ervtod",
+    password:"ervtod",
+  },
+  &\ldots&
+  });
+  \end{lstlisting}
+
+  \item[GET /purchases/{username}]\hfill\\
+    Similar to above, except it returns only the purchases made by the user in question. Does not require admin privileges.
+    The data required, beyond the username, is a password.
+
+    The returned data is the same as above, except the following has been \textbf{removed}:\hfill\\
+    first\_name\hfill\\
+    last\_name\hfill\\
+    username
+    
+      Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/purchases",
+  data:
+  {
+    username:"ervtod",
+    password:"ervtod",
+  },
+  &\ldots&
+  });
+  \end{lstlisting}
+\item[POST /purchases/']
+  This adds a single purchase to the database.
+
+  This does not require admin privileges and the data required are as follows:\hfill\\
+  username\hfill\\
+  password\hfill\\
+  beer\_id
+
+  The request returns nothing beyond success/error.
+
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"POST",
+  url:"/purchases/",
+  data:
+  {
+    username:"jorass",
+    password:"jorass",
+    beer_id: 14882
+  },
+  &\ldots&
+  });
+  \end{lstlisting}
+\end{description}
+\subsubsection{Payments}
+\begin{description}
+  \item[GET /payments]\hfill\\
+    This request retrieves all payments made by users into their account-assets.
+    The request requires an admin's username and password.
+    
+    The request returns the following data:\hfill\\
+    admin\_id \textit{The ID of the administrator who logged the payment}\hfill\\
+    admin\_username\hfill\\
+    amount\hfill\\
+    first\_name \textit{The name of the owner of the account.}\hfill\\
+    last\_name \hfill\\
+    timestamp \hfill\\
+    username \textit{The username of the account being paid into.}\hfill\\
+
+    Example:\hfill\\
+    \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/payments",
+  data:
+  {
+    username:"ervtod",
+    password:"ervtod"
+  },
+  &\ldots&
+});
+    \end{lstlisting}
+    \item[GET /payments/\{username\}]\hfill\\
+      Like above, but returns payment information only about a single user.
+      Does not require admin privileges but does require username and password.
+      
+      The information returned is as follows:\hfill\\
+      admin\_id\hfill\\
+      amount\hfill\\
+      timestamp\hfill\\
+      transaction\_id\hfill\\
+      user\_id\hfill\\
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/payments/ervtod",
+  data:
+  {
+    username:"ervtod",
+    password:"ervtod"
+  },
+  &\ldots&
+ });
+  \end{lstlisting}     
+  \item[PUT /payments/\{user\_id\}]\hfill\\
+    This request adds a new payment onto the account of the user with id user\_id.
+    This action requires administrator privileges.
+    
+    The request takes the following data:\hfill\\
+    user\_id \textit{The id of the user whos account is to be paid into.}\hfill\\
+    username \textit{The username of the admin approving the payment.}\hfill\\
+    password \textit{The password of the admin approving the payment.}\hfill\\
+    amount
+
+    This request returns nothing but success/failure.
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"PUT",
+  url:"/payments/2",
+  data:
+  {
+    username:"ervtod",
+    password:"ervtod",
+    amount: 50
+  },
+  &\ldots&
+ });
+  \end{lstlisting}   
+\end{description}
+\subsubsection{Logins}
+\begin{description}
+  \item[GET /logins/\{username\}]\hfill\\
+    This request performs a login operation and returns some basic user information. The request requires the username and password of a non-admin user.
+
+    The request returns the following data:\hfill\\
+    user\_id\hfill\\
+    username\hfill\\
+    password\hfill\\
+    first\_name\hfill\\
+    last\_naem
+    assets
+
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/logins/jorass",
+  data:
+  {
+    password:"jorass"
+  },
+  &\ldots&
+ });
+  \end{lstlisting}
+
+  \item[GET /logins/admin/\{username\}]
+    Same as above but for admins.
+
+    The request returns the same information as above as well as a list of all purchases stored in purchases\_list.
+
+  Example:\hfill\\
+  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/logins/admin/ervtod",
+  data:
+  {
+    password:"ervtod"
+  },
+  &\ldots&
+ });
+  \end{lstlisting}    
+\end{description}
+\end{document}
+\documentclass
+
+%  Example:\hfill\\
+%  \begin{lstlisting}[language=javascript, frame=single, showstringspaces = false, basicstyle=\small\ttfamily, escapechar=\&]
+$.ajax({
+  type:"GET",
+  url:"/logins/admin/ervtod",
+  data:
+  {
+    password:"ervtod"
+  },
+%  &\ldots&
+% });
+%  \end{lstlisting}
