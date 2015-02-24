@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="login/login/login.less" />
+    <script type="text/javascript" src="./steal/steal.js"></script> 
+</head>
+<body>
+<div class="container" align="center" id="container">
+<div id="logins"></div>
+<form id="login" action=""></form>
+</div>
+<script type="text/javascript">
+  steal(  
+  'login/login',
+  'models/login.js',
+  'models/fixtures',
+  function(LoginControl, Login)
+  {
+  new LoginControl('#login');
+  $("body").bind('created', function(){
+  console.log("Test!");
+});
+  })
+</script>
+</body>
+</html>
