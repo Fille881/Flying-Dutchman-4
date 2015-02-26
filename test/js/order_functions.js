@@ -21,37 +21,43 @@
 
 			$("#btnOrder").click(function(){
 				
-			
-				
 				$('#orderListName li').each(function() {
 					 
 					beer_id = $(this).attr('id');
+					amount = $(this).attr('value');
+					dburl = "http://pub.jamaica-inn.net/fpdb/api.php";
+					counter = 0;
 					
-					dburl = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=inventory_append&beer_id=" + beer_id;
+					while (counter < amount) {
 					
-				alert(dburl);
-					
-				$.ajax({
-					
-				type: "POST",
+						
+			$.ajax({
+				type: "get",
 				url: dburl,
 				data: 
 				{
-					
-					
+					beer_id: beer_id,
+					username: "ervtod",
+					password: "ervtod",
+					action: "purchases_append"
 				},
 				success: function(r)
 				{
-					alert("succes");
-									},
+					response(200, "{type: 'success'}")
+				},
 				error: function(r)
 				{
-					alert("fail");				}
+					response(403, "{type: 'forbidden'}")
+				}
 			});
-
-        
-					
+			
+			alert(counter);
+			++counter
+			}
+			
 					});
+					
+		
 					
 				});
 		
@@ -155,6 +161,7 @@ count++;
 //alert(count + beerName);
 $("#1" + beerName).text(count);
 $("#1" + beerName).attr('value', count);
+$("#" + beerID).attr('value', count);
 
 totalPrice = ($("#" + beerName + beerName).attr('value'));
 
@@ -180,7 +187,7 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
 } else {
 
 count = 1;
-$("#overview ul").append("<li id=" + beerID + ">" + beerName2 + "</li>");
+$("#overview ul").append("<li id=" + beerID + " value=" + count + ">" + beerName2 + "</li>");
 $("#price ul").append("<li id=" + beerPrice + beerName + " >" + beerPrice + "</li>");
 $("#amount ul").append("<li id= " + count + beerName + " value=" + count + ">" + count + "</li>");
 
