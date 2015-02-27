@@ -15,6 +15,7 @@
 				window.location.href = "login.html";
 			})
 			
+
 			// ------------------------
 			
 			// ----- Order -----
@@ -186,7 +187,7 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
 } else {
 
 count = 1;
-$("#overview ul").append("<li id=" + beerID + " value=" + count + ">" + beerName2 + "</li>");
+$("#overview ul").append("<li id=" + beerID + " value=" + count + " > <a href='#'> <img src=images/removeIcon.png heigth=16px width=16px></a> " + beerName2 + "   </li>");
 $("#price ul").append("<li id=" + beerPrice + beerName + " >" + beerPrice + "</li>");
 $("#amount ul").append("<li id= " + count + beerName + " value=" + count + ">" + count + "</li>");
 
