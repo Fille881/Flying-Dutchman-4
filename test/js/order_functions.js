@@ -176,7 +176,6 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
         $("#total").append((sumjq('#totalPerBeer li')));
 
     } else {
-
         $("#total").empty();
         $("#total").append((sumjq('#totalPerBeer li')));
     }

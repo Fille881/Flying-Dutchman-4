@@ -27,10 +27,6 @@ tr {
 
 }
 
-#usefulbutton{
-	color: blue;
-	background-color: red;
-}
 ul li {
     background-color: #167835;
     background-repeat: no-repeat;
@@ -49,14 +45,13 @@ table td {
 }
 
 
-#buttonsDiv{
-	
+.buttonsDiv{
 	position:relative;
 	float: right;
     width: 100%;
-	height: 50px;
+	height: 100%;
 	text-align: center;
-	border: 1px dashed black;
+	border: 1px black;
 	
 }
 
@@ -87,7 +82,7 @@ table td {
 	width: 100%;
     font-size: 12px;
     height: auto; 
-    border: 1px dashed black;
+ /*   border: 1px dashed black;*/
 	overflow: hidden;
 }
 #beers{
@@ -165,12 +160,9 @@ table td {
     text-align: center;
     /* border: dotted; */
 
-}    
-
-
+}
 
 .orderItem {
-	
     font-size: 12px;
     float:left;
     width:100%;
@@ -179,9 +171,9 @@ table td {
 }
 
 .titleDiv{
-	position:relative;
-	width: 66%;
-	height: 10%;
+	position: relative;
+	width: 100%;
+	height: 100%;
 	font-family: Arial;
     font-size: 24px;
 
@@ -216,16 +208,43 @@ table td {
     text-align: center;
 
 }
-.inStock{
+
+.stockSideDiv{
 	position: relative;
-	width: 66%;
-	height: 90%;
+	float: left;
+	width: 60%;
+	height: 100%
+}
+
+.stockReceiptDiv{
+	position: relative;
+	float: left;
+	width: 30%;
+	height: 100%
+}
+.receipt{
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+}
+
+.table{
+	position: relative;
+	width: 100%;
+	height: 100%;
 	font-size: 20px;
 	font-family: Verdana;
 	
 }
-.checkForm{
-	
+
+.stockButtonsDiv{
+	position: relative;
+	text-align: center;
+}
+
+/* For the stock page */
+.orderInput{
 	padding: 10px;
 	position:relative;
     float: left;
@@ -282,7 +301,6 @@ table td {
     font-size: 18px;
     text-align: center;
     /* border: dotted; */
-    
 }
 
 .accountTable{
@@ -330,12 +348,12 @@ input[type=checkbox] {
 	border-radius: 4px;
 }
       
-	.btn.disabled {
+.btn.disabled {
 	background: #ccc;
 	color: #555;
 }
       
-	p .btn {
+p .btn {
 	margin-right: 0.5em;
 }
 

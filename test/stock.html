@@ -5,6 +5,7 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript" src="js/stock_functions.js"></script>
+		<script type="text/javascript" src="js/order_functions.js"></script>
 		
 <script type="text/javascript">
 
@@ -29,18 +30,28 @@
 	</div>
 </div>
 
-<div class = "titleDiv" id = "titleDiv">
-	<div id ="title1"></div>
-	<div id ="title2">Brand</div>
-	<div id ="title3">Count</div><br>
+<div id="container">
+	<div class="stockButtonsDiv" id="buttonsDiv">
+		<button id="orderBtn" class="btn" onClick="makeStockOrder()"> Order </button>
+		<a href="#" id="btnBack" class="btn">Back to manager page</a>
+	</div>
+	
+	<div class="stockSideDiv">
+		<div class = "titleDiv">
+			<div id ="title1"></div>
+			<div id ="title2">Brand</div>
+			<div id ="title3">Count</div><br>
+		</div>
+
+		<div class = "table"></div>
+	</div>
+	<div class="stockReceiptDiv">
+		<div class="receipt">
+		
+		</div>
+	</div>
 </div>
 
-<div class = "inStock" id = "inStock"></div>
 
-<div class="buttonsDiv" id="buttonsDiv">
-	<a href="#" id="btnOrder" class="btn">Order</a>
-
-	<a href="#" id="btnBack" class="btn">Back to manager page</a>
-</div>
 </body>
 </html>

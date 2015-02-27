@@ -28,29 +28,44 @@ $(document).ready(function() {
 				
 				console.log(beerList);*/
 				
-				$('#inStock').append('<div class = "checkForm" id = "checkForm'+ i +'" />');
-				$("#checkForm"+ i).append('<form><input type="checkbox" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
+				$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
+				$("#orderInput"+ i).append('<form><input type="textarea" id="form'+i+'" value=""></input></form>');
 				
-				$('#inStock').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
+				$('.table').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'" />');
 				$("#beerNameDiv"+ i).append(data.payload[i].namn);
 				
-				$('#inStock').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
+				$('.table').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
 				$("#countDiv"+ i).append(data.payload[i].count);
 
 			}
 				
 			else if (beerCount <= outOfStock) {
-				$('#inStock').append('<div class = "checkForm" id = "checkForm'+ i +'" />');
-				$("#checkForm"+ i).append('<form><input type="checkbox" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
+				$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
+				$("#orderInput"+ i).append('<form><input type="textarea" id="form'+i+'" value="'+data.payload[i].namn+'"></input></form>');
 				
-				$('#inStock').append('<div class = "beerOutNameDiv" id = "beerOutNameDiv'+ i +'" />');
+				$('.table').append('<div class = "beerOutNameDiv" id = "beerOutNameDiv'+ i +'" />');
 				$("#beerOutNameDiv"+ i).append(data.payload[i].namn);
 				
-				$('#inStock').append('<div class = "countOutDiv" id = "countOutDiv'+ i +'" />');
+				$('.table').append('<div class = "countOutDiv" id = "countOutDiv'+ i +'" />');
 				$("#countOutDiv"+ i).append('Out of stock');
 			
 			}
 		};
 	});
+	
+
+
+	var makeStockOrder = function(){
+		ordersList = {}
+		
+		for (i=0, i<10, i++){
+			
+			
+		}
+			
+		
+			$('.receipt').append('<div class="orderName" id = "orderName'+i+'"/>');
+	};
+
 })
 	
