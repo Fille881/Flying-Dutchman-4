@@ -15,6 +15,7 @@ isClick = false;
 		if(isClick == false) {
 			var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=purchases_get";
 			jQuery.get(url, function(data){
+
 			
 	    		for (i=0; i <= data.payload.length; i++) {
 		        	$('#PurchaseHistory1').append('<div class = "timestamp" id = "timestamp'+ i +'" />');

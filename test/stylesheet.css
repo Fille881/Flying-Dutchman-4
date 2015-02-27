@@ -18,6 +18,15 @@ ul {
     margin: 0px;
 }
 
+tr {
+    border-width: 2px;
+    border-style: solid;
+    border-color:black;
+    width: auto;
+    text-align: center;
+
+}
+
 #usefulbutton{
 	color: blue;
 	background-color: red;
@@ -28,6 +37,15 @@ ul li {
     background-position: 0px center; 
     padding-left: 15px; 
     
+}
+
+table td {
+    border-width: 2px;
+    border-style: solid;
+    border-color:black;
+    width: auto;
+    text-align: center;
+
 }
 
 
@@ -265,6 +283,16 @@ ul li {
     text-align: center;
     /* border: dotted; */
     
+}
+
+.accountTable{
+
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    border-collapse:collapse;
+    width:auto;
+
 }
 
 

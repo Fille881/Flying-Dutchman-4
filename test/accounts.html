@@ -2,16 +2,31 @@
 <html>
 	<header>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <meta charset="UTF-8">
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
-	
-	
-	$(document).ready(function() {
 
-			$("#btnBack").click(function(){
+        $(document).ready(function() {
+            var url= "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=iou_get_all";
+            jQuery.get(url, function(data) {
+                var table = '';
+                for (var i = 0; i < data.payload.length; i++) {
+                    table += '<tr>';
+                    table += '<th>'+ data.payload[i].username+'</th>';
+                    table += '<th>'+ data.payload[i].first_name+'</th>';
+                    table += '<th>'+ data.payload[i].last_name+'</th>';
+                    table += '<th>'+ data.payload[i].assets+'</th>';
+                    table += '</tr>';
+                }
+                $(".accountTable").append(table);
+
+            });
+
+            $("#btnBack").click(function(){
 				 window.location.href = "orders.html";
 			})
 			
@@ -35,15 +50,36 @@
 	</div>
 </div>
 
-
+<br>
+<br>
 Create, edit and delete customer accounts.
 <br>
 <br>
 <div class="buttonsDiv">
-	<a href="#" id="btnBack" class="btn">Back to orders</a>
+    <p class="btn"> Create an Account </p>
+    <p class="btn"> Delete an Account </p>
+    <p class="btn"> Edit an Account </p>
+</div>
+<br>
+<br>
+<div class="table">
+    <table class="accountTable" border="1">
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Balance</th>
+        </tr>
+    </table>
+
 </div>
 
+<br>
+<br>
 
+<div class="buttonsDiv">
+	<a href="#" id="btnBack" class="btn">Back to orders</a>
+</div>
 
 </body>
 </html>
