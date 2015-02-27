@@ -29,6 +29,14 @@
             $("#btnBack").click(function(){
 				 window.location.href = "orders.html";
 			})
+
+            $("#btnCreateAccount").click(function(){
+                window.location.href = "createAccount.html";
+            })
+
+            $("#btnEditAccount").click(function(){
+                window.location.href = "editAccount.html";
+            })
 			
 		})
 		
@@ -56,9 +64,9 @@ Create, edit and delete customer accounts.
 <br>
 <br>
 <div class="buttonsDiv">
-    <p class="btn"> Create an Account </p>
-    <p class="btn"> Delete an Account </p>
-    <p class="btn"> Edit an Account </p>
+    <p class="btn" id="btnCreateAccount"> Create an Account </p>
+    <p class="btn" id="btnDeleteAccount"> Delete an Account </p>
+    <p class="btn" id="btnEditAccount"> Edit an Account </p>
 </div>
 <br>
 <br>
