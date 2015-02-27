@@ -8,6 +8,7 @@
 		
 	<script type="text/javascript">
 
+//Get purschase history, button can only be clicked once.
 $(document).ready(function() {
 isClick = false;
 	$(".btn").click(function(){
@@ -44,7 +45,7 @@ isClick = false;
 		isClick = true;
 	});
 	
-	
+	//Button function - back to orders
 	$("#btnBack").click(function(){
 		 window.location.href = "orders.html";
 	})
@@ -61,6 +62,7 @@ table, th, td {
 </style>
 <body>
 
+<!-- Header with title Purchase History -->
 <div id="headerWrapper">
 	<div id="headerLogo">
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
@@ -71,12 +73,8 @@ table, th, td {
 </div>
 
 <p><a href="#" class="btn">Check Purchases</a></p>
-<!--
-<div id ="centerDiv">   
-	<button id="btn" type="button">Check Purchases</button>
-</div>
--->
-<!-- This is a table -->
+
+<!-- List purchases in a table -->
 <table>
 	<tr>
     	<th>timestamp</th>
@@ -100,6 +98,8 @@ table, th, td {
 	
 <br>
 <br>
+
+<!-- Button back to orders  -->
 <div class="buttonsDiv">
 	<a href="#" id="btnBack" class="btn">Back to orders</a>
 </div>
