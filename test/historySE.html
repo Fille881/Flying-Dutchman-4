@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="se">
 
 	<header>
 	<meta charset="utf-8"/>
@@ -9,7 +9,7 @@
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
-	
+
 //Get purschase history, button can only be clicked once.
 $(document).ready(function() {
 isClick = false;
@@ -52,8 +52,8 @@ isClick = false;
 	//Button function - back to orders
 	$("#btnBack").click(function(){
 		 window.location.href = "orders.html";
-	})
-	
+	})	
+		
 	$("#btnEN").click(function(){
 		window.location.href = "history.html"
 	})
@@ -65,16 +65,24 @@ isClick = false;
 	
 })            
 
+
+
+/*
+	function getLanguages(languages){
+    if(languages == "Svenska"){
+        document.getElementById("languages").innerHTML = "<a href='history.html'>English</a> <a href='historySE.html'>Svenska</a>";
+    }else if(languages == "English"){
+        document.getElementById("languages").innerHTML = "<a href='history.html'>English</a> <a href='historySE.html'>Svenska</a>";
+    }
+}
+*/
+
 	    
 </script>
 </header>
-
-
-
 <style>
 table, td, th {
 	border-collapse: collapse;
-   
     background-color: #eeebbb;
 }
 
@@ -87,29 +95,28 @@ th {
 </style>
 <body>
 
-<!-- Header with title Purchase History -->
+<!-- Header med titel köphistorik -->
 <div id="headerWrapper">
 	<div id="headerLogo">
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Purchase History </h1>
+		<h1> Köphistorik </h1>
 	</div>
-
 </div>
 
 
 
 <!-- Button back to orders  -->
 <div class="buttonsDiv">
-	<p><a href="#" id="btnBack" class="btn">Back to orders</a></p>
+	<p><a href="#" id="btnBack" class="btn">Tillbaka till order</a></p>
 </div>
 
 
 
 <!-- Button check purchase  -->
 <div class="buttonsDiv">
-	<p><a href="#" class="btn">Check Purchases</a></p>
+	<p><a href="#" class="btn">Se köphistorik</a></p>
 </div>
 
 
@@ -119,20 +126,20 @@ th {
 </div>
 
 <div class="buttonsDivLang">
-	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
+	<p><img href="#" id="btnSE" class="btnSE"src="images/svenska.png"></p>
 </div>
 
 
 <!-- List purchases in a table -->
 <table>
 	<tr>
-    	<th>timestamp</th>
-    	<th>transaktion id</th>
+    	<th>tidstämpel</th>
+    	<th>transaktions id</th>
     	<th>namn1</th>
     	<th>namn2</th>
-		<th>user id</th>
-    	<th>beer id</th>
-    	<th>price</th>
+		<th>användar id</th>
+    	<th>öl id</th>
+    	<th>pris</th>
   	</tr>
   	<tr>
   		<th> <div id="PurchaseHistory1"></div></th>
