@@ -18,43 +18,68 @@ ul {
     margin: 0px;
 }
 
-tr {
-    border-width: 2px;
-    border-style: solid;
-    border-color:black;
-    width: auto;
-    text-align: center;
-
+#usefulbutton{
+	color: blue;
+	background-color: red;
 }
-
 ul li {
     background-color: #167835;
     background-repeat: no-repeat;
     background-position: 0px center; 
     padding-left: 15px; 
-    height: 20px;
     
 }
 
-table td {
-    border-width: 2px;
-    border-style: solid;
-    border-color:black;
-    width: auto;
-    text-align: center;
 
-}
-
-
-.buttonsDiv{
+#buttonsDiv{
+	
 	position:relative;
 	float: right;
     width: 100%;
-	height: 100%;
-	text-align: center;
-	border: 1px black;
+	height: 50px;
+	text-align: right;
+	border: 1px solid black;
 	
 }
+
+
+#logindiv{
+opacity:0.92;
+position: absolute;
+top: 0px;
+left: 0px;
+height: 100%;
+width: 100%;
+background: #000;
+display: none;
+}
+
+
+
+#login{
+width:350px;
+height:180px;
+margin:0px;
+background-color:#eeebaa;
+font-family: 'Fauna One', serif;
+position: relative;
+border: 5px solid rgba(0,0,0,.95);
+}
+
+
+#login{
+left: 50%;
+top: 50%;
+margin-left:-210px;
+margin-top:-158px;
+}
+
+
+
+
+
+
+
 
 #headerWrapper{
     /*border: 1px solid black;*/
@@ -83,7 +108,7 @@ table td {
 	width: 100%;
     font-size: 12px;
     height: auto; 
- /*   border: 1px dashed black;*/
+    border: 1px solid black;
 	overflow: hidden;
 }
 #beers{
@@ -91,7 +116,7 @@ table td {
     float:left;
     font-size: 12px;
     height: auto; 
-    border: 1px dashed black; 
+    border: 1px solid black; 
 	background-color: #ffffff;
 }
 
@@ -101,7 +126,8 @@ table td {
     width: 20%;
 	height: 100%;
     text-align: left;
-   border: 1px dashed black;
+	background-color: #eeebaa;
+   border: 1px solid black;
      
 }
 #price{
@@ -110,16 +136,21 @@ table td {
     width: 10%;
 	height: 100%;
     text-align: left;
-   border: 1px dashed black; 
+	background-color: #eeebaa;
+   border: 1px solid black; 
     }
 
+	
+	
+	
 #amount{
 	position:relative;
 	float: left;
     width: 5%;
 	height: 100%;
     text-align: left;
-   border: 1px dashed black; 
+	background-color: #eeebaa;
+   border: 1px solid black; 
     }
 #amountPrice{
 	position:relative;
@@ -127,22 +158,32 @@ table td {
     width: 2%;
 	height: 100%;
     text-align: left;
-   border: 1px dashed black; 
+	background-color: #eeebaa;
+   border: 1px solid black; 
     }    
     
 #total{
-	position: static;
+	position: relative;
 	float: right;
 	bottom: 0px;
 	margin-right:50px;
     width: 5%;
 	height: 100%;
     text-align: center;
-    background-color: green;
-    border: 1px dashed black; 
+    background-color: #eeebaa;
+    border: 1px solid black; 
     
     }
     
+	
+	
+	#b_title  {
+    display: table;
+    }
+
+  #it_name, #qty, #amt_price {
+    display: table-cell;
+    }
 .imageDiv{
 
 	float: left;
@@ -154,16 +195,23 @@ table td {
 
 }
    
-.centerDiv{
+.centerDiv,.b{
 	width: 100%;
     font-size: 12px;
     height: 20px;
     text-align: center;
     /* border: dotted; */
 
-}
+}    
+
+
+
+
+
+
 
 .orderItem {
+	
     font-size: 12px;
     float:left;
     width:100%;
@@ -172,9 +220,9 @@ table td {
 }
 
 .titleDiv{
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position:relative;
+	width: 66%;
+	height: 10%;
 	font-family: Arial;
     font-size: 24px;
 
@@ -209,43 +257,16 @@ table td {
     text-align: center;
 
 }
-
-.stockSideDiv{
+.inStock{
 	position: relative;
-	float: left;
-	width: 60%;
-	height: 100%
-}
-
-.stockReceiptDiv{
-	position: relative;
-	float: left;
-	width: 30%;
-	height: 100%
-}
-.receipt{
-	position: relative;
-	width: 100%;
-	height: 100%;
-
-}
-
-.table{
-	position: relative;
-	width: 100%;
-	height: 100%;
+	width: 66%;
+	height: 90%;
 	font-size: 20px;
 	font-family: Verdana;
 	
 }
-
-.stockButtonsDiv{
-	position: relative;
-	text-align: center;
-}
-
-/* For the stock page */
-.orderInput{
+.checkForm{
+	
 	padding: 10px;
 	position:relative;
     float: left;
@@ -302,16 +323,7 @@ table td {
     font-size: 18px;
     text-align: center;
     /* border: dotted; */
-}
-
-.accountTable{
-
-    border-width:1px;
-    border-style:solid;
-    border-color:black;
-    border-collapse:collapse;
-    width:auto;
-
+    
 }
 
 
@@ -348,13 +360,23 @@ input[type=checkbox] {
 	font-family: Arial, sans-serif;
 	border-radius: 4px;
 }
-      
-.btn.disabled {
+     
+/*.button {
+  margin: 0 0 0 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+  width: 29px;
+  height: 29px;
+  float: left;
+  text-align: center;
+  background: url(/pub/buttons.png) no-repeat;
+}*/	 
+	.btn.disabled {
 	background: #ccc;
 	color: #555;
 }
       
-p .btn {
+	p .btn {
 	margin-right: 0.5em;
 }
 
