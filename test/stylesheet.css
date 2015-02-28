@@ -8,7 +8,7 @@ h1 {
 }
 
 p {
-    font-family: "Times New Roman";
+    font-family: "Calibiri";
     font-size: 25px;
 }
 ul {
@@ -327,15 +327,7 @@ input[type=checkbox] {
 
 
 
-#PurchaseHistory{
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;
-	
-}
+
 
 .btn {
 	display: inline-block;
@@ -358,4 +350,26 @@ p .btn {
 	margin-right: 0.5em;
 }
 
+/* For the history page */
 
+#PurchaseHistory{
+    line-height:30px;
+    background-color:#eeebbb;
+    height:300px;
+    width:100px;
+    float:left;
+    padding:5px;
+} 
+
+
+.btnSE {
+	position: fixed;
+    top: 30px;
+    right: 100px;
+}
+
+.btnEN {
+	position: fixed;
+    top: 30px;
+    right: 50px;
+}
