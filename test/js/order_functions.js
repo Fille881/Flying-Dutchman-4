@@ -187,13 +187,13 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
 } else {
 
 count = 1;
-$("#overview ul").append("<li id=" + beerID + " value=" + count + " > <a href='#'> <img src=images/removeIcon.png heigth=16px width=16px></a> " + beerName2 + "   </li>");
-$("#price ul").append("<li id=" + beerPrice + beerName + " >" + beerPrice + "</li>");
-$("#amount ul").append("<li id= " + count + beerName + " value=" + count + ">" + count + "</li>");
+$("#overview ul").append("<li id=" + beerID + " value=" + count + "> <a id = " + beerID + " href='#' onClick='deleteEntry(this.id)'> <img src=images/removeIcon.png heigth=16px width=16px></a> " + beerName2 + "   </li>");
+$("#price ul").append("<li id=" + beerPrice + beerName + " id2=" + beerID + " >" + beerPrice + "</li>");
+$("#amount ul").append("<li id= " + count + beerName + " value=" + count + " id2=" + beerID + ">" + count + "</li>");
 
 totalPrice = count * beerPrice;
 
-$("#amountPrice ul").append("<li id= " + beerName + beerName + " value=" + beerPrice + " >" + totalPrice + "</li>");
+$("#amountPrice ul").append("<li id= " + beerName + beerName + " value=" + beerPrice + " id2=" + beerID + ">" + totalPrice + "</li>");
 
 
 if ($("#total:empty").length) {
@@ -212,7 +212,30 @@ if ($("#total:empty").length) {
 
 });
 
+deleteEntry  = function (id){
+	
+	
+	$("#overview li[id*='" + id + "']").remove();
+	$("#price li[id2*='" + id + "']").remove();
+	$("#amount li[id2*='" + id + "']").remove();
+	$("#amountPrice li[id2*='" + id + "']").remove();
+	
+	// deduct article from price 
+	
+	$("#total").empty();
+    $("#total").append((sumjq('#totalPerBeer li')));
+
+/*
+	$("#orderListName li").remove();
+	$("#orderListPrice li").remove();
+	$("#orderAmount li").remove();
+	$("#totalPerBeer li").remove();
+*/
+	
+}
 })
+
+
 /*
 
 function send() {
@@ -249,6 +272,7 @@ $("#btnOrders").click(function(){
 	
 	})
 */
+	
 	
 	
 	
