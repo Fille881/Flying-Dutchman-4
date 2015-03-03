@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="se">
 	<header>
 	 <meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <meta charset="utf-8"/>
+       
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
@@ -42,11 +42,11 @@
 			
 					
 			$("#btnEN").click(function(){
-				window.location.href = "accounts.html"
+				window.location.href = "history.html"
 			})
 	
 			$("#btnSE").click(function(){
-			 	window.location.href = "accountsSE.html"
+			 	window.location.href = "historySE.html"
 			})
 		})
 		
@@ -64,29 +64,29 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Accounts </h1>
+		<h1> Kontohantering </h1>
 	</div>
 </div>
 
 <br>
 <br>
-Create, edit and delete customer accounts.
+Skapa, ändra och ta bort ett användarkonto
 <br>
 <br>
 <div class="buttonsDiv">
-    <p class="btn" id="btnCreateAccount"> Create an Account </p>
-    <p class="btn" id="btnDeleteAccount"> Delete an Account </p>
-    <p class="btn" id="btnEditAccount"> Edit an Account </p>
+    <p class="btn" id="btnCreateAccount"> Skapa ett konto </p>
+    <p class="btn" id="btnDeleteAccount"> Radera ett konto </p>
+    <p class="btn" id="btnEditAccount"> Redigera ett konto </p>
 </div>
 <br>
 <br>
 <div class="table">
     <table class="accountTable" border="1">
         <tr>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Balance</th>
+            <th>Användarnamn</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Saldo</th>
         </tr>
     </table>
 
@@ -96,7 +96,7 @@ Create, edit and delete customer accounts.
 <br>
 
 <div class="buttonsDiv">
-	<a href="#" id="btnBack" class="btn">Back to orders</a>
+	<a href="#" id="btnBack" class="btn">Tillbaka till beställning</a>
 </div>
 
 <!-- Button choose language  -->
