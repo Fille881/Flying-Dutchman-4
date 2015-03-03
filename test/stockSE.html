@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="se">
 	<header>
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -14,7 +14,7 @@
 		$("#btnBack").click(function(){
 			window.location.href = "manager.html";
 			});
-					
+		
 			$("#btnEN").click(function(){
 				window.location.href = "stock.html"
 			})
@@ -35,21 +35,21 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Stock </h1>
+		<h1> Lager </h1>
 	</div>
 </div>
 
 <div id="container">
 	<div class="stockButtonsDiv" id="buttonsDiv">
-		<button id="orderBtn" class="btn" onClick="makeStockOrder()"> Order </button>
-		<a href="#" id="btnBack" class="btn">Back to manager page</a>
+		<button id="orderBtn" class="btn" onClick="makeStockOrder()"> Beställ </button>
+		<a href="#" id="btnBack" class="btn">Tillbaka till manger </a>
 	</div>
 	
 	<div class="stockSideDiv">
 		<div class = "titleDiv">
 			<div id ="title1"></div>
-			<div id ="title2">Brand</div>
-			<div id ="title3">Count</div><br>
+			<div id ="title2">Sort</div>
+			<div id ="title3">Antal</div><br>
 		</div>
 
 		<div class = "table"></div>
