@@ -4,27 +4,25 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="js/search_functions.js"></script> 
 		<script type="text/javascript" src="js/order_functions.js"></script>
-		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript" src="js/sign_in.js"></script>  
 		
-		<script type="text/javascript">
-	
-	
-		$(document).ready(function() {	
-	
-			$("#btnEN").click(function(){
-				window.location.href = "orders.html"
-			})
-	
-			$("#btnSE").click(function(){
-	 			window.location.href = "ordersSE.html"
-			})
-		})
+	<script type="text/javascript">
 	
 	</script>
-        
+<script type="text/javascript">
+					
+		$("#btnEN").click(function(){
+			window.location.href = "index.html"
+		})
+	
+		$("#btnSE").click(function(){
+	 		window.location.href = "indexSE.html"
+		})
+	});
+	</script>
 </header>
 	
 <body>
@@ -34,54 +32,65 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Ordering page </h1>
+		<h1> Order page </h1>
+		
 	</div>
 </div>
-
-
-  
-<div id="container">
-	<div id="beers"></div>
-	<div id="overview">
-		<ul id="orderListName" class="list-unstyled"></ul>
-	</div>	
-	<div id ="price">
-		<ul id="orderListPrice" class="list-unstyled"></ul>
+<!--<div class="leftDiv"id="searchDiv">
+			
+</div>-->
+<div class="rightDiv"id="loginDiv1">
+			<input id="search_txt" align="left" type="text" size="25" placeholder="search here"/>
+			<a href="#" id="btnSearch" class="btn" >Search</a>
+			<a href="#" id="btnSignIn" class="btn" style="float:right">Sign In</a>
+			<!--<input type="button" id="btnSearch" class="btn"onclick="searchVal()"value="Search">-->
+			<!--<button id="popup" style="float:right" onclick="div_show()">Login</button>-->
+</div>
+	<br><br><br><br>
+	<div class="c" id="container">
+		<div class="b"id="beers"></div>
+			<table>
+			<tr>
+				<th align="center" width="700"><b>Item Name</th>
+				<th align="right" width="380"><b>Unit Price</th>
+				<th align="right"width="250"><b>Quantity</th>
+				<th align="center"width="180"><b>Price</th>
+			</tr>
+			</table>
+			<div id="overview">
+				<ul id="orderListName" class="list-unstyled"></ul>
+			</div>
+			<div id ="price">
+				<ul id="orderListPrice" class="list-unstyled"></ul>
+			</div>
+			<div id ="amount">
+				<ul id="orderAmount" class="list-unstyled"></ul>
+			</div>
+			<div id ="amountPrice">
+				<ul id="totalPerBeer" class="list-unstyled"></ul>
+			</div>
+			<div id="total"></div>
+		</div>
 	</div>
-	<div id ="amount">
-		<ul id="orderAmount" class="list-unstyled"></ul>
-	</div>
-	<div id ="amountPrice">
-		<ul id="totalPerBeer" class="list-unstyled"></ul>
-	</div>
-	<div id="total"></div>
+	<br>
+	<div class="centerDiv" id="logindiv" style="display:none">
+	<form class="form" action="#" id="login">
+		<h2> Login </h2>
+		<label>UserName:</label>
+		<input id="uname" type="text" size="25">
+		<br><br>
+		<label>Password:</label>
+		<input id="pwd" type="password" size="25">
+		<br><br>
+		<a href="#" id="btnLogin" type="button" class="btn" >Login</a>
+		<a href="#" id="btnCancel" type="button" class="btn" >Cancel</a>
+	</form>
+</div>
+	<div class="buttonsDiv" id="buttonsDiv">
+		<a href="#" id="btnOrder" class="btn">Order</a>
 	</div>
 	
-</div>
 	
-	
-<br>
-<div class="buttonsDiv" id="buttonsDiv">
-	<a href="#" id="btnOrder" class="btn">Order</a>
-</div>
-
-<br>
------------ only as bartender ------------
-<br>
-<div class="buttonsDiv">
-	<a href="#" id="btnAccounts" class="btn">Accounts</a>
-	<br>
-	<br>
-	<a href="#" id="btnHistory" class="btn">History</a>
-
-</div>
-------------------------------------------
-	<br>
-	<br>
-<div class="buttonsDiv">
-	<a href="#" id="btnBack" class="btn">Back to login</a>
-</div>
-
 <!-- Button choose language  -->
 <div class="buttonsDivLang">
 	<p><img href="#" id="btnEN" class="btnEN"src="images/english.png"></p>
@@ -90,7 +99,5 @@
 <div class="buttonsDivLang">
 	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
 </div>
-
-
 </body>
 </html>
