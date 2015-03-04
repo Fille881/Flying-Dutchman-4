@@ -68,8 +68,8 @@
 	               
 	               
 	               // creating counter to count all array items 
-					var o = 35;
-	                var total = 50;  //total is 166
+					var o = 50;
+	                var total = 60;  //total is 166
 	            
 
 				// while the o < total there is a new div created in the beers div. In that div the name, price and beer ID are placed.
