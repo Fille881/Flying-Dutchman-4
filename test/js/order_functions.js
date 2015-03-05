@@ -91,9 +91,9 @@
 		       
 			    // In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
-				$("#beers").append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
+				$("#beers").append('<div class ="imageDiv" name="' + data.payload[o].namn + '" id="imageDiv'+ o +'" beerID = "' + data.payload[o].beer_id + '" priceID="' + data.payload[o].sbl_price + '" />');
 				$(".imageDiv").draggable();
-                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class= "picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" id="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
+                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class= "picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" priceID="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
                 
 
 				
@@ -137,22 +137,24 @@ sumjq = function(selector) {
 				$(selector).each(function() {
 				sum += Number($(this).text());
 				
+				
     			});
+    			sum = sum.toFixed(2);  
 				return sum;
 				}
 				    // when clicking on a picure of a beer in the class 'picture', the variable beerID is made. The ID of the button clicked is attached to that variable.
  
      
-    var count = 0;
+var count = 0;
     
-   $('.picture').click(function() {
+$('.picture').click(function() {
 
 
 beerName = $(this).attr('name');
 beerName = beerName.replace(/\s+/g, '');
 beerName2 = $(this).attr('name'); 
 beerID = $(this).attr('beerID');
-beerPrice = $(this).attr('id');
+beerPrice = $(this).attr('priceID');
 totalPrice = count * beerPrice;
 
 sum = 0;
@@ -239,14 +241,6 @@ deleteEntry  = function (id){
 	
 }
 
-$("#overview").droppable ({
-			accept: ".imageDiv",
-			drop: function( event, ui){
-				alert("yes");
-				
-
-			}
-			})
 
 })
 
