@@ -206,10 +206,6 @@ margin-top:-158px;
 
 
 
-
-
-
-
 .orderItem {
 	
     font-size: 12px;
@@ -221,7 +217,7 @@ margin-top:-158px;
 
 .titleDiv{
 	position:relative;
-	width: 66%;
+	width: 100%;
 	height: 10%;
 	font-family: Arial;
     font-size: 24px;
@@ -230,6 +226,7 @@ margin-top:-158px;
 #title1{
 	padding: 10px;
 	position:relative;
+	text-decoration: underline;
     float: left;
     width: 30%;
     text-align: right;
@@ -257,14 +254,11 @@ margin-top:-158px;
     text-align: center;
 
 }
-.inStock{
+.stockSideDiv{
 	position: relative;
-<<<<<<< HEAD
 	width: 66%;
-	height: 90%;
+	height: 100%;
 	float: left;
-	width: 60%;
-	height: 100%
 }
 
 .stockReceiptDiv{
@@ -281,22 +275,29 @@ margin-top:-158px;
 
 }
 
+
+
 .table{
 	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	font-size: 20px;
 	font-family: Verdana;
 	
 }
-.checkForm{
-	
-	padding: 10px;
+
+.orderInput{
+	/*padding: 10px;*/
 	position:relative;
     float: left;
     width: 30%;
     text-align: right;
 
+}
+
+input[type=textarea] {
+	width: 40px;
+	height: 20px;
 }
 
 .beerNameDiv{
@@ -306,6 +307,7 @@ margin-top:-158px;
 	padding: 10px;
     float: left;
     width: 40%;
+	height: 100%;
     text-align: center;
 
 }
@@ -316,6 +318,7 @@ margin-top:-158px;
 	padding: 10px;
     float: left;
     width: 40%;
+	height: 100%;
     text-align: center;
 }
 
@@ -326,6 +329,7 @@ margin-top:-158px;
 	padding: 10px;
     float: left;
     width: 20%;
+	height: 100%;
     text-align: center;
 }
 
@@ -336,17 +340,8 @@ margin-top:-158px;
 	padding: 10px;
     float: left;
     width: 20%;
+	height: 100%;
     text-align: center;
-}
-
-.nameDiv{
-	
-	float: left;
-    width: 20%;
-    height: 130px;
-    font-size: 18px;
-    text-align: center;
-    /* border: dotted; */
 }
 
 .orderName{
@@ -354,9 +349,16 @@ margin-top:-158px;
     width: 100%;
     font-size: 18px;
     text-align: center;
-
 }
 
+.nameDiv{
+	float: left;
+    width: 20%;
+    height: 130px;
+    font-size: 18px;
+    text-align: center;
+    /* border: dotted; */
+}
 
 .accountTable{
 
@@ -367,20 +369,6 @@ margin-top:-158px;
     width:auto;
 
 }
-
-
-
-input[type=checkbox] {
-	/* All browsers except webkit*/
-	transform: scale(1.5);
-
-	/* Webkit browsers*/
-	-webkit-transform: scale(1.5);
-}
-
-
-
-
 
 
 .btn {
