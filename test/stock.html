@@ -8,6 +8,9 @@
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript" src="js/stock_functions.js"></script>
 		<script type="text/javascript" src="js/order_functions.js"></script>
+		<script type="text/javascript" src="js/translate.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/drop.js"></script> 
 		
 <script type="text/javascript">
 
@@ -16,13 +19,6 @@
 			window.location.href = "manager.html";
 			});
 					
-			$("#btnEN").click(function(){
-				window.location.href = "stock.html"
-			})
-	
-			$("#btnSE").click(function(){
-	 			window.location.href = "stockSE.html"
-			})
 	})
 	
 </script>
@@ -36,20 +32,20 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Stock </h1>
+		<h1 id="title" data-i18n="stock-page.title"></h1>
 	</div>
 </div>
 
 <div id="container">
 	<div class="stockButtonsDiv" id="buttonsDiv">
-		<a href="#" id="btnBack" class="btn">Back to manager page</a>
+	<p><a href="#" id="btnBackManager" class="btn" data-i18n="stock-page.back-manager"></a></p>
 	</div>
 	
 	<div class="stockSideDiv">
 		<div class = "titleDiv">
-			<div id ="title1"></div>
-			<div id ="title2">Brand</div>
-			<div id ="title3">Count</div>
+			<div id="title1" data-i18n="stock-page.title"></div>
+			<div id="title2" data-i18n="stock-page.brand"></div>
+			<div id="title3" data-i18n="stock-page.count"></div>
 		</div>
 
 		<div class = "table" id = "table">

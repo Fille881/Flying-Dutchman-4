@@ -1,9 +1,73 @@
- {
- "order-page":  {
-	 "title": "Beställningssida", 
-	 "search":"sök",
-	 "sign-in": "logga in"
-       }       
-     }
+{
+"order-page": {
+	"title": "Beställningssida", 
+	"search":"sök",
+	"sign-in": "logga in",
+	"item-name": "Artikelnamn",
+	"unit-price": "Enhetspris",
+	"quantity": "Antal",
+	"order-price": "Pris",
+	"login": "Logga in",
+	"cancel": "Ångra",
+	"order": "Beställ",
+	"username": "Användarnamn:",
+	"password": "Lösenord:"
+       },
+"history-page": {   
+	"title": "Köphistorik",
+	"back-orders": "Tillbaka till beställning",
+	"check-purchases": "Se köphistorik",
+	"timestamp": "Tidstämpel", 
+	"transaktion-id": "Transaktions id",
+    "namn1": "Förnamn",
+    "namn2": "Efternamn",
+	"user-id": "Användar-ID",
+    "beer-id": "Öl-ID",
+    "h-price": "Pris"
+    },
+"account-page":  {
+    "title": "Accounts",
+    "create-account" : "Skapa ett konto",
+    "delete-account": "Ta bort ett konto",
+    "edit-account": "Redigera ett konto",
+    "timestamp": "Tidstämpel", 
+    "namn1": "Förnamn",
+    "namn2": "Efternamn",
+    "balance": "Saldo",
+    "back-orders": "Tillbaka till beställning"
+    },
+"create-account-page": {
+	"title": "Skapa konto"
+	},
+"edit-account-page": {
+	"title": "Redigera konto"
+	},	
+"manager-page": {
+	"title": "Manager sida",
+	"stock": "Lager",
+	"sales": "Sålda",
+	"accounts": "Konton",
+	"back-login": "Tillbaka till startsida"
+	},
+"stock-page": {
+	"title": "Lager",
+	"back-manager": "Tillbaka till manager sida",
+	"brand": "Sort",
+	"count": "Antal"
+	} ,
+"sales-page": {
+	"title": "Försäljning",
+	"back-manager": "Tillbaka till manager sida"
+	},
+"login-page": {
+	"login": "Logga in",
+	"login-customer": "Logga in som kund",
+	"login-bartender": "Logga in som bartender",
+	"login-manager": "Logga in som manager",
+	"username": "Användarnamn:",
+	"password": "Lösenord:"
+	}
+
+}
      
   

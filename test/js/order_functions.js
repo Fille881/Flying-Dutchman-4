@@ -7,14 +7,6 @@
 				 window.location.href = "accounts.html";
 			})
 			
-			$("#btnHistory").click(function(){
-				window.location.href = "history.html";
-			})
-			
-			$("#btnBack").click(function(){
-				window.location.href = "login.html";
-			})
-			
 
 			// ------------------------
 			

@@ -5,6 +5,9 @@
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="js/translate.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/drop.js"></script> 
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
@@ -14,14 +17,6 @@
 			
 			$("#btnBack").click(function(){
 				window.location.href = "manager.html";
-			})
-			
-			$("#btnEN").click(function(){
-				window.location.href = "sales.html"
-			})
-	
-			$("#btnSE").click(function(){
-	 			window.location.href = "salesSE.html"
 			})
 		})
 	
@@ -38,14 +33,14 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Sales </h1>
+		<h1 id="title" data-i18n="sales-page.title"></h1>
 	</div>
 </div>
 
 
 <br>
 <div class="buttonsDiv">
-	<a href="#" id="btnBack" class="btn">Back to manager page</a>
+	<p><a href="#" id="btnBackManager" class="btn" data-i18n="sales-page.back-manager"></a></p>
 </div>
 
 <!-- Button choose language  -->

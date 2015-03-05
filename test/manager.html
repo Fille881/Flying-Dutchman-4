@@ -4,7 +4,11 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="js/translate.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/drop.js"></script> 
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
@@ -28,14 +32,6 @@
 				window.location.href = "login.html";
 			})
 			
-									
-			$("#btnEN").click(function(){
-				window.location.href = "manager.html"
-			})
-	
-			$("#btnSE").click(function(){
-	 			window.location.href = "managerSE.html"
-			})
 		})
 	
 	
@@ -51,23 +47,23 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Manager page </h1>
+		<h1 id="title" data-i18n="manager-page.title"></h1>
 	</div>
 </div>
 
 
 <br>
 <div class="buttonsDiv">
-	<a href="#" id="btnStock" class="btn">Stock</a>
+<p><a href="#" id="btnStock" class="btn" data-i18n="manager-page.stock"></a></p>
 	<br>
 	<br>
-	<a href="#" id="btnSales" class="btn">Sales</a>
+	<p><a href="#" id="btnSales" class="btn" data-i18n="manager-page.sales"></a></p>
 	<br>
 	<br>
-    <a href="#" id="btnAccounts" class="btn">Accounts</a>
+    <p><a href="#" id="btnAccounts" class="btn" data-i18n="manager-page.accounts"></a></p>
     <br>
     <br>
-	<a href="#" id="btnBack" class="btn">Back to login</a>
+	<p><a href="#" id="btnBackLogin" class="btn" data-i18n="manager-page.back-login"></a></p>
 
 </div>
 

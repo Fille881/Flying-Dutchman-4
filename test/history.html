@@ -4,8 +4,11 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
+		<script type="text/javascript" src="js/translate.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/drop.js"></script>  
 		
 	<script type="text/javascript">
 	
@@ -52,14 +55,7 @@ isClick = false;
 	$("#btnBack").click(function(){
 		 window.location.href = "orders.html";
 	})
-	
-	$("#btnEN").click(function(){
-		window.location.href = "history.html"
-	})
-	
-	$("#btnSE").click(function(){
-	 	window.location.href = "historySE.html"
-	})
+
 	
 	
 })            
@@ -92,7 +88,7 @@ th {
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Purchase History </h1>
+		<h1 id="title" data-i18n="history-page.title"> </h1>
 	</div>
 
 </div>
@@ -101,14 +97,14 @@ th {
 
 <!-- Button back to orders  -->
 <div class="buttonsDiv">
-	<p><a href="#" id="btnBack" class="btn">Back to orders</a></p>
+	<p><a href="#" id="btnBack" class="btn" data-i18n="history-page.back-orders"></a></p>
 </div>
 
 
 
 <!-- Button check purchase  -->
 <div class="buttonsDiv">
-	<p><a href="#" class="btn">Check Purchases</a></p>
+	<p><a href="#" id="btnCheckP" class="btn" data-i18n="history-page.check-purchases"></a></p>
 </div>
 
 
@@ -125,13 +121,13 @@ th {
 <!-- List purchases in a table -->
 <table>
 	<tr>
-    	<th>timestamp</th>
-    	<th>transaktion id</th>
-    	<th>namn1</th>
-    	<th>namn2</th>
-		<th>user id</th>
-    	<th>beer id</th>
-    	<th>price</th>
+    	<th id=timestamp data-i18n="history-page.timestamp"></th>
+    	<th id=transaktion-id data-i18n="history-page.transaktion-id"></th>
+    	<th id=namn1 data-i18n="history-page.namn1"></th>
+    	<th id=namn2 data-i18n="history-page.namn2"></th>
+		<th id=user-id data-i18n="history-page.user-id"></th>
+    	<th id=beer-id data-i18n="history-page.beer-id"></th>
+    	<th id=h-price data-i18n="history-page.h-price"></th>
   	</tr>
   	<tr>
   		<th> <div id="PurchaseHistory1"></div></th>

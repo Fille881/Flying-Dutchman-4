@@ -1,7 +1,71 @@
 {
- "order-page":  {
-	 "title": "Order Page",
-	 "search":"Search",
-	 "sign-in": "Sign in" 
-       }
-    }
+"order-page":  {
+	"title": "Order page",
+	"search":"Search",
+	"sign-in": "Sign in",
+	"item-name": "Item name",
+	"unit-price": "Unit Price",
+	"quantity": "Quantity",
+	"order-price": "Price",
+	"login": "Login",
+	"cancel": "Cancel",
+	"order": "Order",
+	"username": "Username:",
+	"password": "Password:"
+    },
+"history-page":  {
+	"title": "Purchase history",
+	"back-orders": "Back to orders",
+	"check-purchases": "Check purchases",
+	"timestamp": "Timestamp", 
+	"transaktion-id": "Transaktion ID",
+    "namn1": "Namn1",
+    "namn2": "Namn2",
+	"user-id": "User ID",
+    "beer-id": "Beer iD",
+    "h-price": "Price"
+    },
+"account-page":  {
+    "title": "Accounts",
+    "create-account" : "Create an account",
+    "delete-account": "Delete an account",
+    "edit-account": "Edit an account",
+    "timestamp": "Timestamp", 
+    "namn1": "First name",
+    "namn2": "Last name",
+    "balance": "Balance",
+    "back-orders": "Back to orders"
+    },
+"create-account-page": {
+	"title": "Create account"
+	},
+"edit-account-page": {
+	"title": "Edit account"
+	},
+"manager-page": {
+	"title": "Manager page",
+	"stock": "Stock",
+	"sales": "Sales",
+	"accounts": "Accounts",
+	"back-login": "Back to login"
+	},
+"stock-page": {
+	"title": "Stock",
+	"back-manager": "Back to manager page",
+	"brand": "Brand",
+	"count": "Count"
+	},
+"sales-page": {
+	"title": "Sales",
+	"back-manager": "Back to manager page"
+	},
+"login-page": {
+	"login": "Login",
+	"login-customer": "Login as customer",
+	"login-bartender": "Login as bartender",
+	"login-manager": "Login as manager",
+	"username": "Username:",
+	"password": "Password:"
+	}
+	
+}

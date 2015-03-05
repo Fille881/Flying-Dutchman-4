@@ -6,20 +6,15 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/translate.js"></script> 
+	<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
     
     <title></title>
     <script type="text/javascript">
     
     $(document).ready(function() {
     
-    
-    		$("#btnEN").click(function(){
-				window.location.href = "editAccount.html"
-			})
-	
-			$("#btnSE").click(function(){
-			 	window.location.href = "editAccountSE.html"
-			})
+
     
     })
     
@@ -31,7 +26,7 @@
         <h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
     </div>
     <div id="headerTitle">
-        <h1> Edit Account </h1>
+    	<h1 id="title" data-i18n="edit-account-page.title"></h1>
     </div>
 </div>
 

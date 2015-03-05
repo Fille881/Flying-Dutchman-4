@@ -3,10 +3,11 @@
 	<header>
 	 <meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <meta charset="utf-8"/>
+		<script type="text/javascript" src="js/translate.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
@@ -39,15 +40,7 @@
                 window.location.href = "editAccount.html";
             })
 			
-			
-					
-			$("#btnEN").click(function(){
-				window.location.href = "accounts.html"
-			})
-	
-			$("#btnSE").click(function(){
-			 	window.location.href = "accountsSE.html"
-			})
+
 		})
 		
 	
@@ -64,7 +57,7 @@
 		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
 	</div>
 	<div id="headerTitle">
-		<h1> Accounts </h1>
+		<h1 id="title" data-i18n="account-page.title"></h1>
 	</div>
 </div>
 
@@ -74,19 +67,19 @@ Create, edit and delete customer accounts.
 <br>
 <br>
 <div class="buttonsDiv">
-    <p class="btn" id="btnCreateAccount"> Create an Account </p>
-    <p class="btn" id="btnDeleteAccount"> Delete an Account </p>
-    <p class="btn" id="btnEditAccount"> Edit an Account </p>
+	<p><a href="#" id="btnCreateAccount" class="btn" data-i18n="account-page.create-account"></a></p>
+	<p><a href="#" id="btnDeleteAccount" class="btn" data-i18n="account-page.delete-account"></a></p>
+	<p><a href="#" id="btnEditAccount" class="btn" data-i18n="account-page.edit-account"></a></p>
 </div>
 <br>
 <br>
 <div class="table">
     <table class="accountTable" border="1">
         <tr>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Balance</th>
+            <th id=timestamp data-i18n="account-page.timestamp"></th>
+            <th id=namn1 data-i18n="account-page.namn1"></th>
+            <th id=namn2 data-i18n="account-page.namn2"></th>
+            <th id=balance data-i18n="account-page.balance"></th>
         </tr>
     </table>
 
@@ -96,7 +89,8 @@ Create, edit and delete customer accounts.
 <br>
 
 <div class="buttonsDiv">
-	<a href="#" id="btnBack" class="btn">Back to orders</a>
+	<p><a href="#" id="btnBackOrders" class="btn" data-i18n="account-page.back-orders"></a></p>
+	
 </div>
 
 <!-- Button choose language  -->

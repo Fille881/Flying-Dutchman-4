@@ -72,10 +72,10 @@
 		<div class="b"id="beers"></div>
 			<table>
 			<tr>
-				<th align="center" width="700"><b>Item Name</th>
-				<th align="right" width="380"><b>Unit Price</th>
-				<th align="right"width="250"><b>Quantity</th>
-				<th align="center"width="180"><b>Price</th>
+				<th align="center" width="700"><b id="item-name" data-i18n="order-page.item-name"></th>
+				<th align="right" width="380"><b id="unit-price" data-i18n="order-page.unit-price"></th>
+				<th align="right"width="250"><b id="quantity" data-i18n="order-page.quantity"></th>
+				<th align="center"width="180"><b id="order-price" data-i18n="order-page.order-price"> </th>
 			</tr>
 			</table>
 			<div id="overview">
@@ -96,22 +96,22 @@
 	<br>
 	<div class="centerDiv" id="logindiv" style="display:none">
 	<form class="form" action="#" id="login">
-		<h2> Login </h2>
-		<label>UserName:</label>
+		<h2 data-i18n="order-page.login"></h2>
+		<label data-i18n="order-page.username"></label>
 		<input id="uname" type="text" size="25">
 		<br><br>
-		<label>Password:</label>
+		<label data-i18n="order-page.password"></label>
 		<input id="pwd" type="password" size="25">
 		<br><br>
-		<a href="#" id="btnLogin" type="button" class="btn" >Login</a>
-		<a href="#" id="btnCancel" type="button" class="btn" >Cancel</a>
+		<a href="#" id="btnLogin" class="btn" data-i18n="order-page.login"></a>
+		<a href="#" id="btnCancel" class="btn" data-i18n="order-page.cancel"></a>
 	</form>
 </div>
 	<div class="buttonsDiv" id="buttonsDiv">
-		<a href="#" id="btnOrder" class="btn">Order</a>
+		<a href="#" id="btnOrder" class="btn" data-i18n="order-page.order"></a>
 	</div>
 	
-	<div class="buttonsDivLang">
+<div class="buttonsDivLang">
 	<p><img href="#" id="btnEN" class="btnEN"src="images/english.png"></p>
 </div>
 
