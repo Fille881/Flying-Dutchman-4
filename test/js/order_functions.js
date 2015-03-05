@@ -244,6 +244,7 @@ $("#overview").droppable ({
 			drop: function( event, ui){
 				alert("yes");
 				
+
 			}
 			})
 
