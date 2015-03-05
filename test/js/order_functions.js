@@ -92,8 +92,9 @@
 			    // In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
 				$("#beers").append('<div class ="imageDiv" id="imageDiv'+ o +'" />');
-
-                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class="picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" id="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
+				$(".imageDiv").draggable();
+                $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class= "picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" id="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
+                
 
 				
 				//$('#beers').append('<div class ="nameDiv" id="div'+ o +'" />');
@@ -126,6 +127,8 @@
        //alert();
           ++o;
           
+          
+          
     }
     
     
@@ -143,6 +146,7 @@ sumjq = function(selector) {
     var count = 0;
     
    $('.picture').click(function() {
+
 
 beerName = $(this).attr('name');
 beerName = beerName.replace(/\s+/g, '');
@@ -231,8 +235,19 @@ deleteEntry  = function (id){
 	$("#orderAmount li").remove();
 	$("#totalPerBeer li").remove();
 */
+
 	
 }
+
+$("#overview").droppable ({
+			accept: ".imageDiv",
+			drop: function( event, ui){
+				alert("yes");
+				
+				
+			}
+			})
+
 })
 
 

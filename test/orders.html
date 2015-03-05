@@ -4,13 +4,49 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript" src="js/search_functions.js"></script> 
 		<script type="text/javascript" src="js/order_functions.js"></script>
 		<script type="text/javascript" src="js/sign_in.js"></script> 
 		<script type="text/javascript" src="js/translate.js"></script> 
 		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+	
 		
+		<script type="text/javascript">
+		
+		$(document).ready(function() {
+			
+/*
+		$(".imageDiv").draggable({ revert: "invalid" });
+    $("#overview").droppable({ 
+        accept: "#my-draggable",
+        drop: function( event, ui ) {
+           alert("yes");
+        } 
+});
+*/
+
+        
+ 
+		$("#overview").droppable ({
+			accept: ".imageDiv",
+			drop: function( event, ui){
+				alert("yes");
+			}
+    
+});
+
+
+
+
+})
+
+
+</script>
+		
+		
+	
 </header>
 	
 <body>
@@ -88,6 +124,6 @@
 	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
 </div>
 		
-	
+	 <DIV id="move" style="width:150px;height:150px;background-color:pink;border:1px solid #999999"> &nbsp; </DIV>
 </body>
 </html>
