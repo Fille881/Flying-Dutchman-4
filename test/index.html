@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<header>
+	<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
+		<script type="text/javascript" src="js/search_functions.js"></script> 
+		
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+			$("#btnSignIn").click(function(){
+				//window.location.href = "login.html";
+				$("#logindiv").css("display", "block");
+			});	
+			$("#btnCancel").click(function(){
+				//hides the pop up
+				$("#logindiv").css("display", "none");
+			});
+			$("#btnLogin").click(function(){
+				//checks whether the fields are empty or not and 
+				//whether the user entered correct credentials..(not implemented now)
+				username=$("#uname").val();
+				password=$("#pwd").val();
+				//alert(username);
+				if(username===''){
+					alert("Please fill username field");
+					$("#uname").focus();
+					return false;
+				}
+				else if(password===''){
+					alert("Please fill password field");
+					$("#pwd").focus();
+					return false;
+				}
+				else{
+					//here if everything checked is coorect, it redirects it to order page or manager
+					$("#logindiv").css("display", "none");
+					//redirect it to orders page for customer and bartender
+					//redirect it to manager page 
+				}
+			});	
+		});
+	
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//gets the value from the textbox id search_txt when any key is entered
+		//and finds the value that matches it from the beer div and the imageDiv 
+		//that is appended to it when it loads
+		
+		$('#search_txt').keyup(function(){
+			var valThis = $(this).val().toLowerCase();	//takes the value from the search_txt	
+			if(valThis == ""){
+				$('#beers').show();
+				//$(this).closest('div.b').fadeIn();
+			} 
+			else {
+				//if value entered, it checks the entered value for each of the beers in div.b(class name of the div beers)
+				$('div.b .imageDiv').each(function(){
+					var text = $(this).text().toLowerCase();
+					var match = text.indexOf(valThis);//holds the number of entered characters matching from the search_txt
+					if (match >= 0) { //checks the match and it shows if it is >=0 elso no
+						$(this).show();
+						//$(this).closest('div.b').show();
+					} 
+					else {
+						$(this).hide();
+						//$(this).closest('div.b').fadeOut();
+					}
+				});	
+			}			
+		});
+		
+				
+		$("#btnEN").click(function(){
+			window.location.href = "index.html"
+		})
+	
+		$("#btnSE").click(function(){
+	 		window.location.href = "indexSE.html"
+		})
+	});
+	</script>
+</header>
+	
+<body>
+
+<div id="headerWrapper">
+	<div id="headerLogo">
+		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
+	</div>
+	<div id="headerTitle">
+		<h1> Pub Management System </h1>
+		
+	</div>
+</div>
+<!--<div class="leftDiv"id="searchDiv">
+			
+</div>-->
+<div class="rightDiv"id="loginDiv1">
+			<input id="search_txt" align="left" type="text" size="25" placeholder="search here"/>
+			<a href="#" id="btnSearch" class="btn" >Search</a>
+			<a href="#" id="btnSignIn" class="btn" style="float:right">Sign In</a>
+			<!--<input type="button" id="btnSearch" class="btn"onclick="searchVal()"value="Search">-->
+			<!--<button id="popup" style="float:right" onclick="div_show()">Login</button>-->
+</div>
+	<br><br><br><br>
+	<div class="c" id="container">
+		<div class="b"id="beers"></div>
+			<table>
+			<tr>
+				<th align="center" width="700"><b>Item Name</th>
+				<th align="right" width="380"><b>Unit Price</th>
+				<th align="right"width="250"><b>Quantity</th>
+				<th align="center"width="180"><b>Price</th>
+			</tr>
+			</table>
+			<div id="overview">
+				<ul id="orderListName" class="list-unstyled"></ul>
+			</div>
+			<div id ="price">
+				<ul id="orderListPrice" class="list-unstyled"></ul>
+			</div>
+			<div id ="amount">
+				<ul id="orderAmount" class="list-unstyled"></ul>
+			</div>
+			<div id ="amountPrice">
+				<ul id="totalPerBeer" class="list-unstyled"></ul>
+			</div>
+			<div id="total"></div>
+		</div>
+	</div>
+	<br>
+	<div class="centerDiv" id="logindiv" style="display:none">
+	<form class="form" action="#" id="login">
+		<h2> Login </h2>
+		<label>UserName:</label>
+		<input id="uname" type="text" size="25">
+		<br><br>
+		<label>Password:</label>
+		<input id="pwd" type="password" size="25">
+		<br><br>
+		<a href="#" id="btnLogin" type="button" class="btn" >Login</a>
+		<a href="#" id="btnCancel" type="button" class="btn" >Cancel</a>
+	</form>
+</div>
+	<div class="buttonsDiv" id="buttonsDiv">
+		<a href="#" id="btnOrder" class="btn">Order</a>
+	</div>
+	
+	
+<!-- Button choose language  -->
+<div class="buttonsDivLang">
+	<p><img href="#" id="btnEN" class="btnEN"src="images/english.png"></p>
+</div>
+
+<div class="buttonsDivLang">
+	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
+</div>
+</body>
+</html>
