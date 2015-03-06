@@ -1,0 +1,71 @@
+{
+"order-page":  {
+	"title": "Bestellungen",
+	"search":"Suche",
+	"sign-in": "Einloggen",
+	"item-name": "Artikelname",
+	"unit-price": "Einheitspreis",
+	"quantity": "Anzahl",
+	"order-price": "Preis",
+	"login": "Login",
+	"cancel": "Abbrechen",
+	"order": "Bestellen",
+	"username": "Nutzername:",
+	"password": "Passwort:"
+    },
+"history-page":  {
+	"title": "Bestellhistorie",
+	"back-orders": "Zurück zu Bestellungen",
+	"check-purchases": "Bestellungen anzeigen",
+	"timestamp": "Zeitstempel", 
+	"transaktion-id": "Transaktions-ID",
+    "namn1": "Vorname",
+    "namn2": "Nachname",
+	"user-id": "Nutzer-ID",
+    "beer-id": "Bier-ID",
+    "h-price": "Preis"
+    },
+"account-page":  {
+    "title": "Accounts",
+    "create-account" : "Account erstellen",
+    "delete-account": "Account löschen",
+    "edit-account": "Account bearbeiten",
+    "timestamp": "Zeitstempel", 
+    "namn1": "Vorname",
+    "namn2": "Nachname",
+    "balance": "Saldo",
+    "back-orders": "Zurück zu Bestellungen"
+    },
+"create-account-page": {
+	"title": "Account erstellen"
+	},
+"edit-account-page": {
+	"title": "Account bearbeiten"
+	},
+"manager-page": {
+	"title": "Manager Seite",
+	"stock": "Vorrat",
+	"sales": "Verkäufe",
+	"accounts": "Accounts",
+	"back-login": "Zurück zum Login"
+	},
+"stock-page": {
+	"title": "Vorrat",
+	"back-manager": "Zurück zur Manager Seite",
+	"brand": "Marke",
+	"count": "Anzahl"
+	},
+"sales-page": {
+	"title": "Verkäufe",
+	"back-manager": "Zurück zur Manager Seite"
+	},
+"login-page": {
+	"login": "Login",
+	"login-customer": "Login als Kunde",
+	"login-bartender": "Login als Barkeeper",
+	"login-manager": "Login als Manager",
+	"username": "Nutzername:",
+	"password": "Passwort:"
+	}
+	
+}
