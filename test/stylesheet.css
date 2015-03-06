@@ -207,8 +207,6 @@ margin-top:-158px;
 
 }    
 
-
-
 .orderItem {
 	
     font-size: 12px;
@@ -224,39 +222,8 @@ margin-top:-158px;
 	height: 10%;
 	font-family: Arial;
     font-size: 24px;
-
-}    
-#title1{
-	padding: 10px;
-	position:relative;
-	text-decoration: underline;
-    float: left;
-    width: 30%;
-    text-align: right;
-
 }
 
-#title2{
-	background-color: #eeebbb;
-	padding: 10px;
-	text-decoration: underline;
-	position:relative;
-    float: left;
-    width: 40%;
-    text-align: center;
-
-}
-
-#title3{
-	background-color: #eeebbb;
-	padding: 10px;
-	text-decoration: underline;
-	position:relative;
-    float: left;
-    width: 20%;
-    text-align: center;
-
-}
 .stockSideDiv{
 	position: relative;
 	width: 66%;
@@ -269,15 +236,24 @@ margin-top:-158px;
 	float: left;
 	width: 30%;
 	height: 100%;
-	border: dotted;
+	
 }
-.receipt{
+.stockBtnDiv {
 	position: relative;
+	float: left;
 	width: 100%;
-	height: 100%;
-
+	height: 40px;
 }
 
+.orderName{
+	float: left;
+    width: 70%;
+    text-align: left;
+	font-size: 20px;
+	font-family: Verdana;
+	background-color: #eeebbb;
+	
+}
 
 
 .table{
@@ -287,20 +263,21 @@ margin-top:-158px;
 	font-size: 20px;
 	font-family: Verdana;
 	
+	
+}
+input[type=textarea] {
+	width: 40px;
+	height: 15px;
 }
 
 .orderInput{
-	/*padding: 10px;*/
+	background-color: #eeebbb;
+	/*border: 1px solid black;*/
+	padding: 10px;
 	position:relative;
     float: left;
-    width: 30%;
+    width: 20%;
     text-align: right;
-
-}
-
-input[type=textarea] {
-	width: 40px;
-	height: 20px;
 }
 
 .beerNameDiv{
@@ -314,16 +291,7 @@ input[type=textarea] {
     text-align: center;
 
 }
-.beerOutNameDiv{
-	background-color: #FF9933;
-	position: relative;
-	border: 1px solid black;
-	padding: 10px;
-    float: left;
-    width: 40%;
-	height: 100%;
-    text-align: center;
-}
+
 
 .countDiv{
 	background-color: #eeebbb;
@@ -331,26 +299,8 @@ input[type=textarea] {
 	border: 1px solid black;
 	padding: 10px;
     float: left;
-    width: 20%;
+    width: 30%;
 	height: 100%;
-    text-align: center;
-}
-
-.countOutDiv{
-	background-color: #FF9933;
-	position: relative;
-	border: 1px solid black;
-	padding: 10px;
-    float: left;
-    width: 20%;
-	height: 100%;
-    text-align: center;
-}
-
-.orderName{
-	float: left;
-    width: 100%;
-    font-size: 18px;
     text-align: center;
 }
 
@@ -360,7 +310,7 @@ input[type=textarea] {
     height: 130px;
     font-size: 18px;
     text-align: center;
-    /* border: dotted; */
+    border: dotted;
 }
 
 .accountTable{
