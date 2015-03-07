@@ -37,54 +37,68 @@
 	
 <body>
 
-<div id="headerWrapper">
-	<div id="headerLogo">
-		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
+
+<div id="mainWrapper">
+
+	<!-- language  -->
+	<div id="languageWrapper">
+		<img href="#" id="btnEN" class="btnEN"src="images/english2.png">
+		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
+		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
 	</div>
-	<div id="headerTitle">
-		<h1 id="login" data-i18n="login-page.login"> </h1>
+	
+	<!-- title -->
+	<div id="pagetitle">
+		<h1 id="title" data-i18n="login-page.login">"></h1>
 	</div>
+	
+	<!-- logo -->
+	<div id="logo">
+		<img src="images/logo.png" alt="Stormy Weather">
+	</div>
+	
+
+	
+	<!-- content -->
+	<div id="contentWrapper">
+		<div class="centerDiv">
+			<label id="username" data-i18n="login-page.username"></label>
+			<br>
+			<input type="text" size="25" value="">
+			</div>
+			<br>
+			<div class="centerDiv">
+			<label id="password" data-i18n="login-page.password"></label>
+			<br>
+			<input type="password" size="25" value="">
+			</div>
+			<br>
+			<br>
+			<div class="centerDiv">
+				<a href="#" id="btnLogin" class="btn" data-i18n="login-page.login"></a>
+			</div>
+		<br>
+		<br>
+		------- Test Logins ------
+		<div class="buttonsDiv">
+			<a href="#" id="btnLoginCustomer" class="btn" data-i18n="login-page.login-customer"></a>
+			<br>
+			<br>
+			<a href="#" id="btnLoginBartender" class="btn" data-i18n="login-page.login-bartender"></a>
+			<br>
+			<br>
+			<a href="#" id="btnLoginManager" class="btn" data-i18n="login-page.login-manager"></a>
+		</div>
+		-----------------------------
+	</div>
+	
+
 </div>
 
-<div class="centerDiv">
-<label id="username" data-i18n="login-page.username"></label>
- <br>
- <input type="text" size="25" value="">
-</div>
-
-<div class="centerDiv">
-<label id="password" data-i18n="login-page.password"></label>
- <br>
- <input type="password" size="25" value="">
-</div>
-<br>
-<div class="centerDiv">
-	<a href="#" id="btnLogin" class="btn" data-i18n="login-page.login"></a>
-</div>
-<br>
-<br>
-------- Test Logins ------
-<div class="buttonsDiv">
-	<a href="#" id="btnLoginCustomer" class="btn" data-i18n="login-page.login-customer"></a>
-	<br>
-	<br>
-	<a href="#" id="btnLoginBartender" class="btn" data-i18n="login-page.login-bartender"></a>
-	<br>
-	<br>
-	<a href="#" id="btnLoginManager" class="btn" data-i18n="login-page.login-manager"></a>
-</div>
------------------------------
 
 
 
-<!-- Button choose language  -->
-<div class="buttonsDivLang">
-	<p><img href="#" id="btnEN" class="btnEN"src="images/english.png"></p>
-</div>
 
-<div class="buttonsDivLang">
-	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
-</div>
 
 
 </body>
