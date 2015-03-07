@@ -1,14 +1,19 @@
 body {
     background-color: #eeebaa;
+	background-image: url("images/background.jpg");
+	background-size: 100% auto;
+	background-attachment: fixed;
 }
 
 h1 {
     color: #000000;
-    text-align: center;
+    text-align: left;
+	font-size:25px;
+	margin-top: 0px;
 }
 
 p {
-    font-family: "Calibiri";
+    font-family: "Calibri";
     font-size: 25px;
 }
 ul {
@@ -33,8 +38,69 @@ ul li {
 }
 
 
+
+#mainWrapper {
+    text-align: left;
+	margin: auto;
+	margin-top: 0px;
+	width:1000px;
+	font-style:normal;
+	font-family:Verdana;
+	background-color : transparent;
+	/*opacity: 0.7; */
+  }
+
+#logo {
+	position:absolute;
+	margin-top:0px;
+	margin-left:20px;
+}
+
+#pagetitle{
+	position:absolute;
+	margin-top: 50px;
+	margin-left:0px;
+	width: 600px;
+	height: 35px;
+	text-align:left;	
+	padding-left: 400px;
+	background-color: rgba(255,255,255,0.8);
+ } 
+  
+#languageWrapper{
+	position: absolute;
+	margin-top: 20px;
+	margin-left: 800px;
+	background-color : transparent;
+	height: 33px;
+  }
+  
+#contentWrapper{
+	position:absolute;
+	margin-top:110px;
+	margin-bottom: 20px;
+	min-height:1000px;
+	overflow:auto;
+	width: 960px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 20px;
+	background-color: rgba(255,255,255,0.8);
+  }
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
 #buttonsDiv{
-	
 	position:relative;
 	float: right;
     width: 100%;
@@ -83,28 +149,7 @@ margin-top:-158px;
 
 
 
-#headerWrapper{
-    /*border: 1px solid black;*/
-    overflow: hidden;
-	height: 100px;
-}
 
-#headerLogo {
-	background-color: #dcdcdc;
-    float:left;
-	height:80px;
-	width:150px;
-	border: 1px solid black;
-	font-size: 11px;
-}
-
-#headerTitle {
-	background-color: #dcdcdc;
-	text-align:center;	
-	border: 1px solid black;
-    overflow: hidden;
-	height:80px;
- } 
  
 #container{
 	width: 100%;
@@ -416,7 +461,7 @@ input[type=textarea] {
     padding:5px;
 } 
 
-
+/*
 .btnSE {
 	position: fixed;
     top: 30px;
@@ -428,3 +473,4 @@ input[type=textarea] {
     top: 30px;
     right: 50px;
 }
+*/

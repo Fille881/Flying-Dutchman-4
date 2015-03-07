@@ -82,63 +82,69 @@ th {
 </style>
 <body>
 
-<!-- Header with title Purchase History -->
-<div id="headerWrapper">
-	<div id="headerLogo">
-		<h1> <img src="logo.jpg" alt="Stormy Weather"> </h1>
+
+<div id="mainWrapper">
+
+	<!-- language  -->
+	<div id="languageWrapper">
+		<img href="#" id="btnEN" class="btnEN"src="images/english2.png">
+		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
+		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
 	</div>
-	<div id="headerTitle">
-		<h1 id="title" data-i18n="history-page.title"> </h1>
+	
+	<!-- title -->
+	<div id="pagetitle">
+		<h1 id="title" data-i18n="history-page.title">"></h1>
 	</div>
+	
+	<!-- logo -->
+	<div id="logo">
+		<img src="images/logo.png" alt="Stormy Weather">
+	</div>
+	
+
+	
+	<!-- content -->
+	<div id="contentWrapper">
+		
+		<!-- Button back to orders  -->
+		<div class="buttonsDiv">
+			<p><a href="#" id="btnBack" class="btn" data-i18n="history-page.back-orders"></a></p>
+		</div>
+
+		<!-- Button check purchase  -->
+		<div class="buttonsDiv">
+			<p><a href="#" id="btnCheckP" class="btn" data-i18n="history-page.check-purchases"></a></p>
+		</div>
+			
+			<!-- List purchases in a table -->
+		<table>
+			<tr>
+				<th id=timestamp data-i18n="history-page.timestamp"></th>
+				<th id=transaktion-id data-i18n="history-page.transaktion-id"></th>
+				<th id=namn1 data-i18n="history-page.namn1"></th>
+				<th id=namn2 data-i18n="history-page.namn2"></th>
+				<th id=user-id data-i18n="history-page.user-id"></th>
+				<th id=beer-id data-i18n="history-page.beer-id"></th>
+				<th id=h-price data-i18n="history-page.h-price"></th>
+			</tr>
+			<tr>
+				<th> <div id="PurchaseHistory1"></div></th>
+				<th> <div id="PurchaseHistory2"></div></th>
+				<th> <div id="PurchaseHistory3"></div></th>
+				<th> <div id="PurchaseHistory4"></div></th>
+				<th> <div id="PurchaseHistory5"></div></th>
+				<th> <div id="PurchaseHistory6"></div></th>
+				<th> <div id="PurchaseHistory7"></div></th>
+			</tr>
+		</table>
+	</div>
+	
 
 </div>
 
 
 
-<!-- Button back to orders  -->
-<div class="buttonsDiv">
-	<p><a href="#" id="btnBack" class="btn" data-i18n="history-page.back-orders"></a></p>
-</div>
-
-
-
-<!-- Button check purchase  -->
-<div class="buttonsDiv">
-	<p><a href="#" id="btnCheckP" class="btn" data-i18n="history-page.check-purchases"></a></p>
-</div>
-
-
-<!-- Button choose language  -->
-<div class="buttonsDivLang">
-	<p><img href="#" id="btnEN" class="btnEN"src="images/english.png"></p>
-</div>
-
-<div class="buttonsDivLang">
-	<p><img href="#" id="btnSE" class="btnSE" src="images/svenska.png"></p>
-</div>
-
-
-<!-- List purchases in a table -->
-<table>
-	<tr>
-    	<th id=timestamp data-i18n="history-page.timestamp"></th>
-    	<th id=transaktion-id data-i18n="history-page.transaktion-id"></th>
-    	<th id=namn1 data-i18n="history-page.namn1"></th>
-    	<th id=namn2 data-i18n="history-page.namn2"></th>
-		<th id=user-id data-i18n="history-page.user-id"></th>
-    	<th id=beer-id data-i18n="history-page.beer-id"></th>
-    	<th id=h-price data-i18n="history-page.h-price"></th>
-  	</tr>
-  	<tr>
-  		<th> <div id="PurchaseHistory1"></div></th>
-  		<th> <div id="PurchaseHistory2"></div></th>
-  		<th> <div id="PurchaseHistory3"></div></th>
-  		<th> <div id="PurchaseHistory4"></div></th>
-  		<th> <div id="PurchaseHistory5"></div></th>
-  		<th> <div id="PurchaseHistory6"></div></th>
-  		<th> <div id="PurchaseHistory7"></div></th>
-  	</tr>
-</table>
 	
 	
 
