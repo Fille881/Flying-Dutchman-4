@@ -4,46 +4,41 @@ $(document).ready(function() {
 	
 	jQuery.get(url, function(data){
 		
-		var totalBeerBrands = [];
-		
-		
-		//try{
+		var beerBrands = [];
 
-			for (i=4; i<163; i++) {
-				if (data.payload[i].namn != ""){
-				totalBeerBrands.push(data.payload[i].namn);
-				
-				}
+		//Push all the non-empty data into an array
+		for (i=0; i<163; i++) {
+			if (data.payload[i].namn != ""){
+			beerBrands.push(data.payload[i].namn);
 			}
-		
-		//}
-		//catch(err){
-			//alert(err);
-			//console.log(err)
-		//}
+			
+		}
 		
 		var beerLowStock = 50;
 		var outOfStock = 0;
 		var beerCountArray = [];
-		var beerBrands = [];
 		var imagesize = 30;
 		
+		//Button for ordering
+		$('.stockBtnRightDiv').append('<button type="button" class="btn" id="orderBtn">Add</button>');
 		
-		$('.stockReceiptDiv').append('<div class="stockBtnDiv"><button type="button" class="btn" id="orderBtn">Add</button></div>');
-		
-		
-		$('.stockBtnDiv').append(' <button class="btn" type="button" id="clearBtn">Clear</button>');
-		$('.stockReceiptDiv').on("click", "#clearBtn", clear = function() {
+		//Button that clear all values from textareas
+		$('.stockBtnRightDiv').append(' <button class="btn" type="button" id="clearBtn">Clear</button>');
+		$('.stockBtnRightDiv').on("click", "#clearBtn", function() {
 				$('.orderName').empty();
 		});
 		
-		$('.stockBtnDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place</button>');
-		$('.stockReceiptDiv').on("click", "#placeOrderBtn", placeStockOrder = function() {
+		$('.stockBtnRightDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place</button>');
+		$('.stockBtnRightDiv').on("click", "#placeOrderBtn", function() {
 			alert("Order Placed");
 		});
 		
-		$('.table').append('<div class="stockBtnDiv"><button class="btn" type="button" id="clearValuesBtn">Clear</button></div>');
-		//Clear all values from textareas
+		$('.stockBtnLeftDiv').append('<button class="btn" type="button" id="clearValuesBtn">Clear Values</button>');
+		$('.stockBtnLeftDiv').on("click", "#clearValuesBtn", function() {
+			for(i = 0; i < beerBrands.length; i++) {
+				$("#textArea"+i).val("")
+			}
+		});
 		
 		
 		//titles
@@ -52,31 +47,25 @@ $(document).ready(function() {
 						'<div class="countDiv">Count</div>'
 		);
 		
-		$(".stockReceiptDiv").on("click", "#orderBtn", function() {
-				//$('.orderName').empty();
+		$(".stockBtnRightDiv").on("click", "#orderBtn", function() {
+				$('.orderName').empty();
 				
 				var stockList = [];
 				var orderList = [];
-				
 			
-				for(i = 4; i <= totalBeerBrands.length; i++) {
+				for(i = 0; i < beerBrands.length; i++) {
 					stockList.push($("#textArea"+i).val());
-					//console.log(stockList);
 					
 					if (stockList[i] != ""){
-						//orderList.push(stockList[i]);
-						
-						$('#orderName'+i).text(totalBeerBrands[i] +" "+ stockList[i]); //+ " " +data.payload[j].namn
+						$('#orderName'+i).text(stockList[i] +" "+beerBrands[i]);
 					}
 					
 				}
 				
-				//console.log("totalBeerBrands:"+totalBeerBrands);
-				//console.log("orderList:"+stockList);
 		});
 		
 		
-		for(i = 4; i <= totalBeerBrands.length; i++) {
+		for(i = 0; i < beerBrands.length; i++) {
 			
 			var beerCount = data.payload[i].count;
 			
@@ -84,13 +73,13 @@ $(document).ready(function() {
 			$('.stockReceiptDiv').append('<div class="orderName" id="orderName'+ i +'"/>');
 			$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
 			$("#orderInput"+i).append('<form class = "inputForm" id = "inputForm'+ i +'" />');
-			$("#inputForm"+i).append('<input type="textarea" id="textArea'+ i +'" value="5"></input>');
+			$("#inputForm"+i).append('<input type="textarea" id="textArea'+ i +'" value=""></input>');
 			$('.table').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'"/>');
-			$("#beerNameDiv"+ i).append(data.payload[i].namn);
+			$("#beerNameDiv"+ i).append(beerBrands[i]);
 			$('.table').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
 			
 			if (beerCount < beerLowStock && beerCount > outOfStock) {
-				$("#countDiv"+ i).append(data.payload[i].count);
+				$("#countDiv"+ i).append(beerCount);
 			}
 			
 			//
@@ -128,6 +117,11 @@ $(document).ready(function() {
 			
 			console.log(beerDict);
 			*/
+			//try{}
+			//catch(err){
+			//alert(err);
+			//console.log(err)
+			//}
 		};
 		
 		
