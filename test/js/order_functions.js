@@ -141,6 +141,12 @@ var count = 0;
     
 $('.picture').click(function() {
 
+/*
+var undoManager = new UndoManager(),
+    beers = {},
+    addBeer;
+*/
+    
 
 beerName = $(this).attr('name');
 beerName = beerName.replace(/\s+/g, '');
@@ -184,7 +190,9 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
 }
 } else {
 
+
 count = 1;
+
 $("#overview ul").append("<li id=" + beerID + " value=" + count + "> <a id = " + beerID + " href='#' onClick='deleteEntry(this.id)'> <img src=images/removeIcon.png heigth=16px width=16px></a> " + beerName2 + "   </li>");
 $("#price ul").append("<li id=" + beerPrice + beerName + " id2=" + beerID + " >" + beerPrice + "</li>");
 $("#amount ul").append("<li id= " + count + beerName + " value=" + count + " id2=" + beerID + ">" + count + "</li>");
@@ -202,7 +210,6 @@ if ($("#total:empty").length) {
     $("#total").empty();
     $("#total").append((sumjq('#totalPerBeer li')));
 }
-
 
 }
 
@@ -232,7 +239,6 @@ deleteEntry  = function (id){
 
 	
 }
-
 
 })
 
