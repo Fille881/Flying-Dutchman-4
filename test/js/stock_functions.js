@@ -7,18 +7,20 @@ $(document).ready(function() {
 		var totalBeerBrands = [];
 		
 		
-		try{
+		//try{
 
-			for (i=0; i<400; i++) {
+			for (i=4; i<163; i++) {
+				if (data.payload[i].namn != ""){
 				totalBeerBrands.push(data.payload[i].namn);
 				
+				}
 			}
 		
-		}
-		catch(err){
+		//}
+		//catch(err){
 			//alert(err);
-		}
-		
+			//console.log(err)
+		//}
 		
 		var beerLowStock = 50;
 		var outOfStock = 0;
@@ -27,14 +29,15 @@ $(document).ready(function() {
 		var imagesize = 30;
 		
 		
-		$('.stockReceiptDiv').append('<div class="stockBtnDiv"><button type="button" class="btn" id="orderBtn">Add to Orders</button></div>');
+		$('.stockReceiptDiv').append('<div class="stockBtnDiv"><button type="button" class="btn" id="orderBtn">Add</button></div>');
 		
-		$('.stockBtnDiv').append(' <button class="btn" type="button" id="clearBtn">Clear Receipt</button>');
+		
+		$('.stockBtnDiv').append(' <button class="btn" type="button" id="clearBtn">Clear</button>');
 		$('.stockReceiptDiv').on("click", "#clearBtn", clear = function() {
 				$('.orderName').empty();
 		});
 		
-		$('.stockBtnDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place Order</button>');
+		$('.stockBtnDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place</button>');
 		$('.stockReceiptDiv').on("click", "#placeOrderBtn", placeStockOrder = function() {
 			alert("Order Placed");
 		});
@@ -44,16 +47,57 @@ $(document).ready(function() {
 		
 		
 		//titles
-		$('.table').append('<div class="orderInput">Amount to Order</div>'+
+		$('.table').append('<div class="orderInput">&nbsp</div>'+
 						'<div class="beerNameDiv">Brand</div>'+
 						'<div class="countDiv">Count</div>'
 		);
 		
+		$(".stockReceiptDiv").on("click", "#orderBtn", function() {
+				//$('.orderName').empty();
+				
+				var stockList = [];
+				var orderList = [];
+				
+			
+				for(i = 4; i <= totalBeerBrands.length; i++) {
+					stockList.push($("#textArea"+i).val());
+					//console.log(stockList);
+					
+					if (stockList[i] != ""){
+						//orderList.push(stockList[i]);
+						
+						$('#orderName'+i).text(totalBeerBrands[i] +" "+ stockList[i]); //+ " " +data.payload[j].namn
+					}
+					
+				}
+				
+				//console.log("totalBeerBrands:"+totalBeerBrands);
+				//console.log("orderList:"+stockList);
+		});
 		
 		
-		
-		
-		for(i = 3; i < totalBeerBrands.length; i++) {
+		for(i = 4; i <= totalBeerBrands.length; i++) {
+			
+			var beerCount = data.payload[i].count;
+			
+			//Dynamically creates divs for displaying which beers are running out of stock
+			$('.stockReceiptDiv').append('<div class="orderName" id="orderName'+ i +'"/>');
+			$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
+			$("#orderInput"+i).append('<form class = "inputForm" id = "inputForm'+ i +'" />');
+			$("#inputForm"+i).append('<input type="textarea" id="textArea'+ i +'" value="5"></input>');
+			$('.table').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'"/>');
+			$("#beerNameDiv"+ i).append(data.payload[i].namn);
+			$('.table').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
+			
+			if (beerCount < beerLowStock && beerCount > outOfStock) {
+				$("#countDiv"+ i).append(data.payload[i].count);
+			}
+			
+			//
+			else {
+				$('#countDiv'+i).append("Out of stock");		//'<img id="outOfStockImg" src="images/outofstock.jpg" height="'+imagesize+'" width="'+imagesize+'"/>')
+			}
+			
 			/*
 			function createAssociativeArray(arr1, arr2) {
 			var arr = {};
@@ -84,49 +128,6 @@ $(document).ready(function() {
 			
 			console.log(beerDict);
 			*/
-			
-			
-			var beerCount = data.payload[i].count;
-			
-			//Dynamically creates divs for displaying which beers are running out of stock
-			$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
-			$("#orderInput"+i).append('<form class = "inputForm" id = "inputForm'+ i +'" />');
-			$("#inputForm"+i).append('<input type="textarea" id="textArea'+i+'" value="10"></input>');
-			$('.table').append('<div class = "beerNameDiv" id = "beerNameDiv'+ i +'"/>');
-			$("#beerNameDiv"+ i).append(data.payload[i].namn);
-			$('.table').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
-			
-			if (beerCount < beerLowStock && beerCount > outOfStock) {
-				$("#countDiv"+ i).append(data.payload[i].count);
-			}
-			
-			//
-			else {
-				$('#countDiv'+i).prepend('<img id="outOfStockImg" src="images/outofstock.jpg" height="'+imagesize+'" width="'+imagesize+'"/>')
-			}
-
-			//Adds 
-			$(".stockReceiptDiv").on("click", "#orderBtn", beerOut = function() {
-				//$('.orderName').empty();
-				
-				var stockList = [];
-				var orderList = [];
-				
-				try{
-				for(j = 3; j < 166; j++) {
-					stockList.push($("#textArea"+j).val());
-					
-					if (stockList[j] != ""){
-						orderList.push(stockList[j]);
-					
-						$('#orderName'+j).text(stockList[j]+ " " +data.payload[j].namn);
-					}
-				}
-				}
-				catch(err){
-					//alert(err);
-				}
-			})		
 		};
 		
 		
