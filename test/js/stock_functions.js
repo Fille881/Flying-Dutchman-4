@@ -112,7 +112,7 @@ $(document).ready(function() {
 				var stockList = [];
 				var orderList = [];
 				
-				//try{
+				try{
 				for(j = 3; j < 166; j++) {
 					stockList.push($("#textArea"+j).val());
 					
@@ -122,10 +122,10 @@ $(document).ready(function() {
 						$('#orderName'+j).text(stockList[j]+ " " +data.payload[j].namn);
 					}
 				}
-				//}
-				//catch(err){
+				}
+				catch(err){
 					//alert(err);
-				//}
+				}
 			})		
 		};
 		
