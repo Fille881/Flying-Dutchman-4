@@ -88,18 +88,6 @@ ul li {
 	background-color: rgba(255,255,255,0.8);
   }
 
-
-
-
-  
-  
-  
-
-
-
-
-
-
 #buttonsDiv{
 	position:relative;
 	float: right;
@@ -142,14 +130,6 @@ margin-left:-210px;
 margin-top:-158px;
 }
 
-
-
-
-
-
-
-
-
  
 #container{
 	width: 100%;
@@ -186,8 +166,6 @@ margin-top:-158px;
 	background-color: #ffffff;
    border: 1px solid black; 
     }
-
-	
 	
 	
 #amount{
@@ -219,20 +197,19 @@ margin-top:-158px;
     text-align: center;
     background-color: #eeebaa;
     border: 1px solid black; 
-    
-    }
+}
     
 	
 	
 	#b_title  {
     display: table;
-    }
+}
 
   #it_name, #qty, #amt_price {
     display: table-cell;
-    }
-.imageDiv{
+}
 
+.imageDiv{
 	float: left;
 	width: 30%;
 	height: 130px;
@@ -240,7 +217,6 @@ margin-top:-158px;
 	text-align: center;
 	padding-bottom: 40px;
 	border: dotted;
-
 }
    
 .centerDiv,.b{
@@ -271,7 +247,7 @@ margin-top:-158px;
 
 .stockSideDiv{
 	position: relative;
-	width: 66%;
+	width: 60%;
 	height: 100%;
 	float: left;
 }
@@ -279,10 +255,20 @@ margin-top:-158px;
 .stockReceiptDiv{
 	position: relative;
 	float: left;
-	width: 32%;
+	width: 38%;
 	height: 100%;
+}
+
+.receiptTable{
+	position: relative;
+	font-size: 16px;
+	font-family: Verdana;
+	position: relative;
+	float: left;
+	width: 100%;
 	border: 1px solid black;
 }
+
 .stockBtnRightDiv {
 	position: relative;
 	float: right;
@@ -303,15 +289,16 @@ margin-top:-158px;
     text-align: left;
 	font-size: 16px;
 	font-family: Verdana;
-	background-color: #eeebbb;
+	background-color: #EEEBAA;
 	
 }
 
 .table{
 	position: relative;
+	float: left;
 	width: 100%;
 	height: 100%;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: Verdana;
 	
 }
@@ -322,12 +309,9 @@ input[type=textarea] {
 }
 
 .orderInput{
-	/*paddingbackground-color: #eeebbb;*/
-	/*paddingborder: 1px solid black;*/
-	/*padding: 10px;*/
 	position: relative;
     float: left;
-    width: 30%;
+    width: 19%;
 	height: 25px;
     text-align: right;
 }
@@ -336,23 +320,42 @@ input[type=textarea] {
 	background-color: #eeebbb;
 	position: relative;
 	border: 1px solid black;
-	/*padding: 10px;*/
     float: left;
 	height: 25px;
-    width: 30%;
+    width: 24%;
     text-align: center;
 
 }
 
 .countDiv{
+	background-color: #eeebdd;
+	position: relative;
+	border: 1px solid black;
+    float: left;
+	height: 25px;
+    width: 19%;
+    text-align: center;
+}
+
+.beerIdDiv{
+	background-color: #eeebdd;
+	position: relative;
+	border: 1px solid black;
+    float: left;
+	height: 25px;
+    width: 19%;
+    text-align: center;
+}
+
+.beerPriceDiv{
 	background-color: #eeebbb;
 	position: relative;
 	border: 1px solid black;
-	/*padding: 10px;*/
     float: left;
 	height: 25px;
-    width: 30%;
+    width: 14%;
     text-align: center;
+
 }
 
 .nameDiv{
