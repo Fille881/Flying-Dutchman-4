@@ -3,6 +3,8 @@ $(document).ready(function() {
 	var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
 	var url2 = "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_append";
 	
+	
+	
 	jQuery.get(url, inventory_get = function(data){
 		
 		var beerBrands = [];
@@ -41,7 +43,7 @@ $(document).ready(function() {
 		$('.stockBtnLeftDiv').append('<button class="btn" type="button" id="clearValuesBtn">Clear Values</button>');
 		$('.stockBtnLeftDiv').on("click", "#clearValuesBtn", function() {
 			for(i = 0; i < beerBrands.length; i++) {
-				$("#textArea"+i).val("")
+				$("#textArea"+i).val("")	
 			}
 		});
 		
@@ -64,6 +66,8 @@ $(document).ready(function() {
 				for(i = 0; i < beerBrands.length; i++) {
 					stockList.push($("#textArea"+i).val());
 					
+					
+					//create table with the receipt data
 					if (stockList[i] != ""){
 						$('#orderName'+i).text(stockList[i] +" "+beerBrands[i] + " " + beerIds[i]);
 					}
@@ -72,14 +76,19 @@ $(document).ready(function() {
 				
 		});
 		
-		
+		/*<tr>
+			<td></>
+			<td></>
+			<td></>
+		</tr>
+		*/
 		for(i = 0; i < beerBrands.length; i++) {
 			
 			var beerCount = data.payload[i].count;
 			
 			if (beerCount < beerLowStock){
 				//Dynamically creates divs for displaying which beers are running out of stock
-				$('.receiptTable').append('<div class="orderName" id="orderName'+ i +'"/>');
+				//$('.receiptTable').append('<div class="orderName" id="orderName'+ i +'"/>');
 				$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
 				$("#orderInput"+i).append('<form class = "inputForm" id = "inputForm'+ i +'" />');
 				$("#inputForm"+i).append('<input type="textarea" id="textArea'+ i +'" value=""></input>');
@@ -157,6 +166,7 @@ $(document).ready(function() {
 				for (i=0; i<50; i++){
 					if ($('#orderName'+i).text() != ""){
 						orderList.push($('#orderName'+i).text());
+						console.log(orderList[i]);
 						
 					}
 				}
