@@ -6,17 +6,16 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript" src="js/translate.js"></script> 
-		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script> 
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
 	<script type="text/javascript">
 	
 		$(document).ready(function() {
 
-			$("#btnLogin").click(function(){
-				 alert( "Not yet implemented." );
-			})
-			
+var username;
+var password;
+	
 			$("#btnLoginCustomer").click(function(){
 				window.location.href = "orders.html";
 			})
@@ -27,8 +26,35 @@
 			
 			$("#btnLoginManager").click(function(){
 				window.location.href = "manager.html";
-
+				
+				})
+				
+			$("#btnLogin").click(function()
+		{
 			
+			username = $("#username").val();
+			password = $("#password").val();
+			
+			if (username == null || username == "") {
+	
+				alert("Please fill in username");
+			}
+			else if (password == null || password == ""){
+				
+				alert("Please fill in password");
+			}
+			else {
+				
+				localStorage.setItem("username", username);
+				window.location.href = "orders.html";  		
+			}
+			
+		
+		
+
+});
+        
+	
 		})
 	
 	</script>
@@ -62,21 +88,24 @@
 	<!-- content -->
 	<div id="contentWrapper">
 		<div class="centerDiv">
-			<label id="username" data-i18n="login-page.username"></label>
+			<label id="usernamelabel" data-i18n="login-page.username"></label>
 			<br>
-			<input type="text" size="25" value="">
+			<input type="text" id="username" size="25" value="">
 			</div>
 			<br>
 			<div class="centerDiv">
-			<label id="password" data-i18n="login-page.password"></label>
+			<label id="passwordlabel" data-i18n="login-page.password"></label>
 			<br>
-			<input type="password" size="25" value="">
+			<input type="password" id="password" size="25" value="">
 			</div>
 			<br>
 			<br>
+		
 			<div class="centerDiv">
 				<a href="#" id="btnLogin" class="btn" data-i18n="login-page.login"></a>
 			</div>
+		
+			
 		<br>
 		<br>
 		------- Test Logins ------
