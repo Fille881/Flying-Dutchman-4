@@ -36,7 +36,7 @@ $(document).ready(function() {
 		//Button that clear all values from textareas
 		$('.stockBtnRightDiv').append(' <button class="btn" type="button" id="clearBtn">Clear</button>');
 		$('.stockBtnRightDiv').on("click", "#clearBtn", function() {
-				$('.orderName').empty();
+				$('.receiptTable').empty();
 		});
 		
 		//Button that clears all the textareas
@@ -54,25 +54,30 @@ $(document).ready(function() {
 						'<div class="beerPriceDiv">Beer price</div>'+
 						'<div class="countDiv">Stock</div>'
 		);
-		$('.receiptTable').append('<div id="orderName" class="orderName"> Amount - Brand - Beer_id </div>');
 		
 		
 		//Button that adds ordered beers to the receipt
 		$(".stockBtnRightDiv").on("click", "#orderBtn", function() {
-				$('.orderName').empty();
+				$('.receiptTable').empty();
 				
 				var stockList = [];
 			
 				for(i = 0; i < beerBrands.length; i++) {
 					stockList.push($("#textArea"+i).val());
 					
-					
-					//create table with the receipt data
-					if (stockList[i] != ""){
-						$('#orderName'+i).text(stockList[i] +" "+beerBrands[i] + " " + beerIds[i]);
+					if (stockList[i] != "" && stockList[i] != "undefined"){
+						$('.receiptTable').append('<tr><td id="tableData1:'+i+'">'+stockList[i]+'</td><td id="tableData'+i+':2">'+beerBrands[i]+'</td><td id=tableData'+i+':3>'+beerIds[i]+'</td></tr>');
 					}
 					
+					/*
+					//create table with the receipt data
+					
+						$('#orderName'+i).text(stockList[i] +" "+beerBrands[i] + " " + beerIds[i]);
+					}*/
+					//console.log($('#tableData'+i+':1').text());
+					console.log($('#tableData2:'+i).text());
 				}
+				
 				
 		});
 		
@@ -163,9 +168,9 @@ $(document).ready(function() {
 				//alert("Work in progress")
 				
 				
-				for (i=0; i<50; i++){
-					if ($('#orderName'+i).text() != ""){
-						orderList.push($('#orderName'+i).text());
+				for (i=0; i<300; i++){
+					if ($('.receiptTable'+i).text() != ""){
+						orderList.push($('.receiptTable'+i).text());
 						console.log(orderList[i]);
 						
 					}
@@ -173,7 +178,7 @@ $(document).ready(function() {
 
 				
 				
-				console.log(orderList);
+				
 				
 					/*
 					

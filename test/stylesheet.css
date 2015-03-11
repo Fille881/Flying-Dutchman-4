@@ -314,6 +314,10 @@ input[type=textarea] {
 	width: 40px;
 	/*height: 15px;*/
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
 .orderInput{
 	position: relative;
