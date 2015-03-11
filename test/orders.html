@@ -23,7 +23,8 @@
 		
 				
 		username = localStorage.getItem("username");
-		$("#welcomeback").append("Welcome back " + " " + username);
+		balance = localStorage.getItem("balance");
+		$("#welcomeback").append("Welcome back " + " " + username + "Your balance =" + balance);
 
 
 		$("#overview").droppable ({

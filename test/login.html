@@ -45,8 +45,19 @@ var password;
 			}
 			else {
 				
-				localStorage.setItem("username", username);
-				window.location.href = "orders.html";  		
+				var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username="+username+"&password="+password+"&action=iou_get";
+              
+                //start ajax request. All data from the url above is being put in data
+                jQuery.get(url, function (data){
+	                
+	                var balance =  data.payload[0].assets;
+	                localStorage.setItem("balance", balance);
+	            	localStorage.setItem("username", username);
+					window.location.href = "orders.html";
+	                
+});
+	                
+				  		
 			}
 			
 		
