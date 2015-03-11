@@ -8,6 +8,7 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="js/translate.js"></script> 
 	<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+	<script type="text/javascript" src="js/formState.js"></script>
 
     <script type="text/javascript">
     
@@ -48,6 +49,23 @@
 	<!-- content -->
 	<div id="contentWrapper">
 		<div class="centerDiv">
+			
+			<form id="cool_undoable">
+				
+				First name: <br>
+				<input type="text" name="firstname">
+				
+				Last name: <br>
+				<input type="text" name="firstname">
+
+
+				<input type="button" onFocus="this.blur()" onClick="formState.undo(this)" name="Undo" value="Undo">
+				
+				<input type="button" onFocus="this.blur()" onClick="formState.redo(this)" name="Redo" value="Redo">
+				
+			</form>
+				
+				
 			
 		</div>
 	</div>
