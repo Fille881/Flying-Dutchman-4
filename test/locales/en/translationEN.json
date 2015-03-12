@@ -1,4 +1,9 @@
 {
+"allPages": {
+	"logout": "Log out"
+
+},
+
 "order-page":  {
 	"title": "Order page",
 	"search":"Search",

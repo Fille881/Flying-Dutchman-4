@@ -1,4 +1,9 @@
 {
+"allPages": {
+	"logout": "Ausloggen"
+
+},
+
 "order-page":  {
 	"title": "Bestellungen",
 	"search":"Suche",

@@ -402,6 +402,12 @@ table, th, td {
 	font-family: Arial, sans-serif;
 	border-radius: 4px;
 }
+
+#logOutBtn {
+	margin-left: 500px;
+
+
+}
      
 /*.button {
   margin: 0 0 0 5px;

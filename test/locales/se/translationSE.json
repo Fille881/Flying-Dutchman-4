@@ -1,4 +1,8 @@
 {
+"allPages": {
+	"logout": "Logga ut"
+
+},
 "order-page": {
 	"title": "Beställningssida", 
 	"search":"sök",
