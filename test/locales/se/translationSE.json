@@ -70,7 +70,7 @@
 "nav-page": {
 	"home": "Hem",
 	"products": "Produkter",
-	"order": "Beställning",
+	"navorder": "Beställning",
 	"status": "Status",
 	"stock-info": "Lager information",
 	"reportMenu": "Rapport",

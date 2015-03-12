@@ -70,7 +70,7 @@
 "nav-page": {
 	"home": "Home",
 	"products": "Products",
-	"order": "Order",
+	"navorder": "Order",
 	"status": "Status",
 	"stock-info": "Stock information",
 	"reportMenu": "Report",

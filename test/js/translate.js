@@ -59,7 +59,7 @@ i18n.init(options, function(t) {
 		 				//Navigation
 						$("#loginMenu").i18n();
 		 				$("#products").i18n();
-		 				$("#order").i18n();
+		 				$("#orderMenu").i18n();
 		 				$("#status").i18n();
 						$("#stockMenu").i18n();
 						$("#historyMenu").i18n();

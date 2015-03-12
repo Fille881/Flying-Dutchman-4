@@ -68,16 +68,16 @@
 	"password": "Passwort:"
 	},
 "nav-page": {
-	"home": "",
-	"products": "",
-	"order": "",
-	"status": "",
-	"stockinfo": "",
-	"reportMenu": "",
-	"historyMenu": "",
-	"user": "",
-	"new-user": "",
-	"contact": "",
-	"receipt": ""
+	"home": "Haus",
+	"products": "Produkte",
+	"navorder": "Bestellen",
+	"status": "Status",
+	"stock-info": "Lizenzinformationen",
+	"reportMenu": "Sich Melden",
+	"historyMenu": "Bisherige Einkäufe",
+	"user": "Benutzer",
+	"new-user": "Benutzer erstellen",
+	"contact": "Kontakt",
+	"receipt": "Erhalt"
 	}
 }
