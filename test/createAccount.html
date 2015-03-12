@@ -8,6 +8,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="js/translate.js"></script> 
+    <script type="text/javascript" src="js/editAccount.js"></script> 
 	<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
 	<script type="text/javascript" src="js/formState.js"></script>
 
@@ -87,23 +88,37 @@
 	<!-- content -->
 	<div id="contentWrapper">
 		<div class="centerDiv">
-			
-			<form id="cool_undoable">
+			<div id="createAccountForm">
+			<form id="createAccount_undoable">
 				
-				First name: <br>
-				<input type="text" name="firstname">
+				Username: 
+				<input type="text" id="username">
+				<br>
+				New Password:
+				<input type="text" id="password">
+				<br>
+				E-mail: 
+				<input type="text" id="email">
+				<br>
+				Phone:
+				<input type="text" id="phone">
+				<br>
+				First name: 
+				<input type="text" id="firstname">
+				<br>
+				Last name:
+				<input type="password" id="lastname">
+				<br>
 				
-				Last name: <br>
-				<input type="text" name="firstname">
-
-
 				<input type="button" onFocus="this.blur()" onClick="formState.undo(this)" name="Undo" value="Undo">
 				
 				<input type="button" onFocus="this.blur()" onClick="formState.redo(this)" name="Redo" value="Redo">
 				
+				<input type="button" id="editAccount" value="Create">
+				
 			</form>
 				
-				
+		</div>
 			
 		</div>
 	</div>
