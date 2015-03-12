@@ -70,6 +70,19 @@
 	"login-manager": "Logga in som manager",
 	"username": "Användarnamn:",
 	"password": "Lösenord:"
+		},
+"nav-page": {
+	"home": "Hem",
+	"products": "Produkter",
+	"navorder": "Beställning",
+	"status": "Status",
+	"stock-info": "Lager information",
+	"reportMenu": "Rapport",
+	"historyMenu": "Beställningshistorik",
+	"user": "Användare",
+	"new-user": "Skapa användare",
+	"contact": "Kontakt",
+	"receipt": "Kvitto"
 	}
 
 }
