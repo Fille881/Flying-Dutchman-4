@@ -1,11 +1,12 @@
 /* Main Navigation */
 #nav {
 	position:relative;
-	width:620px;
-	left:80px;
+	width:530px;
+	height:50px;
+	left:35px;
 	margin:0 auto; 
 	margin-top:15px;
-	padding:50px;
+	padding-top: 90px;
 }
 
 ul#navigation {
