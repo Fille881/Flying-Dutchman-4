@@ -290,16 +290,6 @@ margin-top:-158px;
 	height: 40px;
 }
 
-.orderName{
-	float: left;
-    width: 100%;
-    text-align: left;
-	font-size: 16px;
-	font-family: Verdana;
-	background-color: #EEEBAA;
-	
-}
-
 .table{
 	position: relative;
 	float: left;
@@ -344,7 +334,7 @@ table, th, td {
 	border: 1px solid black;
     float: left;
 	height: 25px;
-    width: 19%;
+    width: 24%;
     text-align: center;
 }
 
@@ -354,7 +344,7 @@ table, th, td {
 	border: 1px solid black;
     float: left;
 	height: 25px;
-    width: 19%;
+    width: 14%;
     text-align: center;
 }
 
