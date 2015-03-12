@@ -30,9 +30,7 @@
 		if (localStorage.getItem("username") === null) {
   
 		$("#btnSignIn").css('visibility', 'visible');
-	}
-		else {
-			
+		} else {	
 		$("#btnSignIn").css('visibility', 'hidden');
 		$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + balance);
 		}
@@ -46,8 +44,8 @@
 			dropObject();
 				
 				
-}	
-			});
+			}	
+		});
     
 	
 				$("#orderMenu").click(function(){
