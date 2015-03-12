@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
-	var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
-	var url2 = "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_append";
+	var url = "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";
+	var url2 = "http://pub.jamaica-inn.net/fpdb/api.php";
 	
 	
 	
@@ -60,22 +60,26 @@ $(document).ready(function() {
 		$(".stockBtnRightDiv").on("click", "#orderBtn", function() {
 				$('.receiptTable').empty();
 				
-				var stockList = [];
+				var beerAmount = [];
+				
+				$('.receiptTable').append('<th id="receiptTableHeader">Receipt</th>')
 			
 				for(i = 0; i < beerBrands.length; i++) {
-					stockList.push($("#textArea"+i).val());
-					
-					if (stockList[i] != "" && stockList[i] != "undefined"){
-						$('.receiptTable').append('<tr><td id="tableData1:'+i+'">'+stockList[i]+'</td><td id="tableData'+i+':2">'+beerBrands[i]+'</td><td id=tableData'+i+':3>'+beerIds[i]+'</td></tr>');
+					beerAmount.push($("#textArea"+i).val());
+			
+					if (beerAmount[i] != "" && beerAmount[i] != null){
+						$('.receiptTable').append('<tr><td id="tableDataAmount'+i+'">'+beerAmount[i]+
+						'</td><td id="tableDataBrand'+i+'">'+beerBrands[i]+'</td><td id="tableDataBeerID'+i+'">'+beerIds[i]+
+						'</td><td id="tableDataPrice'+i+'">'+beerPrices[i]+'</td></tr>');
 					}
+					
 					
 					/*
 					//create table with the receipt data
 					
-						$('#orderName'+i).text(stockList[i] +" "+beerBrands[i] + " " + beerIds[i]);
+						$('#orderName'+i).text(beerAmount[i] +" "+beerBrands[i] + " " + beerIds[i]);
 					}*/
 					//console.log($('#tableData'+i+':1').text());
-					console.log($('#tableData2:'+i).text());
 				}
 				
 				
@@ -108,7 +112,7 @@ $(document).ready(function() {
 				//If stock of the beer is running low write the count, if it's completely out of stock write "out of stock"
 				if (beerCount > 0) {		//beerCount < beerLowStock && 
 					$("#countDiv"+ i).append(beerCount);
-				} else {$('#countDiv'+i).append("Out of stock");		//'<img id="outOfStockImg" src="images/outofstock.jpg" height="'+imagesize+'" width="'+imagesize+'"/>')
+				} else {$('#countDiv'+i).append("Out of stock ("+ beerCount + ")")	//'<img id="outOfStockImg" src="images/outofstock.jpg" height="'+imagesize+'" width="'+imagesize+'"/>')
 				}
 			}
 			//else {
@@ -161,18 +165,41 @@ $(document).ready(function() {
 		$('.stockBtnRightDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place Order</button>');
 			$('.stockBtnRightDiv').on("click", "#placeOrderBtn", place_order = function() {
 				
-				orderList = [];
-				l = [];
-				beerDetails = [];
+				beerIdArray = [];
+				beerAmountArray = [];
+				beerPriceArray = [];
 				
 				//alert("Work in progress")
 				
 				
 				for (i=0; i<300; i++){
-					if ($('.receiptTable'+i).text() != ""){
-						orderList.push($('.receiptTable'+i).text());
-						console.log(orderList[i]);
+					if ($('#tableDataBeerID'+i).text() != "" && $('#tableDataBeerID'+i).text() != null){
+						beerIdArray.push($('#tableDataBeerID'+i).text());
+						beerAmountArray.push($('#tableDataAmount'+i).text());
+						beerPriceArray.push($('#tableDataPrice'+i).text());
+
 						
+						$.ajax({
+							type: "get",
+							url: url2,
+							data: 
+							{
+								beer_id: parseInt(beerIdArray[i]),
+								username: "ervtod",
+								password: "ervtod",
+								amount: parseInt(beerAmountArray[i]),
+								price: parseInt(beerPriceArray[i]),
+								action: "inventory_append"
+							},
+							success: function(r)
+							{
+								alert("Order made")
+							},
+							error: function(r)
+							{
+								response(403, "{type: 'forbidden'}")
+							}
+						});
 					}
 				}
 
@@ -183,7 +210,7 @@ $(document).ready(function() {
 					/*
 					
 					for (j=0; j=10; j++){
-						if (orderList[i] == $('#orderInput'+j).val()+$('beerNameDiv'+j).text()){
+						if (beerIdArray[i] == $('#orderInput'+j).val()+$('beerNameDiv'+j).text()){
 							console.log("ok")
 						}
 					}
