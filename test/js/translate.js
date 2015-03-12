@@ -7,6 +7,9 @@ var options ={
 };
 
 i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+	
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -55,6 +58,19 @@ i18n.init(options, function(t) {
 		 				$("#btnLoginCustomer").i18n();
 		 				$("#btnLoginBartender").i18n();
 		 				$("#btnLoginManager").i18n();
+		 				
+		 				//Navigation
+						$("#loginMenu").i18n();
+		 				$("#products").i18n();
+		 				$("#orderMenu").i18n();
+		 				$("#status").i18n();
+						$("#stockMenu").i18n();
+						$("#historyMenu").i18n();
+		 				$("#user").i18n();
+		 				$("#newUserMenu").i18n();
+		 				$("#contact").i18n();
+		 				$("#receipt").i18n();
+		 				$("#reportMenu").i18n();
 
 					
 		 				});
@@ -66,6 +82,9 @@ i18n.init(options, function(t) {
 					resGetPath: 'locales/en/translationEN.json'
 					}
 					i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -113,6 +132,19 @@ i18n.init(options, function(t) {
 		 				$("#btnLoginCustomer").i18n();
 		 				$("#btnLoginBartender").i18n();
 		 				$("#btnLoginManager").i18n();
+		 				
+		 				//Navigation
+						$("#loginMenu").i18n();
+		 				$("#products").i18n();
+		 				$("#order").i18n();
+		 				$("#status").i18n();
+						$("#stockMenu").i18n();
+						$("#historyMenu").i18n();
+		 				$("#user").i18n();
+		 				$("#newUserMenu").i18n();
+		 				$("#contact").i18n();
+		 				$("#receipt").i18n();
+		 				$("#reportMenu").i18n();
 					
 					
 					});
@@ -125,6 +157,9 @@ i18n.init(options, function(t) {
 					resGetPath: 'locales/se/translationSE.json'
 					}
 					i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -173,6 +208,19 @@ i18n.init(options, function(t) {
 		 				$("#btnLoginCustomer").i18n();
 		 				$("#btnLoginBartender").i18n();
 		 				$("#btnLoginManager").i18n();
+		 				
+		 				//Navigation
+						$("#loginMenu").i18n();
+		 				$("#products").i18n();
+		 				$("#order").i18n();
+		 				$("#status").i18n();
+						$("#stockMenu").i18n();
+						$("#historyMenu").i18n();
+		 				$("#user").i18n();
+		 				$("#newUserMenu").i18n();
+		 				$("#contact").i18n();
+		 				$("#receipt").i18n();
+		 				$("#reportMenu").i18n();
 						
 						
 					});
@@ -180,10 +228,14 @@ i18n.init(options, function(t) {
 					
 			$("#btnGER").click(function(){
 				var options ={ 
-					lng: "ger" ,  
+					lng: "ger" ,
 					resGetPath: 'locales/ger/translationGER.json'
 					}
 					i18n.init(options, function(t) {
+						
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -232,6 +284,19 @@ i18n.init(options, function(t) {
 		 				$("#btnLoginCustomer").i18n();
 		 				$("#btnLoginBartender").i18n();
 		 				$("#btnLoginManager").i18n();
+						
+						//Navigation
+						$("#loginMenu").i18n();
+		 				$("#products").i18n();
+		 				$("#order").i18n();
+		 				$("#status").i18n();
+						$("#stockMenu").i18n();
+						$("#historyMenu").i18n();
+		 				$("#user").i18n();
+		 				$("#newUserMenu").i18n();
+		 				$("#contact").i18n();
+		 				$("#receipt").i18n();
+		 				$("#reportMenu").i18n();
 						
 						
 					});

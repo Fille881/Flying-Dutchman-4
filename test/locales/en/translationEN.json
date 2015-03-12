@@ -1,4 +1,9 @@
 {
+"allPages": {
+	"logout": "Log out"
+
+},
+
 "order-page":  {
 	"title": "Order page",
 	"search":"Search",
@@ -66,6 +71,18 @@
 	"login-manager": "Login as manager",
 	"username": "Username:",
 	"password": "Password:"
+	},
+"nav-page": {
+	"home": "Home",
+	"products": "Products",
+	"navorder": "Order",
+	"status": "Status",
+	"stock-info": "Stock information",
+	"reportMenu": "Report",
+	"historyMenu": "Purchase history",
+	"user": "User",
+	"new-user": "Create User",
+	"contact": "Contact",
+	"receipt": "Receipt"
 	}
-	
 }

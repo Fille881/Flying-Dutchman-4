@@ -1,4 +1,9 @@
 {
+"allPages": {
+	"logout": "Ausloggen"
+
+},
+
 "order-page":  {
 	"title": "Bestellungen",
 	"search":"Suche",
@@ -66,6 +71,18 @@
 	"login-manager": "Login als Manager",
 	"username": "Nutzername:",
 	"password": "Passwort:"
+	},
+"nav-page": {
+	"home": "Haus",
+	"products": "Produkte",
+	"navorder": "Bestellen",
+	"status": "Status",
+	"stock-info": "Lizenzinformationen",
+	"reportMenu": "Sich Melden",
+	"historyMenu": "Bisherige Einkäufe",
+	"user": "Benutzer",
+	"new-user": "Benutzer erstellen",
+	"contact": "Kontakt",
+	"receipt": "Erhalt"
 	}
-	
 }
