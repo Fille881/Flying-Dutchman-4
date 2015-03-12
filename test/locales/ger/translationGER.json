@@ -66,6 +66,18 @@
 	"login-manager": "Login als Manager",
 	"username": "Nutzername:",
 	"password": "Passwort:"
+	},
+"nav-page": {
+	"home": "",
+	"products": "",
+	"order": "",
+	"status": "",
+	"stockinfo": "",
+	"reportMenu": "",
+	"historyMenu": "",
+	"user": "",
+	"new-user": "",
+	"contact": "",
+	"receipt": ""
 	}
-	
 }
