@@ -181,7 +181,7 @@ i18n.init(options, function(t) {
 			$("#btnGER").click(function(){
 				var options ={ 
 					lng: "ger" ,  
-					resGetPath: 'locales/se/translationGER.json'
+					resGetPath: 'locales/ger/translationGER.json'
 					}
 					i18n.init(options, function(t) {
 						//Order page
