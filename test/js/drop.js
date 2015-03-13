@@ -13,7 +13,7 @@ dropObject = function( event,ui) {
 				beerPrice = ui.draggable.attr('priceID');
 			    totalPrice = count * beerPrice;
 
-			 alert(beerName + ' was dropped from ' + ui.draggable.parent().attr('id'));
+			 //alert(beerName + ' was dropped from ' + ui.draggable.parent().attr('id'));
 			
 			sum = 0;
 
