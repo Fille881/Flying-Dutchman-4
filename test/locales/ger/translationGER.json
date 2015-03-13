@@ -45,7 +45,9 @@
 	"a-email": "E-mail:",
 	"a-phone": "Telefonnummer:",
 	"a-name1": "Vorname:",
-	"a-name2": "Nachname:"
+	"a-name2": "Nachname:",
+	"undo": "Ungeschehen machen",
+	"redo": "Wiederholen"
     },
 "create-account-page": {
 	"title": "Account erstellen"
