@@ -84,7 +84,9 @@
 			    // In the newly created div there is an imageDiv placed which contains a static picture for now (heineken.jpg). The ID of the picture is a name from the beer that is used in the current  loop (e.g. data.payload[16].namn)
 				
 				$("#beers").append('<div class ="imageDiv" name="' + data.payload[o].namn + '" id="imageDiv'+ o +'" beerID = "' + data.payload[o].beer_id + '" priceID="' + data.payload[o].sbl_price + '" />');
-				$(".imageDiv").draggable();
+				$(".imageDiv").draggable({
+					helper: 'clone'
+					});
                 $("#imageDiv" + o).append('<input type="image" name="' + data.payload[o].namn + '" class= "picture" src="images/' + picname + '_thmb.JPG" width="60" height="120" priceID="' + data.payload[o].sbl_price + '" beerID = "' + data.payload[o].beer_id + '" />')
                 $(".picture").draggable();
                 

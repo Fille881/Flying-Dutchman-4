@@ -39,17 +39,14 @@
 		}
 
 
-				
 		$("#overview").droppable ({
 			accept: ".imageDiv",
 			drop: function( event, ui ){
 			
-			alert("yay");
-			//dropObject();
-				
-				
-			}	
-		});
+			dropObject(event,ui);
+			
+						}
+						});
     
 	
 				$("#orderMenu").click(function(){
