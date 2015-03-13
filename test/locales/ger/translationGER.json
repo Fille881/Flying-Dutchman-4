@@ -1,4 +1,8 @@
 {
+"allPages": {
+	"logout": "Ausloggen",
+	"Theme": "Ändern thema"
+},
 "order-page":  {
 	"title": "Bestellungen",
 	"search":"Suche",
@@ -34,7 +38,13 @@
     "namn1": "Vorname",
     "namn2": "Nachname",
     "balance": "Saldo",
-    "back-orders": "Zurück zu Bestellungen"
+    "back-orders": "Zurück zu Bestellungen",
+    "a-username": "Nutzername:",
+	"a-newpassword": "Neues passwort",
+	"a-email": "E-mail:",
+	"a-phone": "Telefonnummer:",
+	"a-name1": "Vorname:",
+	"a-name2": "Nachname:"
     },
 "create-account-page": {
 	"title": "Account erstellen"

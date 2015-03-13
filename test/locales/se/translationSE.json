@@ -1,4 +1,8 @@
 {
+"allPages": {
+	"logout": "Logga ut",
+	"Theme": "Ändra tema"
+},
 "order-page": {
 	"title": "Beställningssida", 
 	"search":"sök",
@@ -34,7 +38,13 @@
     "namn1": "Förnamn",
     "namn2": "Efternamn",
     "balance": "Saldo",
-    "back-orders": "Tillbaka till beställning"
+    "back-orders": "Tillbaka till beställning",
+    "a-username": "Användarnamn:",
+	"a-newpassword": "Nytt lösenord",
+	"a-email": "E-mail:",
+	"a-phone": "Telefonnummer:",
+	"a-name1": "Förnamn:",
+	"a-name2": "Efternamn:"
     },
 "create-account-page": {
 	"title": "Skapa konto"

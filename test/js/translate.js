@@ -1,12 +1,12 @@
 $(document).ready(function() {
-
-
 var options ={ 
    lng: "en" ,  
    resGetPath: 'locales/en/translationEN.json'
 };
-
 i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+	
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -40,6 +40,14 @@ i18n.init(options, function(t) {
 		 				$("#balance").i18n();
 		 				$("#btnBackOrders").i18n();
 		 				
+		 				//Editaccount-page
+		 				$("#usernameLabel").i18n();
+						$("#newpasswordLabel").i18n();
+						$("#emailLabel").i18n();
+						$("#phoneLabel").i18n();
+						$("#name1Label").i18n();
+						$("#name2Label").i18n();
+		 				
 		 				//Manager-page
 		 				$("#btnStock").i18n();
 		 				$("#btnSales").i18n();
@@ -68,7 +76,6 @@ i18n.init(options, function(t) {
 		 				$("#contact").i18n();
 		 				$("#receipt").i18n();
 		 				$("#reportMenu").i18n();
-
 					
 		 				});
 		 				
@@ -79,6 +86,9 @@ i18n.init(options, function(t) {
 					resGetPath: 'locales/en/translationEN.json'
 					}
 					i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -110,6 +120,14 @@ i18n.init(options, function(t) {
 		 				$("#btnEditAccount").i18n();
 		 				$("#balance").i18n();
 		 				$("#btnBackOrders").i18n();
+		 				
+		 				//Editaccount-page
+		 				$("#usernameLabel").i18n();
+						$("#newpasswordLabel").i18n();
+						$("#emailLabel").i18n();
+						$("#phoneLabel").i18n();
+						$("#name1Label").i18n();
+						$("#name2Label").i18n();
 		 				
 		 				//Manager-page
 		 				$("#btnStock").i18n();
@@ -151,6 +169,9 @@ i18n.init(options, function(t) {
 					resGetPath: 'locales/se/translationSE.json'
 					}
 					i18n.init(options, function(t) {
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -183,6 +204,14 @@ i18n.init(options, function(t) {
 		 				$("#btnEditAccount").i18n();
 		 				$("#balance").i18n();
 						$("#btnBackOrders").i18n();
+						
+						//Editaccount-page
+		 				$("#usernameLabel").i18n();
+						$("#newpasswordLabel").i18n();
+						$("#emailLabel").i18n();
+						$("#phoneLabel").i18n();
+						$("#name1Label").i18n();
+						$("#name2Label").i18n();
 						
 						//Manager-page
 		 				$("#btnStock").i18n();
@@ -219,10 +248,14 @@ i18n.init(options, function(t) {
 					
 			$("#btnGER").click(function(){
 				var options ={ 
-					lng: "ger" ,  
+					lng: "ger" ,
 					resGetPath: 'locales/ger/translationGER.json'
 					}
 					i18n.init(options, function(t) {
+						
+						//allPages
+						$("#logOutBtn").i18n();
+						
 						//Order page
 		 				$("#title").i18n();
 		 				$("#btnSearch").i18n();
@@ -255,6 +288,14 @@ i18n.init(options, function(t) {
 		 				$("#btnEditAccount").i18n();
 		 				$("#balance").i18n();
 						$("#btnBackOrders").i18n();
+						
+						//Editaccount-page
+		 				$("#usernameLabel").i18n();
+						$("#newpasswordLabel").i18n();
+						$("#emailLabel").i18n();
+						$("#phoneLabel").i18n();
+						$("#name1Label").i18n();
+						$("#name2Label").i18n();
 						
 						//Manager-page
 		 				$("#btnStock").i18n();
