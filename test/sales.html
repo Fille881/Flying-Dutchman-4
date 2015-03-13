@@ -57,11 +57,16 @@
 		<img href="#" id="btnEN" class="btnEN" src="images/english2.png">
 		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
 		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
-				<form>
-		Change Theme
-		<input type="submit" class="themeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" id="standard">
-		<input type="submit" class="themeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" id="alternate">
+<div id="changeThemeTitle">
+		Change Theme:
+		</div>
+		<div id="changeTheme">
+		<form>
+			<input type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" id="standard">
+			<input type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" id="alternate">
 		</form>
+		</div>
+		
 	</div>
 	
 	<!-- title -->

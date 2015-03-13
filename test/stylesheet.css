@@ -129,7 +129,46 @@ background: #000;
 display: none;
 }
 
+#changeThemeTitle{
+	width: 100%;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+}
 
+#changeTheme{
+	width: 100%;
+
+}
+
+#standardThemeBtn{
+	display: inline-block;
+	/*padding: 0.4em 1.2em;
+	background: #08c;*/
+	background: #fffacd;
+	/*color: #fff;*/
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	border-radius: 4px;
+
+}
+
+#alternateThemeBtn{
+	display: inline-block;
+	/*padding: 0.4em 1.2em;
+	background: #08c;*/
+	background: rgba(255,140,0,1);
+	/*color: #fff;*/
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	border-radius: 4px;
+
+}
 
 #login{
 width:350px;
