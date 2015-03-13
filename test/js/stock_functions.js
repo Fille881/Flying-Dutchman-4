@@ -163,60 +163,46 @@ $(document).ready(function() {
 	
 	jQuery.get(url2, inventory_append = function(data){
 		$('.stockBtnRightDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place Order</button>');
-			$('.stockBtnRightDiv').on("click", "#placeOrderBtn", place_order = function() {
-				
-				beerIdArray = [];
-				beerAmountArray = [];
-				beerPriceArray = [];
-				
-				//alert("Work in progress")
-				
-				
-				for (i=0; i<300; i++){
-					if ($('#tableDataBeerID'+i).text() != "" && $('#tableDataBeerID'+i).text() != null){
-						beerIdArray.push($('#tableDataBeerID'+i).text());
-						beerAmountArray.push($('#tableDataAmount'+i).text());
-						beerPriceArray.push($('#tableDataPrice'+i).text());
+		$('.stockBtnRightDiv').on("click", "#placeOrderBtn", place_order = function() {
+			
+			beerIdArray = [];
+			beerAmountArray = [];
+			beerPriceArray = [];
+			
+			//alert("Work in progress")
+			
+			
+			for (i=0; i<300; i++){
+				if ($('#tableDataBeerID'+i).text() != "" && $('#tableDataBeerID'+i).text() != null){
+					beerIdArray.push($('#tableDataBeerID'+i).text());
+					beerAmountArray.push($('#tableDataAmount'+i).text());
+					beerPriceArray.push($('#tableDataPrice'+i).text());
 
-						
-						$.ajax({
-							type: "get",
-							url: url2,
-							data: 
-							{
-								beer_id: parseInt(beerIdArray[i]),
-								username: "ervtod",
-								password: "ervtod",
-								amount: parseInt(beerAmountArray[i]),
-								price: parseInt(beerPriceArray[i]),
-								action: "inventory_append"
-							},
-							success: function(r)
-							{
-								alert("Order made")
-							},
-							error: function(r)
-							{
-								response(403, "{type: 'forbidden'}")
-							}
-						});
-					}
-				}
-
-				
-				
-				
-				
-					/*
 					
-					for (j=0; j=10; j++){
-						if (beerIdArray[i] == $('#orderInput'+j).val()+$('beerNameDiv'+j).text()){
-							console.log("ok")
+					$.ajax({
+						type: "get",
+						url: url2,
+						data: 
+						{
+							beer_id: $('#tableDataBeerID'+i).text(),
+							username: "ervtod",
+							password: "ervtod",
+							amount: $('#tableDataAmount'+i).text(),
+							price: $('#tableDataPrice'+i).text(),
+							action: "inventory_append"
+						},
+						success: function(r)
+						{
+							console.log("Order placed");
+						},
+						error: function(r)
+						{
+							response(403, "{type: 'forbidden'}");
 						}
-					}
-				*/
-
-			});
+					});
+				}
+			}
+		});
 	});
 })
 

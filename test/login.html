@@ -13,8 +13,8 @@
 	
 		$(document).ready(function() {
 
-var username;
-var password;
+			var username;
+			var password;
 	
 			$("#btnLoginCustomer").click(function(){
 				window.location.href = "orders.html";
@@ -30,7 +30,7 @@ var password;
 				})
 				
 			$("#btnLogin").click(function()
-		{
+			{
 			
 			username = $("#username").val();
 			password = $("#password").val();
@@ -44,7 +44,6 @@ var password;
 				alert("Please fill in password");
 			}
 			else {
-				
 				var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username="+username+"&password="+password+"&action=iou_get";
               
                 //start ajax request. All data from the url above is being put in data
@@ -53,22 +52,19 @@ var password;
 	                var balance =  data.payload[0].assets;
 	                localStorage.setItem("balance", balance);
 	            	localStorage.setItem("username", username);
-					window.location.href = "orders.html";
-	                
-});
-	                
-				  		
+					window.location.href = "orders.html";  
+				});  		
 			}
 			
 		
 		
 
-});
+			});
         
 	
 		})
 	
-	</script>
+</script>
 
 </header>
 	
