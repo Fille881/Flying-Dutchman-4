@@ -4,6 +4,7 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<link rel="stylesheet" href="style.css">
+		<link rel="alternate stylesheet" type="text/css" href="stylesheet2.css" title="alternate">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -14,6 +15,7 @@
 		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
 		<script type="text/javascript" src="js/drop.js"></script>  
 		<script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/change_theme.js"></script>
 	
 	
 		
@@ -90,6 +92,11 @@
 		<img href="#" id="btnEN" class="btnEN" src="images/english2.png">
 		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
 		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
+				<form>
+		Change Theme
+		<input type="submit" class="themeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" id="standard">
+		<input type="submit" class="themeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" id="alternate">
+		</form>
 	</div>
 
 	

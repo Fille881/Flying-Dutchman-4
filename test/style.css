@@ -1,12 +1,14 @@
 /* Main Navigation */
 #nav {
 	position:relative;
+	float: left;
 	width:530px;
 	height:50px;
 	left:35px;
-	margin:0 auto; 
-	margin-top:15px;
-	padding-top: 90px;
+	margin:0 auto;
+	margin-left: 250px;
+	margin-top:5px;
+	padding-top: 0px;
 }
 
 ul#navigation {
