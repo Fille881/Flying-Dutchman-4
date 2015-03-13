@@ -45,7 +45,8 @@
 	"title": "Create account"
 	},
 "edit-account-page": {
-	"title": "Edit account"
+	"title": "Edit account",
+	"username": "Hallooo"
 	},
 "manager-page": {
 	"title": "Manager page",
