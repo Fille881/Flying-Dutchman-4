@@ -39,6 +39,10 @@ i18n.init(options, function(t) {
 		 				$("#btnEditAccount").i18n();
 		 				$("#balance").i18n();
 		 				$("#btnBackOrders").i18n();
+		 			
+		 				//Edit account-page
+		 				$("#usernameLabel").i18n();
+		 				
 		 				
 		 				//Editaccount-page
 		 				$("#usernameLabel").i18n();
