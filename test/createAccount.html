@@ -98,24 +98,24 @@
 			<div id="createAccountForm">
 			<form id="createAccount_undoable">
 				
-				Username: 
-				<input type="text" id="username">
-				<br>
-				New Password:
-				<input type="text" id="password">
-				<br>
-				E-mail: 
-				<input type="text" id="email">
-				<br>
-				Phone:
-				<input type="text" id="phone">
-				<br>
-				First name: 
-				<input type="text" id="firstname">
-				<br>
-				Last name:
-				<input type="password" id="lastname">
-				<br>
+				<label id="usernameLabel" data-i18n="account-page.a-username"></label>
+				<input type="text" id="a-username">
+				
+				<label id="newpasswordLabel" data-i18n="account-page.a-newpassword"></label>
+				<input type="text" id="a-newpassword" >
+				
+				<label id="emailLabel" data-i18n="account-page.a-email"></label>
+				<input type="text" id="a-email" >
+				
+				<label id="phoneLabel" data-i18n="account-page.a-phone"></label>
+				<input type="text" id="a-phone" >
+		
+				<label id="name1Label" data-i18n="account-page.a-name1"></label>
+				<input type="text" id="a-name1" >
+				
+				<label id="name2Label" data-i18n="account-page.a-name2"></label>
+				<input type="password" id="a-name2" >
+				
 				
 				<input type="button" onFocus="this.blur()" onClick="formState.undo(this)" name="Undo" value="Undo">
 				
