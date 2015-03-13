@@ -46,7 +46,9 @@
 	"a-email": "E-mail:",
 	"a-phone": "Telefonnummer:",
 	"a-name1": "Förnamn:",
-	"a-name2": "Efternamn:"
+	"a-name2": "Efternamn:",
+	"undo": "Ångra",
+	"redo": "Gör om"
     },
 "create-account-page": {
 	"title": "Skapa konto"

@@ -46,7 +46,9 @@
 	"a-email": "E-mail:",
 	"a-phone": "Phone:",
 	"a-name1": "First name:",
-	"a-name2": "Last name:"
+	"a-name2": "Last name:",
+	"undo": "Undo",
+	"redo": "Redo"
     },
 "create-account-page": {
 	"title": "Create account"

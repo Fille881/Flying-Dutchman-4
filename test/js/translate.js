@@ -46,7 +46,11 @@ i18n.init(options, function(t) {
 						$("#emailLabel").i18n();
 						$("#phoneLabel").i18n();
 						$("#name1Label").i18n();
-						$("#name2Label").i18n();
+						$("#name2Label").i18n(); 
+						$("#undo").i18n();
+						$("#redo").i18n();
+						
+						
 		 				
 		 				//Manager-page
 		 				$("#btnStock").i18n();
@@ -128,6 +132,8 @@ i18n.init(options, function(t) {
 						$("#phoneLabel").i18n();
 						$("#name1Label").i18n();
 						$("#name2Label").i18n();
+						$("#undo").i18n();
+						$("#redo").i18n();
 		 				
 		 				//Manager-page
 		 				$("#btnStock").i18n();
@@ -212,6 +218,8 @@ i18n.init(options, function(t) {
 						$("#phoneLabel").i18n();
 						$("#name1Label").i18n();
 						$("#name2Label").i18n();
+						$("#undo").i18n();
+						$("#redo").i18n();
 						
 						//Manager-page
 		 				$("#btnStock").i18n();
@@ -296,6 +304,8 @@ i18n.init(options, function(t) {
 						$("#phoneLabel").i18n();
 						$("#name1Label").i18n();
 						$("#name2Label").i18n();
+						$("#undo").i18n();
+						$("#redo").i18n();
 						
 						//Manager-page
 		 				$("#btnStock").i18n();
