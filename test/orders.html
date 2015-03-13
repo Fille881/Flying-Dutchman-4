@@ -143,18 +143,18 @@
 				<a href="#" id="btnSignIn" class="btn" style="float:right" data-i18n="order-page.sign-in"></a>
 				
 			</div>
-			<br><br><br><br>
+			
 			<div class="c" id="container">
 				<div class="b"id="beers"></div>
-					<table>
-						<tr>
-							<th align="center" width="700"><b id="item-name" data-i18n="order-page.item-name"></th>
-							<th align="right" width="380"><b id="unit-price" data-i18n="order-page.unit-price"></th>
-							<th align="right"width="250"><b id="quantity" data-i18n="order-page.quantity"></th>
-							<th align="center"width="180"><b id="order-price" data-i18n="order-page.order-price"> </th>
-						</tr>
-					</table>
 					
+			<div id= "receipt">
+					<div id="receiptTitleContainer">
+						<div id="receiptBeerNameTitle" data-i18n="order-page.item-name"></div>
+						<div id="receiptBeerPriceTitle" data-i18n="order-page.unit-price"></div>
+						<div id="receiptBeerAmountTitle" data-i18n="order-page.quantity"></div>
+						<div id="receiptBeerPriceTotalTitle" data-i18n="order-page.order-price"></div>
+					</div>
+				
 				<div id="overview">
 					<ul id="orderListName" class="list-unstyled"></ul>
 				</div>
@@ -167,7 +167,9 @@
 				<div id ="amountPrice">
 					<ul id="totalPerBeer" class="list-unstyled"></ul>
 				</div>
+				<br>
 				<div id="total"></div>
+			</div id= "receipt">
 			</div>
 			</div>
 		</div>

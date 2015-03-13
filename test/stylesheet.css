@@ -103,7 +103,6 @@ ul li {
 	width: 960px;
 	margin-left:auto;
 	margin-right:auto;
-	padding: 20px;
 	background-color: rgba(255,255,255,0.8);
   }
 
@@ -149,7 +148,6 @@ margin-left:-210px;
 margin-top:-158px;
 }
 
- 
 
 #container{
 	width: 100%;
@@ -165,20 +163,63 @@ margin-top:-158px;
     height: auto; 
     border: 1px solid black; 
 	background-color: #ffffff;
-
+	
 }
 
+#receipt{
+	position: fixed;
+	top:43%; 
+	right:4%;
+	width: 39%;
+	float:left;
+	overflow: scroll;
+		
+} 
+#receiptTitleContainer{
+	width: 100%;
+	float:left;
+	
+}
+#receiptBeerNameTitle{
+	position: relative;
+	float:left;
+	width: 40%;
+}
+
+#receiptBeerPriceTitle{
+	position: relative;
+	float:left;
+	width: 18%;
+}
+#receiptBeerAmountTitle{
+	position: relative;
+	float:left;
+	width: 10%;
+}
+#receiptBeerPriceTotalTitle{
+	position: relative;
+	float:left;
+	width: 15%;
+}
 #overview{
 	position:relative;
 	float: left;
-    width: 20%;
+    width: 40%;
 	height: 500px;
     text-align: left;
-	border: 1px solid black;
-	border:dotted;
-     
+	border: 1px solid black;    
 }
 #price{
+	position:relative;
+	float: left;
+    width: 18%;
+	height: 100%;
+    text-align: left;
+	background-color: #ffffff;
+   border: 1px solid black; 
+    }
+		
+#amount{
 	position:relative;
 	float: left;
     width: 10%;
@@ -187,21 +228,10 @@ margin-top:-158px;
 	background-color: #ffffff;
    border: 1px solid black; 
     }
-	
-	
-#amount{
-	position:relative;
-	float: left;
-    width: 5%;
-	height: 100%;
-    text-align: left;
-	background-color: #ffffff;
-   border: 1px solid black; 
-    }
 #amountPrice{
 	position:relative;
 	float: left;
-    width: 2%;
+    width: 14%;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
