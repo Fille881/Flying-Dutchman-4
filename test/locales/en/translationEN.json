@@ -1,8 +1,9 @@
 {
 "allPages": {
-
-"logout": "Log out",
-"Theme": "Change theme"
+	"logout": "Log out",
+	"theme": "Change theme",
+	"standard-theme": "Standard",
+	"alternate-theme": "Orange"
 },
 
 "order-page":  {
@@ -68,7 +69,11 @@
 	"title": "Stock",
 	"back-manager": "Back to manager page",
 	"brand": "Brand",
-	"count": "Count"
+	"count": "Count",
+	"clear-values": "Clear values",
+	"place-order": "Order",
+	"add": "Add",
+	"clear": "Clear"
 	},
 "sales-page": {
 	"title": "Sales",

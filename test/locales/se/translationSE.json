@@ -1,9 +1,9 @@
 {
 "allPages": {
-
 	"logout": "Logga ut",
-	"Theme": "Ändra tema"
-
+	"theme": "Ändra tema",
+	"standard-theme": "Standard",
+	"alternate-theme": "Orange"
 },
 "order-page": {
 	"title": "Beställningssida", 
@@ -67,7 +67,11 @@
 	"title": "Lager",
 	"back-manager": "Tillbaka till manager sida",
 	"brand": "Sort",
-	"count": "Antal"
+	"count": "Antal",
+	"clear-values": "Rensa fält",
+	"place-order": "Beställ",
+	"add": "Lägg till",
+	"clear": "Töm"
 	} ,
 "sales-page": {
 	"title": "Försäljning",

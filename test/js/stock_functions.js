@@ -31,16 +31,16 @@ $(document).ready(function() {
 		var imagesize = 30;
 		
 		//Button for ordering
-		$('.stockBtnRightDiv').append('<button type="button" class="btn" id="orderBtn">Add</button>');
+		$('.stockBtnRightDiv').append('<button type="button" class="btn" id="orderBtn" data-i18n="stock-page.add">Add</button>');
 		
 		//Button that clear all values from textareas
-		$('.stockBtnRightDiv').append(' <button class="btn" type="button" id="clearBtn">Clear</button>');
+		$('.stockBtnRightDiv').append(' <button class="btn" type="button" id="clearBtn" data-i18n="stock-page.clear">Clear</button>');
 		$('.stockBtnRightDiv').on("click", "#clearBtn", function() {
 				$('.receiptTable').empty();
 		});
 		
 		//Button that clears all the textareas
-		$('.stockBtnLeftDiv').append('<button class="btn" type="button" id="clearValuesBtn">Clear Values</button>');
+		$('.stockBtnLeftDiv').append('<button class="btn" type="button" id="clearValuesBtn" data-i18n="stock-page.clear-values">Clear Values</button>');
 		$('.stockBtnLeftDiv').on("click", "#clearValuesBtn", function() {
 			for(i = 0; i < beerBrands.length; i++) {
 				$("#textArea"+i).val("")	
@@ -72,25 +72,12 @@ $(document).ready(function() {
 						'</td><td id="tableDataBrand'+i+'">'+beerBrands[i]+'</td><td id="tableDataBeerID'+i+'">'+beerIds[i]+
 						'</td><td id="tableDataPrice'+i+'">'+beerPrices[i]+'</td></tr>');
 					}
-					
-					
-					/*
-					//create table with the receipt data
-					
-						$('#orderName'+i).text(beerAmount[i] +" "+beerBrands[i] + " " + beerIds[i]);
-					}*/
-					//console.log($('#tableData'+i+':1').text());
+
 				}
 				
 				
 		});
-		
-		/*<tr>
-			<td></>
-			<td></>
-			<td></>
-		</tr>
-		*/
+
 		for(i = 0; i < beerBrands.length; i++) {
 			
 			var beerCount = data.payload[i].count;
@@ -108,9 +95,9 @@ $(document).ready(function() {
 				$('.table').append('<div class = "countDiv" id = "countDiv'+ i +'" />');
 				
 				//If stock of the beer is running low write the count, if it's completely out of stock write "out of stock"
-				if (beerCount > 0) {		//beerCount < beerLowStock && 
+				if (beerCount > 0) {
 					$("#countDiv"+ i).append(beerCount);
-				} else {$('#countDiv'+i).append("Out of stock ("+ beerCount + ")")	//'<img id="outOfStockImg" src="images/outofstock.jpg" height="'+imagesize+'" width="'+imagesize+'"/>')
+				} else {$('#countDiv'+i).append("Out ("+ beerCount + ")")
 				}
 			}
 			//else {
@@ -160,7 +147,7 @@ $(document).ready(function() {
 	
 	
 	jQuery.get(url2, inventory_append = function(data){
-		$('.stockBtnRightDiv').append('<button class="btn" type="button" id="placeOrderBtn">Place Order</button>');
+		$('.stockBtnRightDiv').append('<button class="btn" type="button" id="placeOrderBtn" data-i18n="stock-page.place-order">Order</button>');
 		$('.stockBtnRightDiv').on("click", "#placeOrderBtn", place_order = function() {
 			
 			beerIdArray = [];
@@ -191,7 +178,7 @@ $(document).ready(function() {
 						},
 						success: function(r)
 						{
-							console.log("Order placed");
+							console.log(location.reload());
 						},
 						error: function(r)
 						{
@@ -207,58 +194,7 @@ $(document).ready(function() {
 var style_cookie_name = "style" ;
 var style_cookie_duration = 30 ;
 
-function switch_style ( css_title )
-{
-// You may use this script on your site free of charge provided
-// you do not remove this notice or the URL below. Script from
-// http://www.thesitewizard.com/javascripts/change-style-sheets.shtml
-  var i, link_tag ;
-  for (i = 0, link_tag = document.getElementsByTagName("link") ;
-    i < link_tag.length ; i++ ) {
-    if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&
-      link_tag[i].title) {
-      link_tag[i].disabled = true ;
-      if (link_tag[i].title == css_title) {
-        link_tag[i].disabled = false ;
-      }
-    }
-    set_cookie( style_cookie_name, css_title,
-      style_cookie_duration );
-  }
-}
 
-function set_style_from_cookie()
-{
-  var css_title = get_cookie( style_cookie_name );
-  if (css_title.length) {
-    switch_style( css_title );
-  }
-}
-function set_cookie ( cookie_name, cookie_value,
-    lifespan_in_days, valid_domain )
-{
-    // http://www.thesitewizard.com/javascripts/cookies.shtml
-    var domain_string = valid_domain ?
-                       ("; domain=" + valid_domain) : '' ;
-    document.cookie = cookie_name +
-                       "=" + encodeURIComponent( cookie_value ) +
-                       "; max-age=" + 60 * 60 *
-                       24 * lifespan_in_days +
-                       "; path=/" + domain_string ;
-}
-function get_cookie ( cookie_name )
-{
-    // http://www.thesitewizard.com/javascripts/cookies.shtml
-    var cookie_string = document.cookie ;
-    if (cookie_string.length != 0) {
-        var cookie_value = cookie_string.match (
-                        '(^|;)[\s]*' +
-                        cookie_name +
-                        '=([^;]*)' );
-        return decodeURIComponent ( cookie_value[2] ) ;
-    }
-    return '' ;
-}
 
 
 

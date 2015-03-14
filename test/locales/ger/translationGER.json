@@ -1,7 +1,9 @@
 {
 "allPages": {
 	"logout": "Ausloggen",
-	"Theme": "Ändern thema"
+	"theme": "Ändern thema",
+	"standard-theme": "Standard",
+	"alternate-theme": "Orange"
 },
 
 "order-page":  {
@@ -18,6 +20,7 @@
 	"username": "Nutzername:",
 	"password": "Passwort:"
     },
+	
 "history-page":  {
 	"title": "Bestellhistorie",
 	"back-orders": "Zurück zu Bestellungen",
@@ -66,7 +69,11 @@
 	"title": "Vorrat",
 	"back-manager": "Zurück zur Manager Seite",
 	"brand": "Marke",
-	"count": "Anzahl"
+	"count": "Anzahl",
+	"clear-values": "Clear values",
+	"place-order": "Order",
+	"add": "Add",
+	"clear": "Clear"
 	},
 "sales-page": {
 	"title": "Verkäufe",

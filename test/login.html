@@ -80,14 +80,13 @@
 		<img href="#" id="btnEN" class="btnEN" src="images/english2.png">
 		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
 		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
-<div id="changeThemeTitle">
-		Change Theme:
-		</div>
+		<div id="changeThemeTitle" data-i18n="allPages.theme"></div>
+		
 		<div id="changeTheme">
-		<form>
-			<input type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" id="standard">
-			<input type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" id="alternate">
-		</form>
+		
+			<button type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" data-i18n="allPages.standard-theme"></button>
+			<button type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" data-i18n="allPages.alternate-theme"></button>
+		
 		</div>
 		
 	</div>
@@ -96,7 +95,9 @@
 	<div id="pagetitle">
 
 		<h1 id="title" data-i18n="login-page.login">"></h1>
-
+		<div id="logOut">
+		<button id="logOutBtn" class="btn" data-i18n="allPages.logout"></button>
+		</div>
 	</div>
 	
 	<!-- logo -->

@@ -78,7 +78,7 @@ ul li {
 	float: left;
 	margin-top: 50px;
 	margin-left:0px;
-	width: 100%;
+	width: 960px;
 	height: 35px;
 	text-align: center;	
 	/*padding-left: 400px;*/
@@ -470,12 +470,14 @@ table, th, td {
 	border-radius: 4px;
 }
 
-
-#logOutBtn {
-	margin-left: 900px;
-
+#logOut {
+	position: absolute;
+	margin-bottom: 80px;
+	margin-left: 850px;
 
 }
+
+
      
 /*.button {
   margin: 0 0 0 5px;
