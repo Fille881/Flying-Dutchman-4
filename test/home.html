@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 	<header>
-	 <meta charset="utf-8"/>
+	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="animation.css">
 		<link rel="alternate stylesheet" type="text/css" href="stylesheet2.css" title="alternate">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	   <script type="text/javascript" src="js/search_functions.js"></script>  
+		<script type="text/javascript" src="js/order_functions.js"></script>
+		<script type="text/javascript" src="js/sign_in.js"></script> 
 		<script type="text/javascript" src="js/translate.js"></script> 
-		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script> 
+		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>  
+		<script type="text/javascript" src="js/drop.js"></script>  
 		<script type="text/javascript" src="js/logout.js"></script>
 		<script type="text/javascript" src="js/change_theme.js"></script>
-		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
+	
+	
 		
-	<script type="text/javascript">
-
-        $(document).ready(function() {
-            var url= "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=iou_get_all";
-            jQuery.get(url, function(data) {
-                var table = '';
-                for (var i = 0; i < data.payload.length; i++) {
-                    table += '<tr>';
-                    table += '<th>'+ data.payload[i].username+'</th>';
-                    table += '<th>'+ data.payload[i].first_name+'</th>';
-                    table += '<th>'+ data.payload[i].last_name+'</th>';
-                    table += '<th>'+ data.payload[i].assets+'</th>';
-                    table += '</tr>';
-                }
-                $(".accountTable").append(table);
-
-            });
-
-            $("#btnBack").click(function(){
-				 window.location.href = "orders.html";
-			})
-
-            $("#btnCreateAccount").click(function(){
-                window.location.href = "createAccount.html";
-            })
-
-            $("#btnEditAccount").click(function(){
-                window.location.href = "editAccount.html";
-            })
-			
+		<script type="text/javascript">
+		
+		$(document).ready(function() {
+			username = localStorage.getItem("username");
+			balance = localStorage.getItem("balance");
+			if (localStorage.getItem("username") === null) {
+				$("#btnSignIn").css('visibility', 'visible');
+			} else {	
+				$("#btnSignIn").css('visibility', 'hidden');
+				$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + balance);
+			}
+			$("#overview").droppable ({
+				accept: ".imageDiv",
+				drop: function( event, ui ){
+					dropObject(event,ui);
+				}
+			});
 			$("#orderMenu").click(function(){
 				window.location.href = "orders.html";
 			})
-			
 			$("#stockMenu").click(function(){
 				window.location.href = "stock.html";
 			})
-				
 			$("#historyMenu").click(function(){
 				window.location.href = "history.html";
 			})
-				
 			$("#reportMenu").click(function(){
 				window.location.href = "report.html";
 			})
-				
 			$("#newUserMenu").click(function(){
 				window.location.href = "createAccount.html";
 			})
-				
 			$("#loginMenu").click(function(){
 				window.location.href = "home.html";
 			})
+			$("#homeB").click(function(){
+				window.location.href = "orders.html";
+			})
 		})
-		
-	
-	</script>
-</header>
-
-
+</script>	
+</header>	
 <body>
-
-
-
-
-
 <div id="mainWrapper">
 
 	<!-- language  -->
@@ -87,23 +69,21 @@
 		<img href="#" id="btnEN" class="btnEN" src="images/english2.png">
 		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
 		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
-		<div id="changeThemeTitle" data-i18n="allPages.theme"></div>
-		
-		<div id="changeTheme">
-		
-			<button type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" data-i18n="allPages.standard-theme"></button>
-			<button type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" data-i18n="allPages.alternate-theme"></button>
-		
+		<div id="changeThemeTitle">
+			Change Theme:
 		</div>
-		
+		<div id="changeTheme">
+			<form>
+				<input type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" id="standard">
+				<input type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" id="alternate">
+			</form>
+		</div>
 	</div>
+	
 	<!-- title -->
 	<div id="pagetitle">
-
-		<h1 id="title" data-i18n="account-page.title">"></h1>
-		<div id="logOut">
+		<!--<h1 id="title" data-i18n="order-page.title"></h1>-->
 		<button id="logOutBtn" class="btn" data-i18n="allPages.logout"></button>
-		</div>
 	</div>
 	
 	<!-- logo -->
@@ -138,41 +118,16 @@
 	
 	<!-- content -->
 	<div id="contentWrapper">
-
-		<div class="buttonsDiv">
-			<p><a href="#" id="btnCreateAccount" class="btn" data-i18n="account-page.create-account"></a></p>
-			<p><a href="#" id="btnDeleteAccount" class="btn" data-i18n="account-page.delete-account"></a></p>
-			<p><a href="#" id="btnEditAccount" class="btn" data-i18n="account-page.edit-account"></a></p>
-		</div>
-		<br>
-		<br>
-		<div class="table">
-			<table class="accountTable" border="1">
-				<tr>
-					<th id=timestamp data-i18n="account-page.timestamp"></th>
-					<th id=namn1 data-i18n="account-page.namn1"></th>
-					<th id=namn2 data-i18n="account-page.namn2"></th>
-					<th id=balance data-i18n="account-page.balance"></th>
-				</tr>
-			</table>
-
-		</div>
-
-		<br>
-		<br>
-
-		<div class="buttonsDiv">
-			<p><a href="#" id="btnBackOrders" class="btn" data-i18n="account-page.back-orders"></a></p>
-			
+		<div class="centerDiv">
+			<div id="scene">
+				<img class="beer sml" src="images/b1.png" width="50" height="120"/>
+				<img class="beer med" src="images/b2.png" width="50" height="120"/>
+				<img class="beer lrg" src="images/b3.png" width="50" height="120"/>
+			</div>
+			<div class="hb">
+				<a href="#" id="homeB" class="homeButton" data-i18n="homeB-page.btn-name">Click Here for Order</a>
+			</div>
 		</div>
 	</div>
-	
-
-</div>
-
-
-
-
-
 </body>
 </html>

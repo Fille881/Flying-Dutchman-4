@@ -21,68 +21,43 @@
 		
 		<script type="text/javascript">
 		
-		 
-		
 		$(document).ready(function() {
-		
-		
-		username = localStorage.getItem("username");
-		balance = localStorage.getItem("balance");
-
-		
-		if (localStorage.getItem("username") === null) {
-  
-		$("#btnSignIn").css('visibility', 'visible');
-		} else {	
-		$("#btnSignIn").css('visibility', 'hidden');
-		$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + balance);
-		}
-
-
-		$("#overview").droppable ({
-			accept: ".imageDiv",
-			drop: function( event, ui ){
-			
-			dropObject(event,ui);
-			
-						}
-						});
-    
-	
-				$("#orderMenu").click(function(){
-					window.location.href = "orders.html";
-				})
-				$("#stockMenu").click(function(){
-					window.location.href = "stock.html";
-				})
-				$("#historyMenu").click(function(){
-					window.location.href = "history.html";
-				})
-				$("#reportMenu").click(function(){
-					window.location.href = "report.html";
-				})
-				$("#newUserMenu").click(function(){
-					window.location.href = "createAccount.html";
-				})
-				$("#loginMenu").click(function(){
-					window.location.href = "login.html";
-				})
-})
-
-
-
-
-
-
-
-</script>
-		
-		
-	
-</header>
-	
+			username = localStorage.getItem("username");
+			balance = localStorage.getItem("balance");
+			if (localStorage.getItem("username") === null) {
+				$("#btnSignIn").css('visibility', 'visible');
+			} else {	
+				$("#btnSignIn").css('visibility', 'hidden');
+				$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + balance);
+			}
+			$("#overview").droppable ({
+				accept: ".imageDiv",
+				drop: function( event, ui ){
+					dropObject(event,ui);
+				}
+			});
+			$("#orderMenu").click(function(){
+				window.location.href = "orders.html";
+			})
+			$("#stockMenu").click(function(){
+				window.location.href = "stock.html";
+			})
+			$("#historyMenu").click(function(){
+				window.location.href = "history.html";
+			})
+			$("#reportMenu").click(function(){
+				window.location.href = "report.html";
+			})
+			$("#newUserMenu").click(function(){
+				window.location.href = "createAccount.html";
+			})
+			$("#loginMenu").click(function(){
+				window.location.href = "home.html";
+			})
+		})
+</script>	
+</header>	
 <body>
-
 <div id="mainWrapper">
 
 	<!-- language  -->
@@ -91,16 +66,11 @@
 		<img href="#" id="btnSE" class="btnSE" src="images/svenska2.png">
 		<img href="#" id="btnGER" class="btnGER" src="images/german2.png">
 		<div id="changeThemeTitle" data-i18n="allPages.theme"></div>
-		
 		<div id="changeTheme">
-		
 			<button type="submit" id="standardThemeBtn" onclick="switch_style('standard');return false;" name="theme" value="Standard" data-i18n="allPages.standard-theme"></button>
 			<button type="submit" id="alternateThemeBtn" onclick="switch_style('alternate');return false;" name="theme" value="Alternate" data-i18n="allPages.alternate-theme"></button>
-		
 		</div>
-		
 	</div>
-
 	
 	<!-- title -->
 	<div id="pagetitle">
@@ -147,66 +117,53 @@
 				<p id="welcomeback"></p>
 				<input id="search_txt" align="left" type="text" size="25" placeholder="search here"/>			    
 				<a href="#" id="btnSignIn" class="btn" style="float:right" data-i18n="order-page.sign-in"></a>
-				
 			</div>
-			
 			<div class="c" id="container">
-				<div class="b"id="beers"></div>
-					
-			<div id= "receipt">
+				<div class="b"id="beers"></div>	
+				<div id= "receipt">
 					<div id="receiptTitleContainer">
 						<div id="receiptBeerNameTitle" data-i18n="order-page.item-name"></div>
 						<div id="receiptBeerPriceTitle" data-i18n="order-page.unit-price"></div>
 						<div id="receiptBeerAmountTitle" data-i18n="order-page.quantity"></div>
 						<div id="receiptBeerPriceTotalTitle" data-i18n="order-page.order-price"></div>
 					</div>
-				
-				<div id="overview">
-					<ul id="orderListName" class="list-unstyled"></ul>
-				</div>
-				<div id ="price">
-					<ul id="orderListPrice" class="list-unstyled"></ul>
-				</div>
-				<div id ="amount">
-					<ul id="orderAmount" class="list-unstyled"></ul>
-				</div>
-				<div id ="amountPrice">
-					<ul id="totalPerBeer" class="list-unstyled"></ul>
-				</div>
-				<br>
-				<div id="total"></div>
-			</div id= "receipt">
-			</div>
+					<div id="overview">
+						<ul id="orderListName" class="list-unstyled"></ul>
+					</div>
+					<div id ="price">
+						<ul id="orderListPrice" class="list-unstyled"></ul>
+					</div>
+					<div id ="amount">
+						<ul id="orderAmount" class="list-unstyled"></ul>
+					</div>
+					<div id ="amountPrice">
+						<ul id="totalPerBeer" class="list-unstyled"></ul>
+					</div>
+					<br>
+					<div id="total"></div>
+				</div><!--id= "receipt"-->
 			</div>
 		</div>
-		
-	
-		<br>
-		<div class="centerDiv" id="logindiv" style="display:none">
-			<form class="form" action="#" id="login">
-				<h2 data-i18n="order-page.login"></h2>
-				<label data-i18n="order-page.username"></label>
-				<input id="uname" type="text" size="25">
-				<br><br>
-				<label data-i18n="order-page.password"></label>
-				<input id="pwd" type="password" size="25">
-				<br><br>
-				<a href="#" id="btnLogin" class="btn" data-i18n="order-page.login"></a>
-				<a href="#" id="btnCancel" class="btn" data-i18n="order-page.cancel"></a>
-			</form>
-		</div>
-	
-		<div class="buttonsDiv" id="buttonsDiv">
-			<a href="#" id="btnOrder" class="btn" data-i18n="order-page.order"></a>
-		</div>
-			
 	</div>
-	
+	<br>
+	<!--<div class="centerDiv" id="logindiv" style="display:none">
+		<form class="form" action="#" id="login">
+			<h2 data-i18n="order-page.login"></h2>
+			<label data-i18n="order-page.username"></label>
+			<input id="uname" type="text" size="25">
+			<br><br>
+			<label data-i18n="order-page.password"></label>
+			<input id="pwd" type="password" size="25">
+			<br><br>
+			<a href="#" id="btnLogin" class="btn" data-i18n="order-page.login"></a>
+			<a href="#" id="btnCancel" class="btn" data-i18n="order-page.cancel"></a>
+		</form>
+	</div>-->
 
-</div>
-
-
-
-	
+	<div class="buttonsDiv" id="buttonsDiv">
+		<a href="#" id="btnOrder" class="btn" data-i18n="order-page.order"></a>
+	</div>
+<!--</div>
+</div>-->
 </body>
 </html>
