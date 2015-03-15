@@ -196,7 +196,7 @@ margin-top:-158px;
 	overflow: hidden;
 }
 #beers{
-    width: 60%;
+    width: 50%;
     float:left;
     font-size: 12px;
     height: auto; 
@@ -207,8 +207,8 @@ margin-top:-158px;
 
 #receipt{
 	position: fixed;
-	top:43%; 
-	right:4%;
+	top:47%; 
+	right:12%;
 	width: 39%;
 	float:left;
 	overflow: scroll;
@@ -228,7 +228,7 @@ margin-top:-158px;
 #receiptBeerPriceTitle{
 	position: relative;
 	float:left;
-	width: 18%;
+	width: 15%;
 }
 #receiptBeerAmountTitle{
 	position: relative;
@@ -236,7 +236,7 @@ margin-top:-158px;
 	width: 10%;
 }
 #receiptBeerPriceTotalTitle{
-	position: relative;
+	position: bottom;
 	float:left;
 	width: 15%;
 }
@@ -244,14 +244,14 @@ margin-top:-158px;
 	position:relative;
 	float: left;
     width: 40%;
-	height: 500px;
+	height: 300px;
     text-align: left;
 	border: 1px solid black;    
 }
 #price{
 	position:relative;
 	float: left;
-    width: 18%;
+    width: 15%;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
@@ -270,7 +270,7 @@ margin-top:-158px;
 #amountPrice{
 	position:relative;
 	float: left;
-    width: 14%;
+    width: 15%;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
@@ -289,11 +289,15 @@ margin-top:-158px;
     border: 1px solid black; 
 }
     
-	#b_title  {
+	
+	
+	
+
+#b_title  {
     display: table;
 }
 
-  #it_name, #qty, #amt_price {
+#it_name, #qty, #amt_price {
     display: table-cell;
 }
 
@@ -315,6 +319,15 @@ margin-top:-158px;
     /* border: dotted; */
 
 }    
+
+#loginDiv1,#welcomeback{
+	/*width: 100%;
+    font-size: 12px;
+    height: 20px;*/
+    text-align: left;
+    /* border: dotted; */
+
+}
 
 .orderItem {
 	

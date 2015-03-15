@@ -1,8 +1,17 @@
 {
+  "app": {
+    "name": "i18next"
+  },
+  
 "allPages": {
 
 "logout": "Log out",
 "Theme": "Change theme"
+},
+
+"homeB-page": {
+
+"btn-name": "Click Here for Order"
 },
 
 "order-page":  {

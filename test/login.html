@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript" src="js/translate.js"></script> 
 		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script>
+		<script type="text/javascript" src="js/i18next-1.7.7.js"></script>
 		<script type="text/javascript" src="js/change_theme.js"></script>
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
@@ -40,10 +41,14 @@
 			if (username == null || username == "") {
 	
 				alert("Please fill in username");
+				$("#username").focus();
+				return false;
 			}
 			else if (password == null || password == ""){
 				
 				alert("Please fill in password");
+				$("#password").focus();
+				return false;
 			}
 			else {
 				var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username="+username+"&password="+password+"&action=iou_get";
@@ -62,7 +67,13 @@
 		
 
 			});
-        
+			/*i18n.init(function(t) {
+				// translate login-page
+				$(".login-page").i18n();
+
+				// programatical access
+				var appName = t("app.name");
+			});*/
 	
 		})
 	
@@ -95,7 +106,8 @@
 	<!-- title -->
 	<div id="pagetitle">
 
-		<h1 id="title" data-i18n="login-page.login">"></h1>
+		<h1 id="title" data-i18n="login-page.login"></h1>
+		<!--">-->
 
 	</div>
 	
@@ -108,23 +120,24 @@
 	
 	<!-- content -->
 	<div id="contentWrapper">
+	<br><br><br><br><br><br>
 		<div class="centerDiv">
 			<label id="usernamelabel" data-i18n="login-page.username"></label>
 			<br>
 			<input type="text" id="username" size="25" value="">
-			</div>
-			<br>
-			<div class="centerDiv">
+		</div>
+		<br>
+		<div class="centerDiv">
 			<label id="passwordlabel" data-i18n="login-page.password"></label>
 			<br>
 			<input type="password" id="password" size="25" value="">
-			</div>
-			<br>
-			<br>
+		</div>
+		<br>
+		<br>
 		
-			<div class="centerDiv">
-				<a href="#" id="btnLogin" class="btn" data-i18n="login-page.login"></a>
-			</div>
+		<div class="centerDiv">
+			<a href="#" id="btnLogin" class="btn" data-i18n="login-page.login"></a>
+		</div>
 		
 			
 		<!--
