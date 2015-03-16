@@ -27,7 +27,8 @@
 	"cancel": "Cancel",
 	"order": "Order",
 	"username": "Username:",
-	"password": "Password:"
+	"password": "Password:",
+	"my-purchases": "My purchases"
     },
 "history-page":  {
 	"title": "Purchase history",

@@ -16,6 +16,7 @@
 	
 		$(document).ready(function() {
 
+		
 			var username;
 			var password;
 	
@@ -59,6 +60,7 @@
 	                var balance =  data.payload[0].assets;
 	                localStorage.setItem("balance", balance);
 	            	localStorage.setItem("username", username);
+					localStorage.setItem("password", username);
 					window.location.href = "orders.html";  
 				});  		
 			}
