@@ -61,7 +61,7 @@
 		
 				
 		
-	
+
 		
 	
 							
@@ -249,6 +249,17 @@ deleteEntry  = function (id){
 	
 }
 
+$("#btnDeleteAll").click(function(){
+	$('#overview li').remove();
+	$('#price li').remove();
+	$('#amount li').remove();
+	$('#amountPrice li').remove();
+	$("#total").empty();
+	
+	
+	});
+	
+	
 })
 
 

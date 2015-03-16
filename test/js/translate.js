@@ -30,6 +30,8 @@ i18n.init(options, function(t) {
 		$("#quantity").i18n();
 		$("#order-price").i18n();
 		$("#btnViewPurchases").i18n();
+		$("#btnDeleteAll").i18n();
+		
 	
 		
 		//History-page
@@ -138,6 +140,8 @@ var options ={
 		$("#unitprice").i18n();
 		$("#quantity").i18n();
 		$("#order-price").i18n();
+		$("#btnDeleteAll").i18n();
+		
 		
 		//History-page
 		$("#btnBack").i18n();
@@ -243,6 +247,7 @@ var options ={
 		$("#unit-price").i18n();
 		$("#quantity").i18n();
 		$("#order-price").i18n();
+		$("#btnDeleteAll").i18n();
 		
 		//History-page
 		$("#btnBack").i18n();
@@ -347,6 +352,7 @@ var options ={
 		$("#unit-price").i18n();
 		$("#quantity").i18n();
 		$("#order-price").i18n();
+		$("#btnDeleteAll").i18n();
 		
 		//History-page
 		$("#btnBack").i18n();

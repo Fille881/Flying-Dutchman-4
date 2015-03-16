@@ -27,7 +27,8 @@
 	"order": "Order",
 	"username": "Username:",
 	"password": "Password:",
-	"my-purchases": "My purchases"
+	"my-purchases": "My purchases",
+	"delete-order":"Delete order"
     },
 "history-page":  {
 	"title": "Purchase history",
