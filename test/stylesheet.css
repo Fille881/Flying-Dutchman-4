@@ -40,6 +40,7 @@ ul {
     font-size: 18px;
     padding: 0px;
     margin: 0px;
+	border: 1px solid black;
 }
 
 #usefulbutton{
@@ -48,12 +49,13 @@ ul {
 }
 ul li {
     background-color: #c8e1d0;
+	float: none;
     background-repeat: no-repeat;
-    background-position: 0px center; 
+    background-position: 0px center;
     padding-left: 15px;
-    height: 50px; 
+	padding-right: 15px;
+    height: 50px;
     font-size:12px;
-    
     
 }
 
@@ -110,7 +112,7 @@ ul li {
 	position:relative;
 	float: right;
     width: 100%;
-	height: 50px;
+	height: 25px;
 	text-align: right;
 }
 
@@ -205,12 +207,12 @@ margin-top:-158px;
 
 #receipt{
 	position: fixed;
-	top:47%; 
+	/*float: left;*/
+	top:47%;
 	right:12%;
 	width: 39%;
-	float:left;
-	overflow: scroll;
-		
+	overflow: hidden;
+	border: 1px solid black;
 } 
 #receiptTitleContainer{
 	width: 100%;
@@ -244,7 +246,7 @@ margin-top:-158px;
     width: 40%;
 	height: 300px;
     text-align: left;
-	border: 1px solid black;    
+	/*border: 1px solid black; */  
 }
 #price{
 	position:relative;
@@ -253,7 +255,7 @@ margin-top:-158px;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
-   border: 1px solid black; 
+	/*border: 1px solid black; */
     }
 		
 #amount{
@@ -263,7 +265,7 @@ margin-top:-158px;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
-   border: 1px solid black; 
+	/*border: 1px solid black; */
     }
 #amountPrice{
 	position:relative;
@@ -272,19 +274,19 @@ margin-top:-158px;
 	height: 100%;
     text-align: left;
 	background-color: #ffffff;
-   border: 1px solid black; 
+	/*border: 1px solid black; */
     }    
     
 #total{
 	position: relative;
-	float: right;
+	float: none;
 	bottom: 0px;
 	margin-right:50px;
     width: 5%;
 	height: 100%;
     text-align: center;
     background-color: #eeebaa;
-    border: 1px solid black; 
+   /* border: 1px solid black;*/
 }
     
 	

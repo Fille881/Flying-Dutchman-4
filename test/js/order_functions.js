@@ -36,15 +36,15 @@
 				},
 				success: function(r)
 				{
-					response(200, "{type: 'success'}")
+					alert("Thank you!");
+					location.reload();
 				},
 				error: function(r)
 				{
 					response(403, "{type: 'forbidden'}")
 				}
 			});
-			
-			alert(counter);
+
 			++counter
 			}
 			
