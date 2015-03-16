@@ -302,7 +302,8 @@ display: none;
 	/*width: 100%;
     font-size: 12px;
     height: 20px;*/
-    text-align: left;
+    text-align: right;
+	/*position:relative;*/
     /* border: dotted; */
 
 }
