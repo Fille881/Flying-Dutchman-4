@@ -41,8 +41,12 @@
 				},
 				success: function(r)
 				{
-					alert("Thank you!");
+					updateBalance();
 					location.reload();
+					$("#welcomeback").remove();
+					$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + assets);
+
+					
 				},
 				error: function(r)
 				{
@@ -249,18 +253,54 @@ deleteEntry  = function (id){
 	
 }
 
-$("#btnDeleteAll").click(function(){
-	$('#overview li').remove();
+//$("#btnDeleteAll").click(function(){
+	
+updateBalance  = function (){
+		dburl = "http://pub.jamaica-inn.net/fpdb/api.php";
+		username = localStorage.getItem("username");
+		password = localStorage.getItem("password");
+		password = localStorage.getItem("password");
+		balance = localStorage.getItem("balance");
+		total = $("#total").val();
+		assets = balance - total;
+		
+		$.ajax({
+				type: "get",
+				url: dburl,
+				data: 
+				{
+					user_id: "24",
+					assets: assets ,
+					username: username,
+					password: password,
+					action: "iou_get"
+				},
+				success: function(r)
+				{
+					
+										
+				},
+				error: function(r)
+				{
+					response(403, "{type: 'forbidden'}")
+				}
+				})
+				};
+			//});
+			
+	/*
+$('#overview li').remove();
 	$('#price li').remove();
 	$('#amount li').remove();
 	$('#amountPrice li').remove();
 	$("#total").empty();
+*/
 	
 	
 	});
 	
 	
-})
+
 
 
 /*
