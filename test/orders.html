@@ -4,11 +4,12 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="basicstyles.css">
 		<link rel="alternate stylesheet" type="text/css" href="stylesheet2.css" title="alternate">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	   <script type="text/javascript" src="js/search_functions.js"></script>  
+		<script type="text/javascript" src="js/search_functions.js"></script>  
 		<script type="text/javascript" src="js/order_functions.js"></script>
 		<script type="text/javascript" src="js/sign_in.js"></script> 
 		<script type="text/javascript" src="js/translate.js"></script> 
@@ -153,7 +154,13 @@
 			<div class="c" id="container">
 				<div class="b"id="beers"></div>	
 				<div id= "receipt">
+				
 					<div id="receiptTitleContainer">
+						<div class="buttonsDiv" id="buttonsDiv">
+							<div id="total"></div>
+							<a href="#" id="btnOrder" class="btn" data-i18n="order-page.order"></a>
+							
+						</div>
 						<div id="receiptBeerNameTitle" data-i18n="order-page.item-name"></div>
 						<div id="receiptBeerPriceTitle" data-i18n="order-page.unit-price"></div>
 						<div id="receiptBeerAmountTitle" data-i18n="order-page.quantity"></div>
@@ -172,7 +179,7 @@
 						<ul id="totalPerBeer" class="list-unstyled"></ul>
 					</div>
 					<br>
-					<div id="total"></div>
+					
 				</div><!--id= "receipt"-->
 			</div>
 		</div>
@@ -192,9 +199,7 @@
 		</form>
 	</div>-->
 
-	<div class="buttonsDiv" id="buttonsDiv">
-		<a href="#" id="btnOrder" class="btn" data-i18n="order-page.order"></a>
-	</div>
+
 <!--</div>
 </div>-->
 </body>
