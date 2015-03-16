@@ -184,9 +184,9 @@ display: none;
 	position: fixed;
 	/*float: left;*/
 	background-color: rgba(255,255,255,0.6);
-	top:47%;
-	right:12%;
-	width: 39%;
+	top:46%;
+	right:15%;
+	width: 36%;
 	overflow: hidden;
 	border: 1px solid black;
 } 
