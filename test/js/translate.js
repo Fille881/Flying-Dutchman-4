@@ -87,9 +87,9 @@ i18n.init(options, function(t) {
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
-		$("#passwordLogin").i18n();
-		$("#usernameLogin").i18n();
-		
+		$("#usernamelabel").i18n();
+		$("#passwordlabel").i18n();
+
 		
 		//Navigation
 		$("#loginMenu").i18n();
@@ -214,7 +214,7 @@ var options ={
 
 
 		$("#btnSE").click(function(){
-var options ={ 
+	var options ={ 
 	lng: "se" ,  
 	resGetPath: 'locales/se/translationSE.json'
 	}

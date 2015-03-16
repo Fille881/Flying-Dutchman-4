@@ -1,6 +1,3 @@
-
-
-
 var count = 0;
     
 dropObject = function( event,ui) {
@@ -71,8 +68,5 @@ if ($("#total:empty").length) {
     $("#total").append((sumjq('#totalPerBeer li')));
 }
 
-}
-
-				
-				
+}	
 			}
