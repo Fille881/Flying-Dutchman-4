@@ -59,7 +59,8 @@
 	"a-name2": "Last name:",
 	"a-password": "Password:",
 	"undo": "Undo",
-	"redo": "Redo"
+	"redo": "Redo",
+	"delete-user": "Delete user"
     },
 "create-account-page": {
 	"title": "Create user"

@@ -52,8 +52,10 @@
 	"a-name1": "Vorname:",
 	"a-name2": "Nachname:",
 	"a-password": "Passwort:",
-	"undo": "Rückgängig",
-	"redo": "Wiederholen"
+	"undo": "Ungeschehen machen",
+	"redo": "Wiederholen",
+	"delete-user": "Benutzer löschen"
+
     },
 "create-account-page": {
 	"title": "Benutzer erstellen"

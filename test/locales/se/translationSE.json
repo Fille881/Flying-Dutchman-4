@@ -52,7 +52,8 @@
 	"a-name2": "Efternamn:",
 	"a-password": "Lösenord:",
 	"undo": "Ångra",
-	"redo": "Gör om"
+	"redo": "Gör om",
+	"delete-user": "Ta bort användare"
     },
 "create-account-page": {
 	"title": "Skapa användare"
