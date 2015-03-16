@@ -59,12 +59,11 @@
 				$("#loginMenu").click(function(){
 					window.location.href = "home.html";
 				})
-				
-				
-			//Button function to orders
-			$("#homeB").click(function(){
-		 		window.location.href = "orders.html";
-			})
+			//Button function to login
+
+			$("#btn-name").click(function(){
+					window.location.href = "login.html";
+				})
 
 		})
 </script>	
@@ -98,30 +97,7 @@
 	<div id="logo">
 		<img src="images/logo.png" alt="Stormy Weather">
 	</div>
-	
-	<!--Menu-->
-	<nav id="nav">
-		<ul id="navigation">
-		<li><a href="#" id="loginMenu" class="first" data-i18n="nav-page.home"></a></li>
-			<li><a href="#" id="orderMenu" data-i18n="nav-page.navorder"></a></li>
-			<li><a href="#" id="status" data-i18n="nav-page.status"> &raquo;</a>
-				<ul>
-					<li><a href="#" id="stockMenu" data-i18n="nav-page.stock-info"></a></li>
-					<li><a href="#" id="historyMenu" data-i18n="nav-page.historyMenu"></a></li>
-					<li><a href="#" id="reportMenu" data-i18n="nav-page.reportMenu"></a></li>
-				</ul>				
-			</li>
-			<li><a href="#" id="user" data-i18n="nav-page.user"> &raquo;</a>
-				<ul>
-					<li><a href="#" id="newUserMenu" data-i18n="nav-page.new-user"></a></li>
-					<li><a href="#" id="editUserMenu" data-i18n="nav-page.edit-user"></a></li>		
-				</ul>
-			</li>
-			<li><a href="#" id="contact" class="last" data-i18n="nav-page.contact"></a></li>
-		</ul>
-	</nav>
-	
-	
+		
 	<!-- content -->
 	<div id="contentWrapper">
 		<div class="centerDiv">
@@ -130,8 +106,9 @@
 				<img class="beer med" src="images/b2.png" width="50" height="120"/>
 				<img class="beer lrg" src="images/b3.png" width="50" height="120"/>
 			</div>
-			<div class="hb">
-				<a href="#" id="homeB" class="homeButton" data-i18n="homeB-page.btn-name"></a>
+			<div class="btn">
+				<!--<a href="#" id="btn-name"  data-i18n="homeB-page.homeB"></a>class="btn"-->
+				<button id="btn-name"  data-i18n="homeB-page.homeB"></button>
 
 			</div>
 		</div>
