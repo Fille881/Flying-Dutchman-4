@@ -14,6 +14,8 @@
 
 			$("#btnOrder").click(function(){
 				
+				
+				
 				$('#orderListName li').each(function() {
 					 
 					beer_id = $(this).attr('id');
@@ -22,6 +24,9 @@
 					counter = 0;
 					
 					while (counter < amount) {
+						
+						username = localStorage.getItem("username");
+						password = localStorage.getItem("password");
 					
 						
 			$.ajax({
@@ -30,8 +35,8 @@
 				data: 
 				{
 					beer_id: beer_id,
-					username: "ervtod",
-					password: "ervtod",
+					username: username,
+					password: password,
 					action: "purchases_append"
 				},
 				success: function(r)

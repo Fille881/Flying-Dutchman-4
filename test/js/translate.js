@@ -28,6 +28,8 @@ i18n.init(options, function(t) {
 		$("#unit-price").i18n();
 		$("#quantity").i18n();
 		$("#order-price").i18n();
+		$("#btnViewPurchases").i18n();
+	
 		
 		//History-page
 		$("#btnBack").i18n();

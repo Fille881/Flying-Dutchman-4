@@ -16,6 +16,8 @@
 		<script type="text/javascript" src="js/drop.js"></script>  
 		<script type="text/javascript" src="js/logout.js"></script>
 		<script type="text/javascript" src="js/change_theme.js"></script>
+		<script type="text/javascript" src="js/my_purchases.js"></script>
+		
 	
 	
 		
@@ -27,6 +29,7 @@
 		
 		username = localStorage.getItem("username");
 		balance = localStorage.getItem("balance");
+	
 
 		
 		if (localStorage.getItem("username") === null) {
@@ -107,6 +110,7 @@
 		<h1 id="title" data-i18n="order-page.title"></h1>
 		<div id="logOut">
 		<button id="logOutBtn" class="btn" data-i18n="allPages.logout"></button>
+	    <button id="btnViewPurchases" class="btn" data-i18n="order-page.my-purchases"></button>
 		</div>
 	</div>
 	
@@ -142,7 +146,8 @@
 		<div class="centerDiv">
 			<div class="rightDiv"id="loginDiv1">
 				<p id="welcomeback"></p>
-				<input id="search_txt" align="left" type="text" size="25" placeholder="search here"/>			    
+				<input id="search_txt" align="left" type="text" size="25" placeholder="search here"/>	
+						    
 				<a href="#" id="btnSignIn" class="btn" style="float:right" data-i18n="order-page.sign-in"></a>
 			</div>
 			<div class="c" id="container">
