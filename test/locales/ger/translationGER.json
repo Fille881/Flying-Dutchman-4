@@ -1,7 +1,7 @@
 {
 "allPages": {
 	"logout": "Ausloggen",
-	"theme": "Ändern thema",
+	"theme": "Theme ändern",
 	"standard-theme": "Standard",
 	"alternate-theme": "Orange"
 },
@@ -46,13 +46,13 @@
     "balance": "Saldo",
     "back-orders": "Zurück zu Bestellungen",
     "a-username": "Nutzername:",
-	"a-newpassword": "Neues passwort",
+	"a-newpassword": "Neues Passwort",
 	"a-email": "E-mail:",
 	"a-phone": "Telefonnummer:",
 	"a-name1": "Vorname:",
 	"a-name2": "Nachname:",
 	"a-password": "Passwort:",
-	"undo": "Ungeschehen machen",
+	"undo": "Rückgängig",
 	"redo": "Wiederholen"
     },
 "create-account-page": {
@@ -73,10 +73,10 @@
 	"back-manager": "Zurück zur Manager Seite",
 	"brand": "Marke",
 	"count": "Anzahl",
-	"clear-values": "Clear values",
-	"place-order": "Order",
-	"add": "Add",
-	"clear": "Clear"
+	"clear-values": "Werte löschen",
+	"place-order": "Bestellen",
+	"add": "Hinzufügen",
+	"clear": "Löschen"
 	},
 "sales-page": {
 	"title": "Verkäufe",
@@ -96,7 +96,7 @@
 	"navorder": "Bestellen",
 	"status": "Status",
 	"stock-info": "Lizenzinformationen",
-	"reportMenu": "Sich Melden",
+	"reportMenu": "Statistik",
 	"historyMenu": "Bisherige Einkäufe",
 	"user": "Benutzer",
 	"new-user": "Benutzer erstellen",
