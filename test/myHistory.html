@@ -4,7 +4,6 @@
 	<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="basicstyles.css">
 		<link rel="alternate stylesheet" type="text/css" href="stylesheet2.css" title="alternate">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -23,7 +22,11 @@ isClick = false;
 	$(".btn").click(function(){
 		
 		if(isClick == false) {
-			var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=purchases_get";
+			
+				username = localStorage.getItem("username");
+				password = localStorage.getItem("password");
+				
+			var url =  "http://pub.jamaica-inn.net/fpdb/api.php?username="+ username +"&password="+password+"&action=purchases_get";
 			jQuery.get(url, function(data){
 
 			
@@ -138,8 +141,12 @@ th {
 	<!--Menu-->
 	<nav id="nav">
 		<ul id="navigation">
-		<li><a href="#" id="loginMenu" class="first" data-i18n="nav-page.home"></a></li>
-			<li><a href="#" id="orderMenu" data-i18n="nav-page.navorder"></a></li>
+			<li><a href="#" id="loginMenu" class="first" data-i18n="nav-page.home"></a></li>
+			<li><a href="#" id="products" data-i18n="nav-page.products"> &raquo;</a>
+				<ul>
+					<li><a href="#" id="orderMenu" data-i18n="nav-page.navorder"></a></li>					
+				</ul>
+			</li>
 			<li><a href="#" id="status" data-i18n="nav-page.status"> &raquo;</a>
 				<ul>
 					<li><a href="#" id="stockMenu" data-i18n="nav-page.stock-info"></a></li>
@@ -149,8 +156,7 @@ th {
 			</li>
 			<li><a href="#" id="user" data-i18n="nav-page.user"> &raquo;</a>
 				<ul>
-					<li><a href="#" id="newUserMenu" data-i18n="nav-page.new-user"></a></li>
-					<li><a href="#" id="editUserMenu" data-i18n="nav-page.edit-user"></a></li>		
+					<li><a href="#" id="newUserMenu" data-i18n="nav-page.new-user"></a></li>					
 				</ul>
 			</li>
 			<li><a href="#" id="contact" class="last" data-i18n="nav-page.contact"></a></li>
