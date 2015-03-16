@@ -268,11 +268,11 @@ display: none;
     
 	
 	
-	#b_title  {
+#b_title  {
     display: table;
 }
 
-  #it_name, #qty, #amt_price {
+ #it_name, #qty, #amt_price {
     display: table-cell;
 }
 

@@ -29,6 +29,43 @@ $(document).ready(function() {
 			$("#homeB").click(function(){
 		 		window.location.href = "login.html";
 			})
+		$(document).ready(function() {
+			username = localStorage.getItem("username");
+			balance = localStorage.getItem("balance");
+			if (localStorage.getItem("username") === null) {
+				$("#btnSignIn").css('visibility', 'visible');
+			} else {	
+				$("#btnSignIn").css('visibility', 'hidden');
+				$("#welcomeback").append("Welcome back " + " " + username + "." + " " + "Your balance =" + balance);
+			}
+			$("#overview").droppable ({
+				accept: ".imageDiv",
+				drop: function( event, ui ){
+					dropObject(event,ui);
+				}
+			});
+			$("#orderMenu").click(function(){
+					window.location.href = "orders.html";
+				})
+				$("#stockMenu").click(function(){
+					window.location.href = "stock.html";
+				})
+				$("#historyMenu").click(function(){
+					window.location.href = "history.html";
+				})
+				$("#reportMenu").click(function(){
+					window.location.href = "report.html";
+				})
+				$("#newUserMenu").click(function(){
+					window.location.href = "createAccount.html";
+				})
+				$("#editUserMenu").click(function(){
+					window.location.href = "editAccount.html";
+				})
+				$("#loginMenu").click(function(){
+					window.location.href = "home.html";
+				})
+			//Button function to login
 
 		})
 </script>	
@@ -61,21 +98,17 @@ $(document).ready(function() {
 	<div id="logo">
 		<img src="images/logo.png" alt="Stormy Weather">
 	</div>
-	
-	<!--Menu-->
-		
-	
+
 	<!-- content -->
 	<div id="contentWrapper">
 		<div class="centerDiv">
 			<div id="scene">
 				<img class="beer sml" src="images/b1.png" width="50" height="120"/>
 				<img class="beer med" src="images/b2.png" width="50" height="120"/>
-				<img class="beer lrg" src="images/b3.png" width="50" height="120"/>
-			
-			<div class="hb">
-				<a href="#" id="homeB" class="homeButton" data-i18n="homeB-page.btn-name"></a>
-			</div>
+				<img class="beer lrg" src="images/b3.png" width="50" height="120"/>			
+				<div class="hb">
+					<a href="#" id="homeB" class="homeButton" data-i18n="homeB-page.btn-name"></a>
+				</div>
 			</div>
 		</div>
 	</div>
