@@ -4,6 +4,7 @@ var options ={
    resGetPath: 'locales/en/translationEN.json'
 };
 i18n.init(options, function(t) {
+	
 		//allPages
 		$("#logOutBtn").i18n();
 		$("#changeThemeTitle").i18n();
@@ -86,6 +87,9 @@ i18n.init(options, function(t) {
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
+		$("#passwordLogin").i18n();
+		$("#usernameLogin").i18n();
+		
 		
 		//Navigation
 		$("#loginMenu").i18n();
@@ -185,6 +189,9 @@ var options ={
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
+		$("#passwordLogin").i18n();
+		$("#usernameLogin").i18n();
+		
 		
 		//Navigation
 		$("#loginMenu").i18n();
@@ -287,6 +294,8 @@ var options ={
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
+		$("#passwordLogin").i18n();
+		$("#usernameLogin").i18n();
 		
 		//Navigation
 		$("#loginMenu").i18n();
@@ -389,6 +398,8 @@ var options ={
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
+		$("#passwordLogin").i18n();
+		$("#usernameLogin").i18n();
 		
 		//Navigation
 		$("#loginMenu").i18n();
