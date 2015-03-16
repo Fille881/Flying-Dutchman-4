@@ -200,7 +200,7 @@ var options ={
 
 
 		$("#btnSE").click(function(){
-var options ={ 
+	var options ={ 
 	lng: "se" ,  
 	resGetPath: 'locales/se/translationSE.json'
 	}
