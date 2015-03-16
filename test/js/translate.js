@@ -10,6 +10,9 @@ i18n.init(options, function(t) {
 		$("#standardThemeBtn").i18n();
 		$("#alternateThemeBtn").i18n();
 		
+		//home page
+		$("#homeB").i18n();
+		$("#btn-name").i18n();
 
 		//Order page
 		$("#title").i18n();
@@ -51,6 +54,7 @@ i18n.init(options, function(t) {
 		//Editaccount-page
 		$("#usernameLabel").i18n();
 		$("#newpasswordLabel").i18n();
+		$("#passwordLabel").i18n();
 		$("#emailLabel").i18n();
 		$("#phoneLabel").i18n();
 		$("#name1Label").i18n();
@@ -87,9 +91,11 @@ i18n.init(options, function(t) {
 		$("#historyMenu").i18n();
 		$("#user").i18n();
 		$("#newUserMenu").i18n();
+		$("#editUserMenu").i18n();
 		$("#contact").i18n();
 		$("#receipt").i18n();
 		$("#reportMenu").i18n();
+		$("#edit-user").i18n();
 	
 		});
 		
@@ -105,6 +111,10 @@ var options ={
 		$("#changeThemeTitle").i18n();
 		$("#standardThemeBtn").i18n();
 		$("#alternateThemeBtn").i18n();
+		
+		//home page
+		$("#homeB").i18n();
+		$("#btn-name").i18n();
 		
 		//Order page
 		$("#title").i18n();
@@ -141,6 +151,7 @@ var options ={
 		//Editaccount-page
 		$("#usernameLabel").i18n();
 		$("#newpasswordLabel").i18n();
+		$("#passwordLabel").i18n();
 		$("#emailLabel").i18n();
 		$("#phoneLabel").i18n();
 		$("#name1Label").i18n();
@@ -177,9 +188,11 @@ var options ={
 		$("#historyMenu").i18n();
 		$("#user").i18n();
 		$("#newUserMenu").i18n();
+		$("#editUserMenu").i18n();
 		$("#contact").i18n();
 		$("#receipt").i18n();
 		$("#reportMenu").i18n();
+		$("#edit-user").i18n();
 	
 	
 	});
@@ -198,6 +211,10 @@ var options ={
 		$("#standardThemeBtn").i18n();
 		$("#alternateThemeBtn").i18n();
 		
+		//home page
+		$("#homeB").i18n();
+		$("#btn-name").i18n();
+		
 		//Order page
 		$("#title").i18n();
 		$("#btnSearch").i18n();
@@ -234,6 +251,7 @@ var options ={
 		//Editaccount-page
 		$("#usernameLabel").i18n();
 		$("#newpasswordLabel").i18n();
+		$("#passwordLabel").i18n();
 		$("#emailLabel").i18n();
 		$("#phoneLabel").i18n();
 		$("#name1Label").i18n();
@@ -270,9 +288,11 @@ var options ={
 		$("#historyMenu").i18n();
 		$("#user").i18n();
 		$("#newUserMenu").i18n();
+		$("#editUserMenu").i18n();
 		$("#contact").i18n();
 		$("#receipt").i18n();
 		$("#reportMenu").i18n();
+		$("#edit-user").i18n();
 		
 		
 	});
@@ -291,6 +311,10 @@ var options ={
 		$("#standardThemeBtn").i18n();
 		$("#alternateThemeBtn").i18n();
 		
+		//home page
+		$("#homeB").i18n();
+		$("#btn-name").i18n();
+		
 		//Order page
 		$("#title").i18n();
 		$("#btnSearch").i18n();
@@ -327,6 +351,7 @@ var options ={
 		//Editaccount-page
 		$("#usernameLabel").i18n();
 		$("#newpasswordLabel").i18n();
+		$("#passwordLabel").i18n();
 		$("#emailLabel").i18n();
 		$("#phoneLabel").i18n();
 		$("#name1Label").i18n();
@@ -363,9 +388,11 @@ var options ={
 		$("#historyMenu").i18n();
 		$("#user").i18n();
 		$("#newUserMenu").i18n();
+		$("#editUserMenu").i18n();
 		$("#contact").i18n();
 		$("#receipt").i18n();
 		$("#reportMenu").i18n();
+		$("#edit-user").i18n();
 		
 		
 	});

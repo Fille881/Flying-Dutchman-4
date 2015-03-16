@@ -5,6 +5,9 @@
 	"standard-theme": "Standard",
 	"alternate-theme": "Orange"
 },
+"homeB-page": {
+"btn-name": "Klicka här för beställning"
+},
 "order-page": {
 	"title": "Beställningssida", 
 	"search":"sök",
@@ -47,14 +50,15 @@
 	"a-phone": "Telefonnummer:",
 	"a-name1": "Förnamn:",
 	"a-name2": "Efternamn:",
+	"a-password": "Lösenord:",
 	"undo": "Ångra",
 	"redo": "Gör om"
     },
 "create-account-page": {
-	"title": "Skapa konto"
+	"title": "Skapa användare"
 	},
 "edit-account-page": {
-	"title": "Redigera konto"
+	"title": "Redigera användare"
 	},	
 "manager-page": {
 	"title": "Manager sida",
@@ -64,7 +68,7 @@
 	"back-login": "Tillbaka till startsida"
 	},
 "stock-page": {
-	"title": "Lager",
+	"title": "Lager information",
 	"back-manager": "Tillbaka till manager sida",
 	"brand": "Sort",
 	"count": "Antal",
@@ -96,7 +100,8 @@
 	"user": "Användare",
 	"new-user": "Skapa användare",
 	"contact": "Kontakt",
-	"receipt": "Kvitto"
+	"receipt": "Kvitto",
+	"edit-user": "Redigera användare"
 	}
 
 }

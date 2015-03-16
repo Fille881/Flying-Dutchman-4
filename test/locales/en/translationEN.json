@@ -11,8 +11,7 @@
 },
 
 "homeB-page": {
-
-"btn-name": "Click Here for Order"
+"btn-name": "Click here for order"
 },
 
 "order-page":  {
@@ -57,15 +56,15 @@
 	"a-phone": "Phone:",
 	"a-name1": "First name:",
 	"a-name2": "Last name:",
+	"a-password": "Password:",
 	"undo": "Undo",
 	"redo": "Redo"
     },
 "create-account-page": {
-	"title": "Create account"
+	"title": "Create user"
 	},
 "edit-account-page": {
-	"title": "Edit account",
-	"username": "Hallooo"
+	"title": "Edit user"
 	},
 "manager-page": {
 	"title": "Manager page",
@@ -75,7 +74,7 @@
 	"back-login": "Back to login"
 	},
 "stock-page": {
-	"title": "Stock",
+	"title": "Stock information",
 	"back-manager": "Back to manager page",
 	"brand": "Brand",
 	"count": "Count",
@@ -105,8 +104,9 @@
 	"reportMenu": "Report",
 	"historyMenu": "Purchase history",
 	"user": "User",
-	"new-user": "Create User",
+	"new-user": "Create user",
 	"contact": "Contact",
-	"receipt": "Receipt"
+	"receipt": "Receipt",
+	"edit-user": "Edit user"
 	}
 }

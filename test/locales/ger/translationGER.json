@@ -5,7 +5,9 @@
 	"standard-theme": "Standard",
 	"alternate-theme": "Orange"
 },
-
+"homeB-page": {
+"btn-name": "Klicken Sie , um zu bestellen"
+},
 "order-page":  {
 	"title": "Bestellungen",
 	"search":"Suche",
@@ -49,14 +51,15 @@
 	"a-phone": "Telefonnummer:",
 	"a-name1": "Vorname:",
 	"a-name2": "Nachname:",
+	"a-password": "Passwort:",
 	"undo": "Ungeschehen machen",
 	"redo": "Wiederholen"
     },
 "create-account-page": {
-	"title": "Account erstellen"
+	"title": "Benutzer erstellen"
 	},
 "edit-account-page": {
-	"title": "Account bearbeiten"
+	"title": "Benutzer bearbeiten"
 	},
 "manager-page": {
 	"title": "Manager Seite",
@@ -66,7 +69,7 @@
 	"back-login": "Zurück zum Login"
 	},
 "stock-page": {
-	"title": "Vorrat",
+	"title": "Aktieninformationen",
 	"back-manager": "Zurück zur Manager Seite",
 	"brand": "Marke",
 	"count": "Anzahl",
@@ -98,6 +101,7 @@
 	"user": "Benutzer",
 	"new-user": "Benutzer erstellen",
 	"contact": "Kontakt",
-	"receipt": "Erhalt"
+	"receipt": "Erhalt",
+	"edit-user": "Benutzer bearbeiten"
 	}
 }

@@ -37,7 +37,10 @@
 				})
 				$("#newUserMenu").click(function(){
 					window.location.href = "createAccount.html";
-				})		
+				})
+				$("#editUserMenu").click(function(){
+					window.location.href = "editAccount.html";
+				})
 				$("#loginMenu").click(function(){
 					window.location.href = "home.html";
 				})	
@@ -87,12 +90,8 @@
 	<!--Menu-->
 	<nav id="nav">
 		<ul id="navigation">
-			<li><a href="#" id="loginMenu" class="first" data-i18n="nav-page.home"></a></li>
-			<li><a href="#" id="products" data-i18n="nav-page.products"> &raquo;</a>
-				<ul>
-					<li><a href="#" id="orderMenu" data-i18n="nav-page.navorder"></a></li>					
-				</ul>
-			</li>
+		<li><a href="#" id="loginMenu" class="first" data-i18n="nav-page.home"></a></li>
+			<li><a href="#" id="orderMenu" data-i18n="nav-page.navorder"></a></li>
 			<li><a href="#" id="status" data-i18n="nav-page.status"> &raquo;</a>
 				<ul>
 					<li><a href="#" id="stockMenu" data-i18n="nav-page.stock-info"></a></li>
@@ -102,7 +101,8 @@
 			</li>
 			<li><a href="#" id="user" data-i18n="nav-page.user"> &raquo;</a>
 				<ul>
-					<li><a href="#" id="newUserMenu" data-i18n="nav-page.new-user"></a></li>					
+					<li><a href="#" id="newUserMenu" data-i18n="nav-page.new-user"></a></li>
+					<li><a href="#" id="editUserMenu" data-i18n="nav-page.edit-user"></a></li>		
 				</ul>
 			</li>
 			<li><a href="#" id="contact" class="last" data-i18n="nav-page.contact"></a></li>
