@@ -89,8 +89,8 @@ i18n.init(options, function(t) {
 		$("#btnLoginCustomer").i18n();
 		$("#btnLoginBartender").i18n();
 		$("#btnLoginManager").i18n();
-		$("#usernamelabel").i18n();
-		$("#passwordlabel").i18n();
+		$("#usernameLogin").i18n();
+		$("#passwordLogin").i18n();
 
 		
 		//Navigation

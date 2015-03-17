@@ -1,6 +1,6 @@
 body {
     background-color: #eeebaa;
-	background-image: url("images/background.jpg");
+	background-image: url("../images/background.jpg");
 	background-size: 100% auto;
 	background-attachment: fixed;
 }
@@ -298,7 +298,16 @@ display: none;
     /* border: dotted; */
 
 }
-#loginDiv1,#welcomeback{
+#loginDiv1{
+	/*width: 100%;
+    font-size: 12px;
+    height: 20px;*/
+    text-align: left;
+	/*position:relative;*/
+    /* border: dotted; */
+
+}
+#welcomeback{
 	/*width: 100%;
     font-size: 12px;
     height: 20px;*/
