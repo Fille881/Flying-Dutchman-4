@@ -70,7 +70,7 @@
 	"back-login": "Zurück zum Login"
 	},
 "stock-page": {
-	"title": "Aktieninformationen",
+	"title": "Lagerinformationen",
 	"back-manager": "Zurück zur Manager Seite",
 	"brand": "Marke",
 	"count": "Anzahl",
@@ -92,17 +92,17 @@
 	"password": "Passwort:"
 	},
 "nav-page": {
-	"home": "Haus",
+	"home": "Home",
 	"products": "Produkte",
 	"navorder": "Bestellen",
 	"status": "Status",
-	"stock-info": "Lizenzinformationen",
+	"stock-info": "Lagerinformationen",
 	"reportMenu": "Statistik",
 	"historyMenu": "Bisherige Einkäufe",
 	"user": "Benutzer",
 	"new-user": "Benutzer erstellen",
 	"contact": "Kontakt",
-	"receipt": "Erhalt",
+	"receipt": "Beleg",
 	"edit-user": "Benutzer bearbeiten"
 	}
 }
