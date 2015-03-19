@@ -249,6 +249,7 @@ var options ={
 		$("#order-price").i18n();
 		$("#btnDeleteAll").i18n();
 		
+		
 		//History-page
 		$("#btnBack").i18n();
 		$("#btnCheckP").i18n();

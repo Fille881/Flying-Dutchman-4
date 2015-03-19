@@ -21,6 +21,8 @@
 	"order": "Beställ",
 	"username": "Användarnamn:",
 	"password": "Lösenord:"
+	"delete-order":"Radera ordning"
+
        },
 "history-page": {   
 	"title": "Köphistorik",

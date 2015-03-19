@@ -20,7 +20,8 @@
 	"cancel": "Abbrechen",
 	"order": "Bestellen",
 	"username": "Nutzername:",
-	"password": "Passwort:"
+	"password": "Passwort:",
+	"delete-order":"Bestellen löschen"
     },
 	
 "history-page":  {
