@@ -12,6 +12,7 @@ $(document).ready(function() {
 		var beerPrices = [];
 		
 		//Push all the non-empty data into an array
+		try {
 		for (i=0; i<163; i++) {
 			if (data.payload[i].namn != ""){
 				beerBrands.push(data.payload[i].namn);
@@ -25,8 +26,11 @@ $(document).ready(function() {
 				beerPrices.push(data.payload[i].sbl_price);
 			}
 		}
+		}
+		catch (err)
+		{console.log(err)}
 		
-		var beerLowStock = 30;
+		var beerLowStock = 20;
 		var beerCountArray = [];
 		var imagesize = 30;
 		
