@@ -13,68 +13,15 @@
 		<script type="text/javascript" src="js/i18next-1.7.7.min.js"></script> 
 		<script type="text/javascript" src="js/logout.js"></script>
 		<script type="text/javascript" src="js/change_theme.js"></script>
+		<script type="text/javascript" src="js/accountPage.js"></script>
+		<script type="text/javascript" src="js/dropDownMenu.js"></script>
 		<!-- <script type="text/javascript" src="javascript/scripts.js"></script> -->
 		
-	<script type="text/javascript">
 
-        $(document).ready(function() {
-            var url= "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=iou_get_all";
-            jQuery.get(url, function(data) {
-                var table = '';
-                for (var i = 0; i < data.payload.length; i++) {
-                    table += '<tr>';
-                    table += '<th>'+ data.payload[i].username+'</th>';
-                    table += '<th>'+ data.payload[i].first_name+'</th>';
-                    table += '<th>'+ data.payload[i].last_name+'</th>';
-                    table += '<th>'+ data.payload[i].assets+'</th>';
-                    table += '</tr>';
-                }
-                $(".accountTable").append(table);
-
-            });
-
-            $("#btnBack").click(function(){
-				 window.location.href = "orders.html";
-			})
-
-            $("#btnCreateAccount").click(function(){
-                window.location.href = "createAccount.html";
-            })
-
-            $("#btnEditAccount").click(function(){
-                window.location.href = "editAccount.html";
-            })
-			
-			$("#orderMenu").click(function(){
-					window.location.href = "orders.html";
-				})
-				$("#stockMenu").click(function(){
-					window.location.href = "stock.html";
-				})
-				$("#historyMenu").click(function(){
-					window.location.href = "history.html";
-				})
-				$("#reportMenu").click(function(){
-					window.location.href = "report.html";
-				})
-				$("#newUserMenu").click(function(){
-					window.location.href = "createAccount.html";
-				})
-				$("#editUserMenu").click(function(){
-					window.location.href = "editAccount.html";
-				})
-		})
-		
-	
-	</script>
 </header>
 
 
 <body>
-
-
-
-
 
 <div id="mainWrapper">
 
@@ -96,7 +43,7 @@
 	<!-- title -->
 	<div id="pagetitle">
 
-		<h1 id="title" data-i18n="account-page.title">"></h1>
+		<h1 id="title" data-i18n="account-page.title"></h1>
 		<div id="logOut">
 		<button id="logOutBtn" class="btn" data-i18n="allPages.logout"></button>
 		</div>
