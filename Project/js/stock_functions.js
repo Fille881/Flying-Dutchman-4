@@ -82,11 +82,13 @@ $(document).ready(function() {
 				
 				
 		});
-
+		
+		
 		for(i = 0; i < beerBrands.length; i++) {
 			
 			var beerCount = data.payload[i].count;
-			
+				
+			//Create divs containing information about beers in stock
 			if (beerCount < beerLowStock){
 				$('.table').append('<div class = "orderInput" id = "orderInput'+ i +'" />');
 				$("#orderInput"+i).append('<form class = "inputForm" id = "inputForm'+ i +'" />');
@@ -105,48 +107,9 @@ $(document).ready(function() {
 				} else {$('#countDiv'+i).append("Out ("+ beerCount + ")")
 				}
 			}
-			//else {
-			//}
-			/*
-			function createAssociativeArray(arr1, arr2) {
-			var arr = {};
-			for(var i = 0, ii = arr1.length; i<ii; i++) {
-				arr[arr1[i]] = arr2[i];
-			}
-			return arr;
-			}
-			beerCountArray.push(data.payload[i].count)
-			beerBrands.push(data.payload[i].namn)
-			
-			var beerDict = createAssociativeArray(beerCount, beerBrands);
-			
-			
-			//Creates a list of 
-			beerCountArray.push(data.payload[i].count);
-			
-			for(var k=0, len=beerCountArray.length; k<len; k++){
-					beerCountArray[k] = parseInt(beerCountArray[k], 10);
-			}
-			
-			function sortNumbers(a,b) {
-				return a-b;
-			}
-			
-		
-			beerDict.sort(sortNumbers);
-			
-			console.log(beerDict);
-			*/
-			//try{}
-			//catch(err){
-			//alert(err);
-			//console.log(err)
-			//}
 			
 		
 		};
-		
-		//return beerBrands, beerIds, beerPrices
 	
 	});
 	
@@ -158,9 +121,6 @@ $(document).ready(function() {
 			beerIdArray = [];
 			beerAmountArray = [];
 			beerPriceArray = [];
-			
-			//alert("Work in progress")
-			
 			
 			for (i=0; i<300; i++){
 				if ($('#tableDataBeerID'+i).text() != "" && $('#tableDataBeerID'+i).text() != null){
@@ -195,11 +155,6 @@ $(document).ready(function() {
 		});
 	});
 })
-
-var style_cookie_name = "style" ;
-var style_cookie_duration = 30 ;
-
-
 
 
 
