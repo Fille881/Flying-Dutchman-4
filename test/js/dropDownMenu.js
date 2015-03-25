@@ -1,4 +1,4 @@
-
+// Various links from the drop down menu
 	$(document).ready(function() {
 	
 	$("#orderMenu").click(function(){

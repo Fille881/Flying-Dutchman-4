@@ -1,19 +1,10 @@
 //When DOM loaded we attach click event to button
         $(document).ready(function() {
-            
-			// ----- Navigation -----
-			
-			$("#btnAccounts").click(function(){
-				 window.location.href = "accounts.html";
-			})
-			
-
-			// ------------------------
 			
 			// ----- Order -----
+			//When clicking on the order button the different beers get extracted from the receipt (ul orderListName). A counter is started to loop trough the number of beers for each type. The username and password is fetched from the localstorage which is then used to make the purchase with the purchase_append function. On succes, the balance get's updated (doesn't work), the page get's reloaded and the welcome message reset.
 
 			$("#btnOrder").click(function(){
-				
 				
 				
 				$('#orderListName li').each(function() {
@@ -50,7 +41,7 @@
 				},
 				error: function(r)
 				{
-					response(403, "{type: 'forbidden'}")
+					alert("Something went wrong");
 				}
 			});
 
@@ -79,7 +70,7 @@
                 jQuery.get(url, function (data){
 	               
 	               
-	               // creating counter to count all array items 
+	               // creating counter to count all array items  (beers)
 					var o = 35;
 	                var total = 50;  //total is 166
 	            
@@ -137,7 +128,7 @@
     }
     
     
-sumjq = function(selector) {
+TotalSum = function(selector) {
 				var sum = 0;
 				$(selector).each(function() {
 				sum += Number($(this).text());
@@ -147,18 +138,13 @@ sumjq = function(selector) {
     			sum = sum.toFixed(2);  
 				return sum;
 				}
-				    // when clicking on a picure of a beer in the class 'picture', the variable beerID is made. The ID of the button clicked is attached to that variable.
+				   
+ // when clicking on a picure of a beer in the class 'picture', the variable beerID is made. The ID of the button clicked is attached to that variable. There are a lot of if / else creations. This is not the simplest way to do it but since the receipt div consists of a number of ul it became a bit messy. However it works fine. I won't go into detail explaining it all now but in short int checks if the beername already exists in the list, if not it will create the beername and put the count of that beer on 1. The next time that beer is clicked, the beername already exists, the counter field is fetched and raised by one. Then the total price is calculated.
  
      
 var count = 0;
     
 $('.picture').click(function() {
-
-/*
-var undoManager = new UndoManager(),
-    beers = {},
-    addBeer;
-*/
     
 
 beerName = $(this).attr('name');
@@ -191,11 +177,11 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
     $("#" + beerName + beerName).attr('value', totalPrice);
 
     if ($("#total:empty").length) {
-        $("#total").append((sumjq('#totalPerBeer li')));
+        $("#total").append((TotalSum('#totalPerBeer li')));
 
     } else {
         $("#total").empty();
-        $("#total").append((sumjq('#totalPerBeer li')));
+        $("#total").append((TotalSum('#totalPerBeer li')));
     }
 
 } else {
@@ -216,12 +202,12 @@ $("#amountPrice ul").append("<li id= " + beerName + beerName + " value=" + beerP
 
 
 if ($("#total:empty").length) {
-    $("#total").append((sumjq('#totalPerBeer li')));
+    $("#total").append((TotalSum('#totalPerBeer li')));
 
 } else {
 
     $("#total").empty();
-    $("#total").append((sumjq('#totalPerBeer li')));
+    $("#total").append((TotalSum('#totalPerBeer li')));
 }
 
 }
@@ -230,31 +216,8 @@ if ($("#total:empty").length) {
 
 });
 
-deleteEntry  = function (id){
-	
-	
-	$("#overview li[id*='" + id + "']").remove();
-	$("#price li[id2*='" + id + "']").remove();
-	$("#amount li[id2*='" + id + "']").remove();
-	$("#amountPrice li[id2*='" + id + "']").remove();
-	
-	// deduct article from price 
-	
-	$("#total").empty();
-    $("#total").append((sumjq('#totalPerBeer li')));
+// Doesn't work
 
-/*
-	$("#orderListName li").remove();
-	$("#orderListPrice li").remove();
-	$("#orderAmount li").remove();
-	$("#totalPerBeer li").remove();
-*/
-
-	
-}
-
-
-	
 updateBalance  = function (){
 		dburl = "http://pub.jamaica-inn.net/fpdb/api.php";
 		username = localStorage.getItem("username");
@@ -286,66 +249,10 @@ updateBalance  = function (){
 				}
 				})
 				};
-		
-			
-			
-$("#btnDeleteAll").click(function(){
-	
-$('#overview li').remove();
-	$('#price li').remove();
-	$('#amount li').remove();
-	$('#amountPrice li').remove();
-	$("#total").empty();
-});
-	
-	
+
 	});
 	
-	
-
-
-
-/*
-
-function send() {
-
-
-
- 			//element = document.getElementById(data.payload[o].beer_id);
-
-var beerId = document.getElementById(this.id);
- 			alert(beerId);
-
-}
-*/
-
-/*
-$("#btnOrders").click(function(){
-	
-	
-	url = "http://pub.jamaica-inn.net/fpdb/api.php?username=jorass&password=jorass&action=purchase_append";
-	
-	
-	beerId = 5555;
-	
-	$.ajax({
-   type: "POST",
-   data: {beerId},
-   url: url,
-   success: function(msg){
-	   
-    alert("succes");
-   }
-});
-	
-	
-	})
-*/
-	
-	
-	
-	
-	
+		
 	
 
 

@@ -1,3 +1,4 @@
+// First we get all values from the different textfields. Then we setup the user_edit api url with the various data variables. 
  $(document).ready(function() {
 	 
 $("#editAccount").click(function(){
@@ -27,11 +28,11 @@ $.ajax({
 				success: function(r)
 				{
 					
-					 alert("tadaa");
+					 alert("Successfully edited");
 				},
 				error: function(r)
 				{
-					alert("fail");
+					alert("Something went wrong");
 				}
 			});
 	 

@@ -27,11 +27,11 @@ $.ajax({
 				success: function(r)
 				{
 					
-					 alert("tadaa");
+					 alert("User succesfully created");
 				},
 				error: function(r)
 				{
-					alert("fail");
+					alert("Something went wrong");
 				}
 			});
 	 

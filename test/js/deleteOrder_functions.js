@@ -1,3 +1,4 @@
+//When clicking on delete order, all the li items from the different lists in the receipt are emptied. After that the total sum is calculated again.
 deleteEntry  = function (id){
 	
 	

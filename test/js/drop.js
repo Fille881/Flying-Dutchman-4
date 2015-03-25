@@ -1,3 +1,6 @@
+//When a draggable object is placed on a droppable object, dropObject is executed. It gets various attributes from the drag object. What follows is the same function that is used when a user clicks on a beer to add it to the receipt.
+
+
 var count = 0;
     
 dropObject = function( event,ui) {
