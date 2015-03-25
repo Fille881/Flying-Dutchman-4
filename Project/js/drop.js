@@ -38,11 +38,11 @@ if ($("#amountPrice ul:contains('" + totalPrice + "')").length) {
     $("#" + beerName + beerName).attr('value', totalPrice);
 
     if ($("#total:empty").length) {
-        $("#total").append((sumjq('#totalPerBeer li')));
+        $("#total").append((TotalSum('#totalPerBeer li')));
 
     } else {
         $("#total").empty();
-        $("#total").append((sumjq('#totalPerBeer li')));
+        $("#total").append((TotalSum('#totalPerBeer li')));
     }
 
 } else {
@@ -63,12 +63,12 @@ $("#amountPrice ul").append("<li id= " + beerName + beerName + " value=" + beerP
 
 
 if ($("#total:empty").length) {
-    $("#total").append((sumjq('#totalPerBeer li')));
+    $("#total").append((TotalSum('#totalPerBeer li')));
 
 } else {
 
     $("#total").empty();
-    $("#total").append((sumjq('#totalPerBeer li')));
+    $("#total").append((TotalSum('#totalPerBeer li')));
 }
 
 }	

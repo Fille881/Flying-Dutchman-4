@@ -1,3 +1,4 @@
+  $(document).ready(function() {
 //When clicking on delete order, all the li items from the different lists in the receipt are emptied. After that the total sum is calculated again.
 deleteEntry  = function (id){
 	
@@ -10,8 +11,16 @@ deleteEntry  = function (id){
 	// deduct article from price 
 	
 	$("#total").empty();
-    $("#total").append((sumjq('#totalPerBeer li')));
-
-
+    $("#total").append((TotalSum('#totalPerBeer li')));
 	
 }
+
+$("#btnDeleteAll").click(function(){
+	
+$('#overview li').remove();
+	$('#price li').remove();
+	$('#amount li').remove();
+	$('#amountPrice li').remove();
+	$("#total").empty();
+});
+})
