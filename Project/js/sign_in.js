@@ -1,3 +1,4 @@
+//a sign in page
 	$(document).ready(function() {
 			$("#btnSignIn").click(function(){
 				//window.location.href = "login.html";

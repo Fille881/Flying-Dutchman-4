@@ -1,3 +1,4 @@
+//stock information
 $(document).ready(function() {
 	
 	var url = "http://pub.jamaica-inn.net/fpdb/api.php?username=ervtod&password=ervtod&action=inventory_get";

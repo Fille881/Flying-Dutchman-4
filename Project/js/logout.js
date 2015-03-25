@@ -1,3 +1,4 @@
+//the logout page when the button is clicked, it is redirected to the login page
 $(document).ready(function() {
 	
 	$("#logOutBtn").click(function(){
