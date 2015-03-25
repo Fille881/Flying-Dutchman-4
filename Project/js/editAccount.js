@@ -1,4 +1,5 @@
-// First we get all values from the different textfields. Then we setup the user_edit api url with the various data variables. 
+// First we get all values from the different textfields. 
+//Then we setup the user_edit api url with the various data variables. 
  $(document).ready(function() {
 	 
 $("#editAccount").click(function(){

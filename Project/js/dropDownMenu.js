@@ -1,7 +1,7 @@
 // Various links from the drop down menu
 	$(document).ready(function() {
 	
-	$("#orderMenu").click(function(){
+				$("#orderMenu").click(function(){
 					window.location.href = "orders.html";
 				})
 				$("#stockMenu").click(function(){
@@ -20,9 +20,6 @@
 					window.location.href = "editAccount.html";
 				})
 				$("#btnAccounts").click(function(){
-                window.location.href = "accounts.html";
-            })
-				
-				
-				
-			})
+					window.location.href = "accounts.html";
+				})			
+	})

@@ -1,4 +1,6 @@
-//this functions checks if the username field and password field has been filled. Then it checks is the user exists in the database, if so it gets the balance and saves it with the username in password in localstorage. Any login is possible since the database was a bit picky.
+//this functions checks if the username field and password field has been filled. 
+//Then it checks is the user exists in the database, if so it gets the balance and saves it with the username and password in localstorage. 
+//Any login is possible since the database was a bit picky.
 		
 		$(document).ready(function() {
 

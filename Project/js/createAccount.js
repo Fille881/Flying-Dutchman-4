@@ -1,5 +1,7 @@
+//this page creates a new user 
  $(document).ready(function() {
-	 
+
+ //when a button is clicked,it takes the values of each fields into a variable and changes them by assigning
 $("#editAccount").click(function(){
 		 
 firstname = $('#firstname').val();
@@ -23,12 +25,13 @@ $.ajax({
 					email: email,
 					phone: phone
 				},
-				
+				//success message
 				success: function(r)
 				{
 					
 					 alert("User succesfully created");
 				},
+				//error message
 				error: function(r)
 				{
 					alert("Something went wrong");

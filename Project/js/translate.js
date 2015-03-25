@@ -1,8 +1,9 @@
-
+//translation of different languages 
 
 $(document).ready(function() {
 	
-	//on load the english version of the website is loaded. Each element on the pages has an ID an in this function the command is give to translate that id.
+	//on load the english version of the website is loaded. Each element on the pages has an ID an in this function 
+	//the command is give to translate that id.
 var options ={ 
    lng: "en" ,  
    resGetPath: 'locales/en/translationEN.json'

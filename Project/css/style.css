@@ -1,4 +1,4 @@
-/* Main Navigation */
+/* Main Navigation  i.e for the drop down menu*/
 #nav {
 	position:relative;
 	float: left;
@@ -86,7 +86,7 @@ being the ones which make the drop-down to stay hidden */
 	width:180px;
 	background:#f8f8f8;
 	box-shadow:1px 1px 3px #ccc;
-/* css3 transitions for smooth hover effect */
+/* css3 transitions for smooth hover effect for different browsers */
 	-webkit-transition:opacity 0.2s linear, visibility 0.2s linear; 
 	-moz-transition:opacity 0.2s linear, visibility 0.2s linear; 
 	-o-transition:opacity 0.2s linear, visibility 0.2s linear; 
@@ -100,7 +100,7 @@ ul#navigation ul {
 
 ul#navigation ul li ul {
     top: 0;
-    left: 181px; /* strong related to width:180px; from above */
+    left: 181px; 
 }
 
 ul#navigation ul li {
